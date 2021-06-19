@@ -183,22 +183,22 @@ h4 {
 }
 
 #left2 {
-	background: url('http://placehold.it/960x1080/34495e/F8F8F8&text=left+part+of+your+picture+960x1080')no-repeat top right;
+	background: url('')no-repeat top right;
 	background-size: cover;
 }
 
 #right2 {
-	background: url('http://placehold.it/960x1080/34495e/F8F8F8&text=right+part+of+your+picture+960x1080')no-repeat top left;
+	background: url('')no-repeat top left;
 	background-size: cover;
 }
 
 #left3 {
-	background: url('http://placehold.it/960x1080/7f8c8d/333333&text=left+part+of+your+picture+960x1080')no-repeat top right;
+	background: url('')no-repeat top right;
 	background-size: cover;
 }
 
 #right3 {
-	background: url('http://placehold.it/960x1080/7f8c8d/333333&text=right+part+of+your+picture+960x1080')no-repeat top left;
+	background: url('')no-repeat top left;
 	background-size: cover;
 }
 
