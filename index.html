@@ -126,22 +126,27 @@
             <div class="ms-section" id="right1">
     			
                 <!-- START NEWSLETTER -->  
-                <div id="subscribe" class="animated opacity-0">
-                
-                    <div class="col-md-8 col-md-offset-2 col-xs-12 col-xs-offset-0">
+		    
+		    
+               <!-- modify this form HTML and place wherever you want your form -->
 
-                    <h3>Get notified at launch</h3>
-                    
-                        <!-- START NEWSLETTER FORM -->            
-                        <form action="assets/php/notify-me.php" id="notifyMe" method="POST">
+<form
+  action="https://formspree.io/f/mzbygolv"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="_replyto">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
 
-                            <div class="form-group">
-                                <div class="controls">
-                                    <input type="text" id="mail-sub" name="email" placeholder="Your email address..." class="form-control email srequiredField">
-                                    <button class="btn btn-lg submit"><i class="fa fa-check"></i></button>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
+  <!-- your other form fields go here -->
+
+  <button type="submit">Send</button>
+</form>
 
                         </form>
                         <!-- END NEWSLETTER FORM -->
