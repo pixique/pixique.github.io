@@ -5,7 +5,7 @@
 /* ******************************************************** */
 
 // Set to "mailchimp" or "file"
-$STORE_MODE = "mailchimp";
+$STORE_MODE = "file";
 
 // MailChimp API Key findable in your Mailchimp's dashboard
 $API_KEY =  "5338c7b46360a3a7967bc80f3eb3867e-us6";
