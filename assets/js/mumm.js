@@ -75,8 +75,8 @@ $(window).load(function() {
 $('#countdown_dashboard').countDown({
 		targetDate: {
 			'day': 		30,
-			'month': 	10,
-			'year': 	2021,
+			'month': 	02,
+			'year': 	2022,
 			'hour': 	12,
 			'min': 		00,
 			'sec': 		0
