@@ -373,8 +373,93 @@
                     </ul>
                 </div>
                 <div class="contact-cta">
-                    <a href="mailto:hello@pixique.com?subject=Pixique Application - [Your Brand Name]&body=Please answer these questions:%0D%0A%0D%0A1. Brand/Company Name:%0D%0A%0D%0A2. What do you sell? (Pleasure products / Luxury beauty / Wellness experience / Hospitality / Other):%0D%0A%0D%0A3. Website or Instagram:%0D%0A%0D%0A4. Describe your product in sensory terms (what does it feel like, sound like, smell like?):%0D%0A%0D%0A5. Have you seen our founder's intimacy brand, Cherie Linda? It's an example of the sensory positioning we architect. (Yes / No / Will check it out):%0D%0A%0D%0A6. Monthly revenue or funding: ($10-30K/mo / $30-50K/mo / $50K+/mo / Funded $20K+):%0D%0A%0D%0A7. When you invest in services, what do you expect?%0D%0A   a) The deliverables, on time, as promised%0D%0A   b) Flexibility to adjust as we discover together%0D%0A   c) Partnership and ongoing creative collaboration%0D%0A%0D%0A8. How do you prefer to work with agencies?%0D%0A   a) Give me the strategy, I'll implement%0D%0A   b) I want done-for-you, minimal input needed%0D%0A   c) I like collaborative exploration%0D%0A   d) I need lots of check-ins%0D%0A%0D%0A9. What's your biggest brand frustration? (2-3 sentences):%0D%0A%0D%0A10. Which service? (Async Strategy $3.5K / 48-Hour System $4.5K / Live Architecture $7.5K / Not sure):%0D%0A%0D%0A11. Can you approve without committee? (Yes/No):%0D%0A%0D%0A12. Can you meet material deadlines and approve within 48 hours? (Yes/No):%0D%0A%0D%0A13. Ideal start date:%0D%0A%0D%0A" class="btn-primary-large">Submit Application</a>
-                    <p class="contact-note">We respond to qualified applications within 24 hours.<br><strong>Applications with "b/c/d" answers to questions 6-7 receive no response.</strong></p>
+                    <form action="https://formspree.io/f/your-endpoint" method="POST" id="applicationForm" style="max-width: 600px; margin: 0 auto;">
+                        <input type="text" name="name" placeholder="Brand/Company Name *" required style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
+                        
+                        <input type="email" name="email" placeholder="Email *" required style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
+                        
+                        <select name="brand_type" required style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
+                            <option value="">What do you sell? *</option>
+                            <option value="intimacy">Intimacy/Pleasure products</option>
+                            <option value="beauty">Luxury beauty/fragrance</option>
+                            <option value="wellness">Embodied wellness/sound healing</option>
+                            <option value="hospitality">Hospitality (hotel/spa/restaurant)</option>
+                            <option value="other">Other sensory brand</option>
+                        </select>
+                        
+                        <input type="url" name="website" placeholder="Website or Instagram URL *" required style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
+                        
+                        <textarea name="sensory_description" placeholder="Describe your product in sensory terms (what does it feel like, sound like, smell like?) *" required rows="3" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px; resize: vertical;"></textarea>
+                        
+                        <select name="cherie_linda" required style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
+                            <option value="">Have you seen Cherie Linda (our founder's brand)? *</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No, but will check it out</option>
+                            <option value="not_interested">No</option>
+                        </select>
+                        
+                        <select name="revenue" required data-qualifier="true" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
+                            <option value="">Monthly revenue or funding? *</option>
+                            <option value="reject_unfunded">Pre-launch (unfunded)</option>
+                            <option value="funded">Pre-launch (funded $20K+)</option>
+                            <option value="reject_low">$0-10K/month</option>
+                            <option value="pass_10_30">$10-30K/month</option>
+                            <option value="pass_30_50">$30-50K/month</option>
+                            <option value="pass_50plus">$50K+/month</option>
+                        </select>
+                        
+                        <select name="expectations" required data-aya-filter="true" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
+                            <option value="">When you invest in services, what do you expect? *</option>
+                            <option value="pass_deliverables">The deliverables, on time, as promised</option>
+                            <option value="reject_flexibility">Flexibility to adjust as we discover together</option>
+                            <option value="reject_partnership">Partnership and ongoing creative collaboration</option>
+                        </select>
+                        
+                        <select name="work_style" required data-aya-filter="true" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
+                            <option value="">How do you prefer to work with agencies? *</option>
+                            <option value="pass_strategy">Give me the strategy, I'll implement</option>
+                            <option value="pass_done_for_you">I want done-for-you, minimal input needed</option>
+                            <option value="reject_collaborative">I like collaborative exploration</option>
+                            <option value="reject_checkins">I need lots of check-ins</option>
+                        </select>
+                        
+                        <select name="async_comfort" required data-qualifier="true" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
+                            <option value="">Are you comfortable with async-only delivery (no live calls except $7.5K tier)? *</option>
+                            <option value="pass_yes">Yes, async is perfect</option>
+                            <option value="reject_no">No, I need live sessions</option>
+                        </select>
+                        
+                        <textarea name="frustration" placeholder="What's your biggest brand frustration? (2-3 sentences) *" required rows="3" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px; resize: vertical;"></textarea>
+                        
+                        <select name="service_tier" required style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
+                            <option value="">Which service? *</option>
+                            <option value="async_strategy">Sensory Brand Strategy — $3,500</option>
+                            <option value="48_hour">48-Hour Sensory System — $4,500</option>
+                            <option value="live_architecture">Live Architecture Session — $7,500</option>
+                            <option value="not_sure">Not sure yet</option>
+                        </select>
+                        
+                        <select name="decision_authority" required data-qualifier="true" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
+                            <option value="">Can you approve without committee? *</option>
+                            <option value="pass_yes_solo">Yes, I decide alone</option>
+                            <option value="pass_partner">Need partner approval (2 people max)</option>
+                            <option value="reject_committee">Need team/committee</option>
+                        </select>
+                        
+                        <select name="deadline_commitment" required data-qualifier="true" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
+                            <option value="">Can you meet hard deadlines (no flexibility)? *</option>
+                            <option value="pass_yes">Yes, I respect deadlines</option>
+                            <option value="reject_extensions">I might need extensions</option>
+                        </select>
+                        
+                        <input type="text" name="start_date" placeholder="Ideal start date" style="width: 100%; padding: 16px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
+                        
+                        <!-- Hidden field for auto-scoring -->
+                        <input type="hidden" name="_subject" value="New Pixique Application">
+                        
+                        <button type="submit" class="btn-primary-large" style="width: 100%; cursor: pointer;">Submit Application</button>
+                    </form>
+                    <p class="contact-note">We respond to qualified applications within 24 hours.<br><strong>Applications failing qualification criteria receive automated rejection.</strong></p>
                 </div>
                 <p class="contact-disclaimer">If you answer "b", "c", or "d" to questions 6-7, or can't answer "yes" to 10-11, we're not the right fit. We work exclusively with decisive founders who respect structured processes, meet deadlines, and trust expertise over collaboration.</p>
             </div>
