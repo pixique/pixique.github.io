@@ -3,500 +3,679 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixique Studio | Sensory Innovation for Immersive Brand Experiences</title>
-    <meta name="description" content="We help luxury beauty brands and creative agencies design and ship immersive AR/VR experiences. Sensory design meets technical excellence.">
-    <link rel="stylesheet" href="styles.css">
+    <title>Pixique — Technical Strategy for Premium Brands</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+        
+        header {
+            margin-bottom: 80px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 38px;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: #525252;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+        
+        .availability {
+            display: inline-block;
+            background: #059669;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 32px;
+        }
+        
+        section {
+            margin-bottom: 80px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+        
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: #404040;
+            font-size: 16px;
+        }
+        
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            padding-left: 24px;
+            margin-bottom: 10px;
+            position: relative;
+            color: #404040;
+            font-size: 16px;
+        }
+        
+        li:before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #a3a3a3;
+        }
+        
+        .service-grid {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+        
+        .service-box {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            padding: 32px;
+            border-radius: 2px;
+        }
+        
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        
+        .service-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .service-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+        }
+        
+        .service-description {
+            font-size: 15px;
+            color: #525252;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        
+        .service-ideal {
+            font-size: 14px;
+            color: #737373;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        
+        .service-delivery {
+            font-size: 14px;
+            color: #737373;
+            font-style: italic;
+        }
+        
+        .highlight-box {
+            background: #f5f5f5;
+            border-left: 3px solid #000;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+            font-size: 15px;
+            color: #404040;
+        }
+        
+        .how-box {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            padding: 32px;
+            border-radius: 2px;
+        }
+        
+        .how-box ol {
+            list-style: none;
+            counter-reset: steps;
+        }
+        
+        .how-box li {
+            counter-increment: steps;
+            padding-left: 40px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        
+        .how-box li:before {
+            content: counter(steps);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            background: #000;
+            color: #fff;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .how-box li strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .credentials {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            padding: 32px;
+            border-radius: 2px;
+        }
+        
+        .credentials p {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        .credentials-footer {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e5e5;
+            font-size: 14px;
+            color: #737373;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 32px 0;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 24px;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 2px;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: #737373;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-section {
+            background: #000;
+            color: #fff;
+            padding: 48px 32px;
+            border-radius: 2px;
+            margin-top: 80px;
+        }
+        
+        .form-section h2 {
+            color: #fff;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        
+        .form-section .form-intro {
+            color: #d4d4d4;
+            text-align: center;
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+        
+        .form-container {
+            background: #fff;
+            padding: 32px;
+            border-radius: 2px;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+            font-size: 15px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d4d4d4;
+            border-radius: 4px;
+            font-size: 15px;
+            font-family: inherit;
+            background: #fff;
+            color: #1a1a1a;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        select {
+            cursor: pointer;
+        }
+        
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            padding: 14px;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .radio-option:hover {
+            border-color: #000;
+            background: #fafafa;
+        }
+        
+        .radio-option input[type="radio"] {
+            margin-right: 12px;
+            cursor: pointer;
+        }
+        
+        .submit-button {
+            width: 100%;
+            background: #000;
+            color: #fff;
+            padding: 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .submit-button:hover {
+            background: #262626;
+        }
+        
+        .form-note {
+            margin-top: 16px;
+            font-size: 14px;
+            color: #737373;
+            text-align: center;
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 60px;
+            border-top: 1px solid #e5e5e5;
+            font-size: 14px;
+            color: #737373;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 30px;
+            }
+            
+            .service-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .service-price {
+                margin-top: 8px;
+            }
+            
+            .form-section {
+                padding: 32px 20px;
+            }
+            
+            .form-container {
+                padding: 24px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">PIXIQUE</div>
-                <nav class="nav">
-                    <a href="#services">Services</a>
-                    <a href="#work">Work</a>
-                    <a href="#contact" class="btn-primary-small">Book a Call</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <div class="logo">PIXIQUE</div>
+            <span class="availability">● Limited Availability Q4 2025 / Q1 2026</span>
+            <h1>Technical strategy for brands that need expert guidance — not another vendor.</h1>
+            <p class="subtitle">Pixique provides high-leverage technical consulting for beauty, wellness, hospitality, and DTC brands navigating complex technology decisions.</p>
+        </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-label">For Intimacy, Beauty, Wellness & Hospitality Brands</div>
-                <h1 class="hero-title">
-                    Your brand should feel like<br>
-                    an experience, not a logo.
-                </h1>
-                <p class="hero-subtitle">
-                    We architect sensory brand systems for brands where touch, sound, scent, and sight aren't optional—they're your entire value proposition. If your customers buy feelings (not features), you need sensory positioning.
-                </p>
-                <a href="#services" class="btn-primary">See How We Work</a>
-                <p class="hero-trust">Complete sensory systems. No calls (except $7.5K tier). No revisions. Payment doesn't buy time—it buys architecture.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
+        <section>
             <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-label">Sensory Touchpoints</div>
-                    <div class="stat-number">20+</div>
-                    <div class="stat-subtext">per brand system</div>
+                <div class="stat-box">
+                    <div class="stat-number">140+</div>
+                    <div class="stat-label">Programs Delivered</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">Delivery Speed</div>
-                    <div class="stat-number">48hrs</div>
-                    <div class="stat-subtext">to 5 days</div>
+                <div class="stat-box">
+                    <div class="stat-number">25%</div>
+                    <div class="stat-label">Avg Timeline Reduction</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">Conversion Lift</div>
-                    <div class="stat-number">2-4x</div>
-                    <div class="stat-subtext">with sensory positioning</div>
+                <div class="stat-box">
+                    <div class="stat-number">7+ Yrs</div>
+                    <div class="stat-label">Enterprise Experience</div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Problem/Solution Section -->
-    <section class="qualify-section" id="problem">
-        <div class="container">
-            <div class="qualify-content">
-                <h2 class="section-title">Your product is a sensory experience. Your brand isn't.</h2>
-                <p class="qualify-intro">You're selling pleasure, touch, scent, embodied experience—but your brand looks like a Canva template. When your customers buy feelings (not features), generic branding is business death. Your sensory positioning should match the experience you deliver.</p>
-                
-                <div class="qualify-grid">
-                    <div class="qualify-column">
-                        <h3>What's killing your conversions:</h3>
-                        <ul class="qualify-list-negative">
-                            <li>Visual identity that doesn't evoke the sensory experience you sell</li>
-                            <li>No sonic strategy (music, sound, voice) when sound IS your work</li>
-                            <li>Packaging that feels cheap when touch matters most</li>
-                            <li>Generic "wellness aesthetic" when you're selling embodiment</li>
-                            <li>Brand that tells instead of makes people FEEL</li>
-                        </ul>
+        <section>
+            <h2>Strategic Engagements</h2>
+            
+            <div class="service-grid">
+                <div class="service-box">
+                    <div class="service-header">
+                        <div class="service-title">Technical Strategy Session</div>
+                        <div class="service-price">$4,500</div>
                     </div>
+                    <div class="service-description">
+                        Stuck on a critical technical decision? Get expert analysis and a clear action plan in one intensive session. Leave with confidence on your next move.
+                    </div>
+                    <div class="service-ideal">
+                        <strong>Ideal for:</strong> Evaluating AR/VR vendors · Choosing tech stack · Scoping complex projects · Getting unstuck on stalled initiatives
+                    </div>
+                    <div class="service-delivery">90-minute strategic session + written action plan delivered within 48 hours</div>
+                </div>
+                
+                <div class="service-box">
+                    <div class="service-header">
+                        <div class="service-title">Program Rescue Audit</div>
+                        <div class="service-price">$8,500</div>
+                    </div>
+                    <div class="service-description">
+                        Your technical project is behind, over budget, or stuck. Get an independent assessment of what's broken and a prioritized recovery roadmap to get back on track.
+                    </div>
+                    <div class="service-ideal">
+                        <strong>What you get:</strong> Full project audit · Root cause analysis · Recovery plan · Vendor/team performance assessment · Risk mitigation strategy
+                    </div>
+                    <div class="service-delivery">7-10 days async review + 60-minute presentation of findings + Q&A</div>
+                </div>
+                
+                <div class="service-box">
+                    <div class="service-header">
+                        <div class="service-title">Platform Selection Sprint</div>
+                        <div class="service-price">$6,500</div>
+                    </div>
+                    <div class="service-description">
+                        Overwhelmed by technical options? Get expert vendor evaluation, comparison analysis, and implementation roadmap so you can move forward with confidence.
+                    </div>
+                    <div class="service-ideal">
+                        <strong>Ideal for:</strong> E-commerce platform selection · AR/VR production partners · Marketing tech stack · Platform migration decisions
+                    </div>
+                    <div class="service-delivery">Comparison matrix + recommendation deck + implementation timeline (async delivery)</div>
+                </div>
+                
+                <div class="service-box">
+                    <div class="service-header">
+                        <div class="service-title">Technical Fractional PM</div>
+                        <div class="service-price">$6,500/mo</div>
+                    </div>
+                    <div class="service-description">
+                        Monthly strategic oversight for your technical initiatives. Expert program management without full-time overhead. Keep projects on track, vendors accountable, and risks managed.
+                    </div>
+                    <div class="service-ideal">
+                        <strong>Includes:</strong> 15 hours/month strategic oversight · Weekly async updates via Loom · Vendor/team coordination · Risk management · One 60-min call/month
+                    </div>
+                    <div class="service-delivery">3-month minimum commitment · Async-first with optional monthly sync</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <p><strong>Not sure which engagement fits your needs?</strong> Submit the form below and we'll recommend the right approach based on your situation.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>How Pixique Works</h2>
+            <div class="how-box">
+                <ol>
+                    <li>
+                        <strong>Submit application.</strong>
+                        Describe your challenge, timeline, and budget. You'll hear back within 24 hours if it's a fit.
+                    </li>
+                    <li>
+                        <strong>Payment secures your spot.</strong>
+                        Once approved, pay via Stripe invoice. Work begins immediately upon payment.
+                    </li>
+                    <li>
+                        <strong>Kickoff briefing.</strong>
+                        Share context, docs, and constraints. For strategy sessions: schedule your 90-min call. For audits/sprints: async document review begins.
+                    </li>
+                    <li>
+                        <strong>Delivery.</strong>
+                        Receive strategic analysis, action plans, and recommendations. Most engagements include one follow-up Q&A session.
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>Who We Work With</h2>
+            <ul>
+                <li>Beauty and wellness brands launching technical products (AR try-on, personalization engines, digital experiences)</li>
+                <li>Hospitality groups navigating platform selection or digital transformation</li>
+                <li>DTC brands at inflection points (scaling tech, migrating platforms, evaluating vendors)</li>
+                <li>Creative agencies needing fractional technical program management for client projects</li>
+                <li>Leadership teams stuck on high-stakes technical decisions</li>
+            </ul>
+            <p style="margin-top: 24px;"><strong>Ideal clients are decisive, value expertise over exploration, and need strategic clarity to move forward.</strong></p>
+        </section>
+
+        <section>
+            <h2>Led By Someone Who's Navigated This at Enterprise Scale</h2>
+            <div class="credentials">
+                <p>Pixique is led by a Technical Program Manager with 7+ years driving large-scale technical initiatives at Walmart Connect, Google, Airbnb, and McCann Worldgroup.</p>
+                
+                <p>Track record includes managing portfolios of 140+ annual programs with VP-level accountability, reducing delivery timelines by 25% through operational frameworks, and directing end-to-end AR/VR production (Unity/Unreal Engine) for global brand activations.</p>
+                
+                <p>Deep expertise in ad technology platforms, real-time bidding systems, cloud infrastructure (AWS/GCP), ML integration, and coordinating distributed engineering, product, and data teams under ambiguous, high-pressure conditions.</p>
+
+                <p>This isn't theory — it's pattern recognition from hundreds of technical programs, tens of millions in managed budgets, and navigating every failure mode you're trying to avoid.</p>
+                
+                <div class="credentials-footer">
+                    UC Berkeley MS · Previously: Walmart Connect, Google for Education, Airbnb, McCann Worldgroup, PBS, Salesforce
+                </div>
+            </div>
+        </section>
+
+        <div class="form-section">
+            <h2>Apply for Strategic Engagement</h2>
+            <p class="form-intro">Limited availability. Applications reviewed within 24 hours.</p>
+            
+            <div class="form-container">
+                <form action="https://formcarry.com/s/iy1FfC8V_yO" method="POST">
                     
-                    <div class="qualify-column">
-                        <h3>What you actually need:</h3>
-                        <ul class="qualify-list">
-                            <li>Visual language that evokes touch, pleasure, embodiment</li>
-                            <li>Sonic identity that mirrors your sensory work</li>
-                            <li>Tactile strategy for packaging and physical touchpoints</li>
-                            <li>Olfactory direction (scent recommendations for spaces/products)</li>
-                            <li>Complete sensory architecture across all brand moments</li>
-                        </ul>
+                    <div class="form-group">
+                        <label for="service">Which engagement are you interested in?</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select an engagement</option>
+                            <option value="Technical Strategy Session ($4,500)">Technical Strategy Session ($4,500)</option>
+                            <option value="Program Rescue Audit ($8,500)">Program Rescue Audit ($8,500)</option>
+                            <option value="Platform Selection Sprint ($6,500)">Platform Selection Sprint ($6,500)</option>
+                            <option value="Technical Fractional PM ($6,500/mo)">Technical Fractional PM ($6,500/mo)</option>
+                            <option value="Not sure - need recommendation">Not sure - need recommendation</option>
+                        </select>
                     </div>
-                </div>
-                
-                <div class="qualify-cta">
-                    <p><strong>We build sensory brand systems in 48 hours to 5 days.</strong></p>
-                    <p>No mood boards. No "let's explore." Just complete sensory architecture you can implement immediately.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">How We Work</div>
-                <h2 class="section-title">Three ways to build your sensory brand system</h2>
-            </div>
-
-            <div class="services-grid">
-                <!-- Service 1: 4-Hour Intensive -->
-                <div class="service-card gradient-gold">
-                    <div class="service-header">
-                        <span class="service-price">$3,500</span>
-                        <span class="service-duration">4 hours</span>
+                    <div class="form-group">
+                        <label for="challenge">What's the technical challenge or decision you're facing?</label>
+                        <textarea id="challenge" name="challenge" placeholder="Be specific: What are you trying to solve? What's at stake? What's unclear?" required></textarea>
                     </div>
-                    <h3 class="service-title">Sensory Brand Strategy — Async Architecture</h3>
-                    <p class="service-description">
-                        Complete sensory brand strategy delivered via personalized Loom walkthrough. No live calls. No Zoom sessions. Pure strategy, delivered async in 3 business days.
-                    </p>
-                    <div class="service-details">
-                        <h4>Perfect for:</h4>
-                        <p>Intimacy brands, wellness practitioners, or beauty founders who want strategic direction and will implement themselves.</p>
-                        <h4>What you get:</h4>
-                        <ul>
-                            <li>Complete sensory brand audit (visual, sonic, tactile, olfactory)</li>
-                            <li>Strategic direction document (12 pages)</li>
-                            <li>Visual identity strategy (colors, imagery, typography that evoke feeling)</li>
-                            <li>Sonic identity framework (music, sound, voice direction)</li>
-                            <li>Tactile language (packaging materials, textures, physical experience)</li>
-                            <li>Olfactory recommendations (scent strategy for spaces/products)</li>
-                            <li>30-day implementation roadmap</li>
-                            <li>45-minute personalized Loom walkthrough</li>
-                        </ul>
-                        <h4>Timeline:</h4>
-                        <p>Pay → Submit intake within 48 hours → Delivery in 3 business days → Access for 30 days</p>
-                        <h4>Terms:</h4>
-                        <p><strong>Async only. No live calls.</strong> Late intake = automatic 2-week pause. One revision round included; additional = $1,500 each.</p>
-                    </div>
-                    <a href="#contact" class="btn-service">Book Intensive</a>
-                </div>
 
-                <!-- Service 2: 48-Hour Package -->
-                <div class="service-card gradient-rose">
-                    <div class="service-header">
-                        <span class="service-price">$4,500</span>
-                        <span class="service-duration">48 hours</span>
-                    </div>
-                    <h3 class="service-title">48-Hour Sensory System — Async Delivery</h3>
-                    <p class="service-description">
-                        Pay Friday. Send materials Friday by 11:59pm. Receive complete sensory brand architecture Monday 9am. Miss the deadline? Project auto-pauses to next available slot. No exceptions.
-                    </p>
-                    <div class="service-details">
-                        <h4>Perfect for:</h4>
-                        <p>Pleasure product brands, embodied coaches, or luxury beauty lines that need complete sensory positioning fast.</p>
-                        <h4>What you get:</h4>
-                        <ul>
-                            <li>12-page sensory brand system</li>
-                            <li>Visual identity (color palette, typography, imagery style that evokes touch/pleasure)</li>
-                            <li>Sonic identity package (curated Spotify playlist + music mood board)</li>
-                            <li>Tactile guide (packaging materials, textures, physical touchpoint strategy)</li>
-                            <li>Olfactory direction (scent recommendations for products/spaces)</li>
-                            <li>Sensory experience map (customer journey across all senses)</li>
-                            <li>Implementation roadmap (actionable next steps)</li>
-                            <li>30-minute Loom walkthrough</li>
-                        </ul>
-                        <h4>Timeline:</h4>
-                        <p>Pay + submit materials Friday by 11:59pm EST. Receive delivery Monday 9am EST.</p>
-                        <h4>Terms:</h4>
-                        <p><strong>Late materials = automatic pause.</strong> Miss Friday deadline? Your delivery moves to the next available Monday (typically 2 weeks out). Rush fee of $1,500 available to maintain original timeline if materials arrive within 24 hours of deadline.</p>
-                    </div>
-                    <a href="#contact" class="btn-service">Book 48-Hour System</a>
-                </div>
-
-                <!-- Service 3: Complete Sensory Rebrand -->
-                <div class="service-card gradient-cream" style="border-top-color: #C8A675;">
-                    <div class="service-header">
-                        <span class="service-price">$7,500</span>
-                        <span class="service-duration">5 days</span>
-                    </div>
-                    <h3 class="service-title">Live Brand Architecture Session</h3>
-                    <p class="service-description">
-                        The only tier that includes live access. Complete sensory brand system + optional 60-minute Zoom strategy session. For urgent launches or brands that want face-to-face strategy.
-                    </p>
-                    <div class="service-details">
-                        <h4>Perfect for:</h4>
-                        <p>Urgent launches, funded brands, or founders who value optional live strategic consultation alongside complete sensory architecture.</p>
-                        <h4>What you get:</h4>
-                        <ul>
-                            <li>20-page sensory brand architecture</li>
-                            <li>Complete visual identity system (logo exploration, full color theory, typography hierarchy)</li>
-                            <li>Sonic branding (custom playlist, music strategy, voice/tone across audio touchpoints)</li>
-                            <li>Tactile strategy (materials library, packaging design direction, physical experience guide)</li>
-                            <li>Olfactory architecture (scent strategy for products, spaces, packaging)</li>
-                            <li>Sensory experience choreography (how all senses work together across customer journey)</li>
-                            <li>Launch-ready brand guidelines PDF</li>
-                            <li>14 days implementation support</li>
-                            <li>One 60-minute strategy call (optional)</li>
-                        </ul>
-                        <h4>Timeline:</h4>
-                        <p>Pay today. Materials due within 24 hours. Delivery in 5 business days.</p>
-                        <h4>Terms:</h4>
-                        <p><strong>Materials late? Project auto-pauses 2 weeks.</strong> Need delivery in 72 hours instead of 5 days? Add rush fee (+$2,000). Scope changes after kickoff = $750/hour. One revision round included; additional revisions = $1,500 per round.</p>
-                    </div>
-                    <a href="#contact" class="btn-service">Request Urgent Rebrand</a>
-                </div>
-            </div>
-
-            <!-- Value Prop -->
-            <div class="audit-offer">
-                <h3>Why sensory brands choose Pixique:</h3>
-                <p>Most brand studios design logos. We architect experiences. <strong>If your customers buy feelings—pleasure, embodiment, luxury, sensuality—we're the only studio that designs for ALL their senses.</strong></p>
-                <p>We don't do endless discovery. No "mood board exploration" theater. No surprise calls or flexible timelines. You pay, we deliver complete sensory architecture in 48 hours to 5 days, then you implement.</p>
-                <p style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1);"><strong>Our terms are firm:</strong> 100% payment upfront. Materials deadlines are absolute (late = auto-pause). Scope changes billed at $750/hour. One revision round per project. We protect our process so we can deliver excellence.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Our Process</div>
-                <h2 class="section-title">Five steps. Zero unnecessary communication.</h2>
-            </div>
-            <div class="how-grid">
-                <div class="how-step">
-                    <div class="step-number">01</div>
-                    <h3>Apply</h3>
-                    <p>Fill out application form with your brand details, revenue stage, and which service you need.</p>
-                </div>
-                <div class="how-step">
-                    <div class="step-number">02</div>
-                    <h3>Qualify</h3>
-                    <p>We review within 24 hours. If you're a fit, you receive payment link and brief template.</p>
-                </div>
-                <div class="how-step">
-                    <div class="step-number">03</div>
-                    <h3>Brief</h3>
-                    <p>You pay and submit your completed brief (takes 15-30 minutes). We start immediately.</p>
-                </div>
-                <div class="how-step">
-                    <div class="step-number">04</div>
-                    <h3>Deliver</h3>
-                    <p>5 business days later, you receive your complete audit or brand system via email + Loom.</p>
-                </div>
-                <div class="how-step">
-                    <div class="step-number">05</div>
-                    <h3>Launch</h3>
-                    <p>You implement immediately. Optional 30-min review call available for Sprint clients.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Who It's For -->
-    <section id="work" class="work-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Who We Work With</div>
-                <h2 class="section-title">Built for brands where sensory experience = your entire product</h2>
-            </div>
-
-            <div class="who-grid">
-                <div class="who-card">
-                    <h3>Intimacy & Pleasure Brands</h3>
-                    <p>Sex tech, pleasure products, sensual wellness, intimate coaching. Your customers buy touch, pleasure, and embodied experience—not features. If your packaging doesn't feel luxurious and your brand doesn't evoke sensuality, you're dead on arrival in premium markets.</p>
-                </div>
-
-                <div class="who-card">
-                    <h3>Luxury Beauty & Fragrance</h3>
-                    <p>High-end skincare ($100+ products), niche perfume, luxury cosmetics. When texture, scent, and unboxing experience justify $200 cream, your brand needs complete sensory architecture. Generic beauty branding = competing on discount codes instead of experience.</p>
-                </div>
-
-                <div class="who-card">
-                    <h3>Embodied Wellness Experiences</h3>
-                    <p>Sound healing, breathwork, somatic therapy, embodiment coaching. Your WORK is sensory (sound, touch, breath)—your brand should mirror the experience you deliver. Clinical wellness branding kills the very feeling you're trying to sell.</p>
-                </div>
-
-                <div class="who-card">
-                    <h3>Hospitality & Sensory Spaces</h3>
-                    <p>Boutique hotels, luxury spas, experiential restaurants, retreat centers. Your product IS the sensory environment. Scent when guests walk in, music in the lounge, texture of linens—these aren't details, they're your differentiator. Generic hospitality branding = just another hotel.</p>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 60px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <p style="font-size: 18px; color: var(--color-text); line-height: 1.8; margin-bottom: 16px;">
-                    <strong>These brands can't succeed with visual identity alone.</strong>
-                </p>
-                <p style="font-size: 16px; color: var(--color-text-secondary); line-height: 1.7;">
-                    When your customers buy feelings (not features), you need sensory architecture across sight, sound, touch, and scent. That's what we build. Most brand studios design logos and call it done. We architect complete sensory experiences that make people feel your brand before they read a word.
-                </p>
-            </div>
-
-            <!-- Who We DON'T Work With -->
-            <div style="margin-top: 80px; padding: 60px 40px; background: var(--color-bg-light); border-radius: 12px; border-left: 3px solid var(--color-accent-rose);">
-                <h3 style="font-size: 24px; margin-bottom: 24px; color: var(--color-text);">Who We Don't Work With</h3>
-                <p style="font-size: 16px; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 24px;">
-                    We're not the right fit if you:
-                </p>
-                <ul style="font-size: 16px; color: var(--color-text-secondary); line-height: 1.9; list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 12px;">• Need emotional processing or validation alongside strategy</li>
-                    <li style="margin-bottom: 12px;">• Want to "explore together" or "collaborate creatively" rather than execute</li>
-                    <li style="margin-bottom: 12px;">• Expect 24/7 access, surprise Zoom calls, or flexible timelines</li>
-                    <li style="margin-bottom: 12px;">• Require hand-holding through implementation decisions</li>
-                    <li style="margin-bottom: 12px;">• Blur boundaries between business relationships and friendship</li>
-                    <li style="margin-bottom: 12px;">• Need committee or partner approval for creative decisions</li>
-                </ul>
-                <p style="font-size: 16px; color: var(--color-text); line-height: 1.7; margin-top: 32px;">
-                    <strong>We're exceptional at sensory brand architecture. We're not therapists, accountability partners, or on-call consultants.</strong>
-                </p>
-                <p style="font-size: 15px; color: var(--color-text-secondary); line-height: 1.7; margin-top: 16px;">
-                    If you need flexible timelines, collaborative exploration, or lots of check-ins, we recommend <a href="#" style="color: var(--color-accent-rose); text-decoration: underline;">these studios</a> instead.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <section class="expertise-section">
-        <div class="container">
-            <h2 class="section-title">Why sensory brands trust Pixique</h2>
-            <div class="expertise-content">
-                <p>Pixique was founded by a sensory brand strategist with 7+ years architecting multi-sensory experiences for intimacy, beauty, wellness, and hospitality brands.</p>
-                
-                <p><strong>That includes building Cherie Linda</strong>—a sensual-ritual and feminine-sovereignty brand that blends eroticism, spirituality, and sensory design through guided rituals, scent, texture, and sound. That lived experience of building a faceless, poetic, high-art intimacy brand means Pixique doesn't just theorize about sensory positioning—we've lived it.</p>
-
-                <p>We understand how to position eroticism as sovereignty (not pornography), the psychology of selling sensual experiences (not just products), and how to integrate sight, sound, scent, and touch into brand architecture. Most brand studios apply generic templates to intimacy brands. We speak the language fluently because we built our own.</p>
-
-                <p>No mood boards. No "let's explore together." Just complete sensory architecture delivered in 48 hours to 5 days so you can launch with positioning that makes people FEEL your value immediately.</p>
-            </div>
-
-            <div class="expertise-grid">
-                <div class="expertise-item">
-                    <h4>Complete Sensory Architecture</h4>
-                    <p>We design for sight, sound, touch, and scent. Most studios stop at visual. We architect experiences across every sense your customer engages.</p>
-                </div>
-                <div class="expertise-item">
-                    <h4>Lived Intimacy Expertise</h4>
-                    <p>Our founder built Cherie Linda, proving we understand sensual positioning, ritual design, and embodied brand language at a depth most studios can't match.</p>
-                </div>
-                <div class="expertise-item">
-                    <h4>Speed Without Compromise</h4>
-                    <p>48-hour to 5-day delivery. Async-first. We don't need months of "discovery" to understand sensory brands. We know this market intimately.</p>
-                </div>
-                <div class="expertise-item">
-                    <h4>Experience-Driven ROI</h4>
-                    <p>When your brand evokes the right feeling, conversions lift 2-4x. We optimize for sensory impact that drives purchase decisions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="contact-content">
-                <h2>Ready to build your sensory brand system?</h2>
-                <p class="contact-subtitle">
-                    We're accepting new sensory brand projects on a rolling basis. If your customers buy feelings (not features) and you need complete sensory architecture, apply below.
-                </p>
-                <div class="contact-requirements">
-                    <h3>Before You Apply:</h3>
-                    <ul>
-                        <li><strong>Your product is sensory:</strong> Intimacy, beauty, wellness, hospitality—where touch/scent/sound/sight = core value</li>
-                        <li><strong>Decision authority:</strong> You can approve creative direction without committee/partner sign-off</li>
-                        <li><strong>Budget ready:</strong> $3,500-$7,500 depending on tier (100% upfront, no payment plans)</li>
-                        <li><strong>Process respect:</strong> You trust expertise and don't need collaborative exploration or emotional processing</li>
-                        <li><strong>Fast execution:</strong> You can provide materials on deadline and approve deliverables within 48 hours</li>
-                    </ul>
-                </div>
-                <div class="contact-cta">
-                    <form action="https://formcarry.com/s/iy1FfC8V_yO" method="POST" id="applicationForm" style="max-width: 600px; margin: 0 auto;">
-                        <input type="text" name="name" placeholder="Brand/Company Name *" required style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
-                        
-                        <input type="email" name="email" placeholder="Email *" required style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
-                        
-                        <select name="brand_type" required style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
-                            <option value="">What do you sell? *</option>
-                            <option value="intimacy">Intimacy/Pleasure products</option>
-                            <option value="beauty">Luxury beauty/fragrance</option>
-                            <option value="wellness">Embodied wellness/sound healing</option>
-                            <option value="hospitality">Hospitality (hotel/spa/restaurant)</option>
-                            <option value="other">Other sensory brand</option>
-                        </select>
-                        
-                        <input type="url" name="website" placeholder="Website or Instagram URL *" required style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
-                        
-                        <textarea name="sensory_description" placeholder="Describe your product in sensory terms (what does it feel like, sound like, smell like?) *" required rows="3" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px; resize: vertical;"></textarea>
-                        
-                        <select name="cherie_linda" required style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
-                            <option value="">Have you seen Cherie Linda (our founder's brand)? *</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No, but will check it out</option>
-                            <option value="not_interested">No</option>
-                        </select>
-                        
-                        <select name="revenue" required data-qualifier="true" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
-                            <option value="">Monthly revenue or funding? *</option>
-                            <option value="reject_unfunded">Pre-launch (unfunded)</option>
-                            <option value="funded">Pre-launch (funded $20K+)</option>
-                            <option value="reject_low">$0-10K/month</option>
-                            <option value="pass_10_30">$10-30K/month</option>
-                            <option value="pass_30_50">$30-50K/month</option>
-                            <option value="pass_50plus">$50K+/month</option>
-                        </select>
-                        
-                        <select name="expectations" required data-aya-filter="true" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
-                            <option value="">When you invest in services, what do you expect? *</option>
-                            <option value="pass_deliverables">The deliverables, on time, as promised</option>
-                            <option value="reject_flexibility">Flexibility to adjust as we discover together</option>
-                            <option value="reject_partnership">Partnership and ongoing creative collaboration</option>
-                        </select>
-                        
-                        <select name="work_style" required data-aya-filter="true" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
-                            <option value="">How do you prefer to work with agencies? *</option>
-                            <option value="pass_strategy">Give me the strategy, I'll implement</option>
-                            <option value="pass_done_for_you">I want done-for-you, minimal input needed</option>
-                            <option value="reject_collaborative">I like collaborative exploration</option>
-                            <option value="reject_checkins">I need lots of check-ins</option>
-                        </select>
-                        
-                        <select name="async_comfort" required data-qualifier="true" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
-                            <option value="">Are you comfortable with async-only delivery (no live calls except $7.5K tier)? *</option>
-                            <option value="pass_yes">Yes, async is perfect</option>
-                            <option value="reject_no">No, I need live sessions</option>
-                        </select>
-                        
-                        <textarea name="frustration" placeholder="What's your biggest brand frustration? (2-3 sentences) *" required rows="3" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px; resize: vertical;"></textarea>
-                        
-                        <select name="service_tier" required style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
-                            <option value="">Which service? *</option>
-                            <option value="async_strategy">Sensory Brand Strategy — $3,500</option>
-                            <option value="48_hour">48-Hour Sensory System — $4,500</option>
-                            <option value="live_architecture">Live Architecture Session — $7,500</option>
-                            <option value="not_sure">Not sure yet</option>
-                        </select>
-                        
-                        <select name="decision_authority" required data-qualifier="true" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
-                            <option value="">Can you approve without committee? *</option>
-                            <option value="pass_yes_solo">Yes, I decide alone</option>
-                            <option value="pass_partner">Need partner approval (2 people max)</option>
-                            <option value="reject_committee">Need team/committee</option>
-                        </select>
-                        
-                        <select name="deadline_commitment" required data-qualifier="true" style="width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
-                            <option value="">Can you meet hard deadlines (no flexibility)? *</option>
-                            <option value="pass_yes">Yes, I respect deadlines</option>
-                            <option value="reject_extensions">I might need extensions</option>
-                        </select>
-                        
-                        <input type="text" name="start_date" placeholder="Ideal start date" style="width: 100%; padding: 16px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #FDFBF7; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 15px;">
-                        
-                        <!-- Hidden field for auto-scoring -->
-                        <input type="hidden" name="_subject" value="New Pixique Application">
-                        
-                        <button type="submit" class="btn-primary-large" style="width: 100%; cursor: pointer;">Submit Application</button>
-                    </form>
-                    <p class="contact-note">We respond to qualified applications within 24 hours.<br><strong>Applications failing qualification criteria receive automated rejection.</strong></p>
-                </div>
-                <p class="contact-disclaimer">If you answer "b", "c", or "d" to questions 6-7, or can't answer "yes" to 10-11, we're not the right fit. We work exclusively with decisive founders who respect structured processes, meet deadlines, and trust expertise over collaboration.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <div class="footer-brand">
-                        <div class="footer-logo">PIXIQUE</div>
-                        <p>Sensory brand architecture for intimacy, beauty, wellness, and hospitality brands. Founded by the creator of Cherie Linda, we architect complete sensory systems (visual, sonic, tactile, olfactory) that make customers feel your brand before they read a word. Payment doesn't buy time—it buys architecture.</p>
-                    </div>
-                    <div class="footer-links">
-                        <div class="footer-column">
-                            <h4>Services</h4>
-                            <a href="#services">Sensory Brand Intensive — $3,500</a>
-                            <a href="#services">48-Hour Sensory System — $4,500</a>
-                            <a href="#services">Complete Sensory Rebrand — $7,500</a>
-                        </div>
-                        <div class="footer-column">
-                            <h4>Company</h4>
-                            <a href="#work">Who We Work With</a>
-                            <a href="#contact">Apply</a>
-                            <a href="https://linkedin.com/company/pixique-studio" target="_blank">LinkedIn</a>
+                    <div class="form-group">
+                        <label>Timeline urgency:</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="timeline" value="Need to decide/move in next 2-4 weeks" required>
+                                <span>Need to decide/move in next 2-4 weeks</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="timeline" value="Need clarity in next 1-2 months" required>
+                                <span>Need clarity in next 1-2 months</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="timeline" value="Exploring options, no immediate pressure" required>
+                                <span>Exploring options, no immediate pressure</span>
+                            </label>
                         </div>
                     </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2025 Pixique Studio. Sensory brand architecture for brands that sell feelings.</p>
-                </div>
+
+                    <div class="form-group">
+                        <label>Budget status:</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="budget" value="Budget approved ($4.5K-$8.5K range)" required>
+                                <span>Budget approved ($4.5K-$8.5K range)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="budget" value="Budget likely, need proposal for approval" required>
+                                <span>Budget likely, need proposal for approval</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="budget" value="Exploring investment" required>
+                                <span>Exploring investment</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>What are you looking for from this engagement?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="goal" value="Clear recommendation so we can move forward" required>
+                                <span>Clear recommendation so we can move forward</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="goal" value="Validate our thinking with an expert" required>
+                                <span>Validate our thinking with an expert</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="goal" value="Fix what's broken in current project" required>
+                                <span>Fix what's broken in current project</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="goal" value="Ongoing strategic oversight" required>
+                                <span>Ongoing strategic oversight</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company or Project Name</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">Website (if applicable)</label>
+                        <input type="url" id="website" name="website" placeholder="https://">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Best Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <button type="submit" class="submit-button">Submit Application</button>
+                    
+                    <p class="form-note">Applications reviewed within 24 hours. Qualified engagements receive immediate next steps.</p>
+                </form>
             </div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <footer>
+            <p><strong>PIXIQUE</strong></p>
+            <p style="margin-top: 8px;">Technical strategy for premium brands.</p>
+            <p style="margin-top: 20px; color: #a3a3a3;">Remote · Worldwide</p>
+        </footer>
+    </div>
 </body>
 </html>
