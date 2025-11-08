@@ -685,11 +685,18 @@
         <div class="container">
             <h2 class="reveal">Strategic Engagements</h2>
             
+            <div class="reveal" style="text-align: center; margin-bottom: 60px; padding: 40px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.03) 100%); border: 1px solid rgba(16, 185, 129, 0.15); border-radius: 8px;">
+                <h3 style="color: #10b981; font-size: 16px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; font-weight: 600;">Flagship Offer</h3>
+                <p style="font-size: 28px; font-weight: 600; color: #ffffff; margin-bottom: 12px; line-height: 1.3;">90-Minute Technical Strategy Intensive — $4,900</p>
+                <p style="font-size: 16px; color: #a3a3a3; margin-bottom: 24px;">Fixed scope. Async-friendly. Scheduled within 7–14 days of payment.</p>
+                <p style="font-size: 15px; color: #e5e5e5; margin-bottom: 0;">Ready now? <a href="#reserve-form" style="color: #10b981; text-decoration: none; font-weight: 600; border-bottom: 1px solid #10b981;">Skip to reservation form</a> or <a href="https://buy.stripe.com/YOUR_LINK_HERE" style="color: #10b981; text-decoration: none; font-weight: 600; border-bottom: 1px solid #10b981;">pay directly via Stripe</a></p>
+            </div>
+            
             <div class="services-grid">
                 <div class="service-card reveal">
                     <div class="service-header">
                         <div class="service-title">Technical Strategy Session</div>
-                        <div class="service-price">$4,500</div>
+                        <div class="service-price">$4,900</div>
                     </div>
                     <div class="service-description">
                         Stuck on a critical technical decision? Get expert analysis and a clear action plan in one intensive session. Leave with confidence on your next move.
@@ -804,6 +811,7 @@
                 
                 <div class="ideal-note">
                     <p><strong>Ideal clients are decisive, value expertise over exploration, and need strategic clarity to move forward.</strong></p>
+                    <p style="margin-top: 12px; font-size: 15px; color: #a3a3a3;">If you need internal consensus, months of exploration, or three rounds of pitches, we're not your partner.</p>
                 </div>
             </div>
         </div>
@@ -828,96 +836,85 @@
         </div>
     </section>
 
-    <div class="form-section">
+    <div class="form-section" id="reserve-form">
         <div class="container">
-            <h2>Apply for Strategic Engagement</h2>
-            <p class="form-intro">Limited availability. Applications reviewed within 24 hours.</p>
+            <h2>Reserve Your Engagement</h2>
+            <p class="form-intro">Limited availability. If you're ready, we move fast. No discovery circus.</p>
             
             <div class="form-container">
                 <form action="https://formcarry.com/s/iy1FfC8V_yO" method="POST">
                     
+                    <!-- Decision Gate -->
                     <div class="form-group">
-                        <label for="service">Which engagement are you interested in?</label>
+                        <label>Where are you right now?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="decision_status" value="Ready to proceed - send invoice for selected engagement" required>
+                                <span>Ready to proceed — send invoice for my selected engagement</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="decision_status" value="One clarification, then I'm ready to proceed" required>
+                                <span>One clarification, then I'm ready to proceed</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Service Selection -->
+                    <div class="form-group">
+                        <label for="service">Which engagement are you reserving?</label>
                         <select id="service" name="service" required>
                             <option value="">Select an engagement</option>
                             <option value="Technical Strategy Session ($4,500)">Technical Strategy Session ($4,500)</option>
                             <option value="Program Rescue Audit ($8,500)">Program Rescue Audit ($8,500)</option>
                             <option value="Platform Selection Sprint ($6,500)">Platform Selection Sprint ($6,500)</option>
-                            <option value="Technical Fractional PM ($6,500/mo)">Technical Fractional PM ($6,500/mo)</option>
-                            <option value="Not sure - need recommendation">Not sure - need recommendation</option>
+                            <option value="Technical Fractional PM ($6,500/mo, 3-month min)">Technical Fractional PM ($6,500/mo · 3-month min)</option>
                         </select>
                     </div>
 
+                    <!-- Challenge (tight prompt) -->
                     <div class="form-group">
-                        <label for="challenge">What's the technical challenge or decision you're facing?</label>
-                        <textarea id="challenge" name="challenge" placeholder="Be specific: What are you trying to solve? What's at stake? What's unclear?" required></textarea>
+                        <label for="challenge">What are we solving in one sentence?</label>
+                        <textarea id="challenge" name="challenge" placeholder="Example: AR try-on launch is 8 weeks behind and vendor is burning budget." required></textarea>
                     </div>
 
+                    <!-- Timeline -->
                     <div class="form-group">
-                        <label>Timeline urgency:</label>
+                        <label>Timeline</label>
                         <div class="radio-group">
                             <label class="radio-option">
-                                <input type="radio" name="timeline" value="Need to decide/move in next 2-4 weeks" required>
-                                <span>Need to decide/move in next 2-4 weeks</span>
+                                <input type="radio" name="timeline" value="Decision/start within 7-14 days" required>
+                                <span>Decision / start within 7–14 days</span>
                             </label>
                             <label class="radio-option">
-                                <input type="radio" name="timeline" value="Need clarity in next 1-2 months" required>
-                                <span>Need clarity in next 1-2 months</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="timeline" value="Exploring options, no immediate pressure" required>
-                                <span>Exploring options, no immediate pressure</span>
+                                <input type="radio" name="timeline" value="Decision this month" required>
+                                <span>Decision this month</span>
                             </label>
                         </div>
                     </div>
 
+                    <!-- Budget -->
                     <div class="form-group">
-                        <label>Budget status:</label>
+                        <label>Budget</label>
                         <div class="radio-group">
                             <label class="radio-option">
-                                <input type="radio" name="budget" value="Budget approved ($4.5K-$8.5K range)" required>
-                                <span>Budget approved ($4.5K-$8.5K range)</span>
+                                <input type="radio" name="budget" value="Budget approved for this engagement" required>
+                                <span>Budget approved for this engagement</span>
                             </label>
                             <label class="radio-option">
-                                <input type="radio" name="budget" value="Budget likely, need proposal for approval" required>
-                                <span>Budget likely, need proposal for approval</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="budget" value="Exploring investment" required>
-                                <span>Exploring investment</span>
+                                <input type="radio" name="budget" value="Verbal approval / in final sign-off" required>
+                                <span>Verbal approval / in final sign-off</span>
                             </label>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>What are you looking for from this engagement?</label>
-                        <div class="radio-group">
-                            <label class="radio-option">
-                                <input type="radio" name="goal" value="Clear recommendation so we can move forward" required>
-                                <span>Clear recommendation so we can move forward</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="goal" value="Validate our thinking with an expert" required>
-                                <span>Validate our thinking with an expert</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="goal" value="Fix what's broken in current project" required>
-                                <span>Fix what's broken in current project</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="goal" value="Ongoing strategic oversight" required>
-                                <span>Ongoing strategic oversight</span>
-                            </label>
-                        </div>
-                    </div>
-
+                    <!-- Essentials -->
                     <div class="form-group">
                         <label for="company">Company or Project Name</label>
                         <input type="text" id="company" name="company" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="website">Website (if applicable)</label>
+                        <label for="website">Website</label>
                         <input type="url" id="website" name="website" placeholder="https://">
                     </div>
 
@@ -931,9 +928,12 @@
                         <input type="email" id="email" name="email" required>
                     </div>
 
-                    <button type="submit" class="submit-button">Submit Application</button>
+                    <!-- Hidden: fast-lane flag for automation -->
+                    <input type="hidden" name="lead_type" value="Pixique Strategic Engagement">
+
+                    <button type="submit" class="submit-button">Reserve Engagement — Invoice in 4 Hours</button>
                     
-                    <p class="form-note">Applications reviewed within 24 hours. Qualified engagements receive immediate next steps.</p>
+                    <p class="form-note">If you're a fit, you'll receive a Stripe invoice within 4 business hours. Strategy Session: invoice only (no sales call). Audit/Sprint/Fractional: short written confirmation, then invoice. Engagements are scheduled within 7–14 days of payment. Urgent timelines by request.</p>
                 </form>
             </div>
         </div>
