@@ -1,73 +1,1003 @@
-<!-- Flagship Offer -->
-<div class="reveal" style="text-align: center; margin-bottom: 60px; padding: 40px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.03) 100%); border: 1px solid rgba(16, 185, 129, 0.15); border-radius: 8px;">
-    <h3 style="color: #10b981; font-size: 16px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; font-weight: 600;">Flagship Offer</h3>
-    <p style="font-size: 28px; font-weight: 600; color: #ffffff; margin-bottom: 12px; line-height: 1.3;">90-Minute Technical Strategy Intensive — $6,500</p>
-    <p style="font-size: 16px; color: #a3a3a3; margin-bottom: 24px;">Fixed scope. Async-friendly. Scheduled within 7–14 days of payment.</p>
-    <p style="font-size: 15px; color: #e5e5e5; margin-bottom: 0;">Ready now? <a href="#reserve-form" style="color: #10b981; text-decoration: none; font-weight: 600; border-bottom: 1px solid #10b981;">Skip to reservation form</a> or <a href="https://buy.stripe.com/5kQ3cu0TFggY6pN0rgeQM00" style="color: #10b981; text-decoration: none; font-weight: 600; border-bottom: 1px solid #10b981;">pay directly via Stripe</a></p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixique — Technical Strategy for Premium Brands</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #e5e5e5;
+            background: #0a0a0a;
+            overflow-x: hidden;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* Header */
+        header {
+            padding: 120px 0 100px;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+            color: #fff;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .availability {
+            display: inline-block;
+            background: rgba(5, 150, 105, 0.15);
+            color: #10b981;
+            padding: 10px 20px;
+            border-radius: 24px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            border: 1px solid rgba(5, 150, 105, 0.3);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+        
+        .availability::before {
+            content: "●";
+            margin-right: 8px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        h1 {
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin-bottom: 28px;
+            line-height: 1.1;
+            color: #ffffff;
+            max-width: 900px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: #a3a3a3;
+            margin-bottom: 48px;
+            line-height: 1.6;
+            max-width: 700px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 0;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+        }
+        
+        .stat-box {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .stat-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stat-number {
+            font-size: 56px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #737373;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+        }
+        
+        h2 {
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 60px;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+            color: #ffffff;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: #a3a3a3;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #0f0f0f 0%, #0a0a0a 100%);
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: #2a2a2a;
+            background: linear-gradient(135deg, #141414 0%, #0f0f0f 100%);
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        
+        .service-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+        
+        .service-card:hover .service-title {
+            color: #10b981;
+        }
+        
+        .service-price {
+            font-size: 20px;
+            font-weight: 600;
+            color: #10b981;
+        }
+        
+        .service-description {
+            font-size: 15px;
+            color: #a3a3a3;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        
+        .service-ideal {
+            font-size: 14px;
+            color: #737373;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        
+        .service-ideal strong {
+            color: #e5e5e5;
+            display: block;
+            margin-bottom: 6px;
+        }
+        
+        .service-delivery {
+            font-size: 13px;
+            color: #525252;
+            font-style: italic;
+            padding-top: 16px;
+            border-top: 1px solid #1a1a1a;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            background: linear-gradient(135deg, #0f0f0f 0%, #0a0a0a 100%);
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+            padding: 50px;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .step {
+            display: flex;
+            gap: 20px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease;
+        }
+        
+        .step.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .step-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border: 1px solid #262626;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: #10b981;
+            transition: all 0.3s ease;
+        }
+        
+        .step:hover .step-number {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #0a0a0a;
+            transform: scale(1.1);
+        }
+        
+        .step-content h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .step-content p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Ideal Clients */
+        .clients-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .clients-list ul {
+            list-style: none;
+        }
+        
+        .clients-list li {
+            padding: 20px 0;
+            border-bottom: 1px solid #1a1a1a;
+            color: #a3a3a3;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .clients-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .clients-list li:hover {
+            color: #e5e5e5;
+            padding-left: 40px;
+        }
+        
+        .clients-list li:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .clients-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .ideal-note {
+            text-align: center;
+            margin-top: 40px;
+            padding: 28px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.02) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.1);
+            border-radius: 8px;
+        }
+        
+        .ideal-note p {
+            color: #e5e5e5;
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        /* Credentials */
+        .credentials {
+            background: linear-gradient(135deg, #0f0f0f 0%, #0a0a0a 100%);
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+            padding: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .credentials p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        
+        .credentials-footer {
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid #1a1a1a;
+            font-size: 14px;
+            color: #737373;
+            text-align: center;
+        }
+        
+        /* Form Section */
+        .form-section {
+            background: linear-gradient(135deg, #0f0f0f 0%, #050505 100%);
+            border-top: 1px solid #1a1a1a;
+            padding: 100px 0;
+            margin-top: 100px;
+        }
+        
+        .form-section h2 {
+            margin-bottom: 16px;
+        }
+        
+        .form-intro {
+            text-align: center;
+            color: #737373;
+            margin-bottom: 60px;
+            font-size: 16px;
+        }
+        
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #0a0a0a;
+            padding: 50px;
+            border-radius: 8px;
+            border: 1px solid #1a1a1a;
+        }
+        
+        .form-group {
+            margin-bottom: 32px;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #e5e5e5;
+            font-size: 15px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 16px;
+            background: #0f0f0f;
+            border: 1px solid #262626;
+            border-radius: 6px;
+            font-size: 15px;
+            font-family: inherit;
+            color: #e5e5e5;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #10b981;
+            background: #141414;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23737373' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 45px;
+        }
+        
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            background: #0f0f0f;
+            border: 1px solid #262626;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .radio-option:hover {
+            border-color: #404040;
+            background: #141414;
+        }
+        
+        .radio-option input[type="radio"]:checked + span {
+            color: #10b981;
+        }
+        
+        .radio-option input[type="radio"] {
+            margin-right: 12px;
+            cursor: pointer;
+            accent-color: #10b981;
+        }
+        
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            padding: 18px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .submit-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        
+        .submit-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        .submit-button:active {
+            transform: translateY(0);
+        }
+        
+        .form-note {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #525252;
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 80px 40px 60px;
+            border-top: 1px solid #1a1a1a;
+        }
+        
+        footer p {
+            color: #525252;
+            margin-bottom: 8px;
+        }
+        
+        footer strong {
+            color: #ffffff;
+            letter-spacing: 3px;
+            font-size: 16px;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .services-grid,
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+            
+            h1 {
+                font-size: 40px;
+            }
+            
+            h2 {
+                font-size: 32px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .form-container {
+                padding: 32px 24px;
+            }
+            
+            .how-it-works {
+                padding: 32px 24px;
+            }
+            
+            .credentials {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">PIXIQUE</div>
+            <span class="availability">Available for Q4 2025 / Q1 2026</span>
+            <h1>Technical strategy for brands that need expert guidance — not another vendor.</h1>
+            <p class="subtitle">High-leverage consulting for beauty, wellness, hospitality, and DTC brands navigating complex technology decisions.</p>
+        </header>
+    </div>
 
-<div class="services-grid">
-    <!-- Technical Strategy Session -->
-    <div class="service-card reveal">
-        <div class="service-header">
-            <div class="service-title">Technical Strategy Session</div>
-            <div class="service-price">$6,500</div>
+    <div class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">140+</div>
+                    <div class="stat-label">Programs Delivered</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">25%</div>
+                    <div class="stat-label">Avg Timeline Reduction</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">7+ Yrs</div>
+                    <div class="stat-label">Enterprise Experience</div>
+                </div>
+            </div>
         </div>
-        <div class="service-description">
-            Stuck on a critical technical decision? Get expert analysis and a clear action plan in one intensive session. Leave with confidence on your next move.
-        </div>
-        <div class="service-ideal">
-            <strong>Ideal for:</strong>
-            Evaluating AR/VR vendors · Choosing tech stack · Scoping complex projects · Getting unstuck on stalled initiatives
-        </div>
-        <div class="service-delivery">90-minute strategic session + written action plan delivered within 48 hours</div>
     </div>
-    
-    <!-- Program Rescue Audit -->
-    <div class="service-card reveal">
-        <div class="service-header">
-            <div class="service-title">Program Rescue Audit</div>
-            <div class="service-price">$15,000</div>
+
+    <section>
+        <div class="container">
+            <h2 class="reveal">Strategic Engagements</h2>
+            
+            <div class="reveal" style="text-align: center; margin-bottom: 60px; padding: 40px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.03) 100%); border: 1px solid rgba(16, 185, 129, 0.15); border-radius: 8px;">
+                <h3 style="color: #10b981; font-size: 16px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; font-weight: 600;">Flagship Offer</h3>
+                <p style="font-size: 28px; font-weight: 600; color: #ffffff; margin-bottom: 12px; line-height: 1.3;">90-Minute Technical Strategy Intensive — $6,500</p>
+                <p style="font-size: 16px; color: #a3a3a3; margin-bottom: 24px;">Fixed scope. Async-friendly. Scheduled within 7–14 days of payment.</p>
+                <p style="font-size: 15px; color: #e5e5e5; margin-bottom: 0;">Ready now? <a href="#reserve-form" style="color: #10b981; text-decoration: none; font-weight: 600; border-bottom: 1px solid #10b981;">Skip to reservation form</a> or <a href="https://buy.stripe.com/5kQ3cu0TFggY6pN0rgeQM00" style="color: #10b981; text-decoration: none; font-weight: 600; border-bottom: 1px solid #10b981;">pay directly via Stripe</a></p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-header">
+                        <div class="service-title">Technical Strategy Session</div>
+                        <div class="service-price">$6,500</div>
+                    </div>
+                    <div class="service-description">
+                        Stuck on a critical technical decision? Get expert analysis and a clear action plan in one intensive session. Leave with confidence on your next move.
+                    </div>
+                    <div class="service-ideal">
+                        <strong>Ideal for:</strong>
+                        Evaluating AR/VR vendors · Choosing tech stack · Scoping complex projects · Getting unstuck on stalled initiatives
+                    </div>
+                    <div class="service-delivery">90-minute strategic session + written action plan delivered within 48 hours</div>
+                </div>
+                
+                <div class="service-card reveal">
+                    <div class="service-header">
+                        <div class="service-title">Program Rescue Audit</div>
+                        <div class="service-price">$15,000</div>
+                    </div>
+                    <div class="service-description">
+                        Your technical project is behind, over budget, or stuck. Get an independent assessment of what's broken and a prioritized recovery roadmap.
+                    </div>
+                    <div class="service-ideal">
+                        <strong>What you get:</strong>
+                        Full project audit · Root cause analysis · Recovery plan · Vendor/team performance assessment · Risk mitigation strategy
+                    </div>
+                    <div class="service-delivery">7-10 days async review + 60-minute presentation of findings + Q&A</div>
+                </div>
+                
+                <div class="service-card reveal">
+                    <div class="service-header">
+                        <div class="service-title">Platform Selection Sprint</div>
+                        <div class="service-price">$9,500</div>
+                    </div>
+                    <div class="service-description">
+                        Overwhelmed by technical options? Get expert vendor evaluation, comparison analysis, and implementation roadmap so you can move forward with confidence.
+                    </div>
+                    <div class="service-ideal">
+                        <strong>Ideal for:</strong>
+                        E-commerce platform selection · AR/VR production partners · Marketing tech stack · Platform migration decisions
+                    </div>
+                    <div class="service-delivery">Comparison matrix + recommendation deck + implementation timeline (async delivery)</div>
+                </div>
+                
+                <div class="service-card reveal">
+                    <div class="service-header">
+                        <div class="service-title">Technical Fractional PM</div>
+                        <div class="service-price">$9,500/mo</div>
+                    </div>
+                    <div class="service-description">
+                        Monthly strategic oversight for your technical initiatives. Expert program management without full-time overhead. Keep projects on track, vendors accountable, and risks managed.
+                    </div>
+                    <div class="service-ideal">
+                        <strong>Includes:</strong>
+                        15 hours/month strategic oversight · Weekly async updates via Loom · Vendor/team coordination · Risk management · One 60-min call/month
+                    </div>
+                    <div class="service-delivery">3-month minimum commitment · Async-first with optional monthly sync</div>
+                </div>
+            </div>
         </div>
-        <div class="service-description">
-            Your technical project is behind, over budget, or stuck. Get an independent assessment of what's broken and a prioritized recovery roadmap.
+    </section>
+
+    <section style="background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%); padding: 100px 0;">
+        <div class="container">
+            <h2 class="reveal">How Pixique Works</h2>
+            <div class="how-it-works reveal">
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Submit application</h3>
+                            <p>Describe your challenge, timeline, and budget. You'll hear back within 24 hours if it's a fit.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Payment secures your spot</h3>
+                            <p>Once approved, pay via Stripe invoice. Work begins immediately upon payment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Kickoff briefing</h3>
+                            <p>Share context, docs, and constraints. For strategy sessions: schedule your call. For audits/sprints: async review begins.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Delivery</h3>
+                            <p>Receive strategic analysis, action plans, and recommendations. Most engagements include one follow-up Q&A session.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="service-ideal">
-            <strong>What you get:</strong>
-            Full project audit · Root cause analysis · Recovery plan · Vendor/team performance assessment · Risk mitigation strategy
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="reveal">Who We Work With</h2>
+            <div class="clients-list reveal">
+                <ul>
+                    <li>Beauty and wellness brands launching technical products (AR try-on, personalization engines, digital experiences)</li>
+                    <li>Hospitality groups navigating platform selection or digital transformation</li>
+                    <li>DTC brands at inflection points (scaling tech, migrating platforms, evaluating vendors)</li>
+                    <li>Creative agencies needing fractional technical program management for client projects</li>
+                    <li>Leadership teams stuck on high-stakes technical decisions</li>
+                </ul>
+                
+                <div class="ideal-note">
+                    <p><strong>Ideal clients are decisive, value expertise over exploration, and need strategic clarity to move forward.</strong></p>
+                    <p style="margin-top: 12px; font-size: 15px; color: #a3a3a3;">If you need internal consensus, months of exploration, or three rounds of pitches, we're not your partner.</p>
+                </div>
+            </div>
         </div>
-        <div class="service-delivery">7-10 days async review + 60-minute presentation of findings + Q&A</div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="reveal">Led By Someone Who's Navigated This at Enterprise Scale</h2>
+            <div class="credentials reveal">
+                <p>Pixique is led by a Technical Program Manager with 7+ years driving large-scale technical initiatives at Walmart Connect, Google, Airbnb, and McCann Worldgroup.</p>
+                
+                <p>Track record includes managing portfolios of 140+ annual programs with VP-level accountability, reducing delivery timelines by 25% through operational frameworks, and directing end-to-end AR/VR production (Unity/Unreal Engine) for global brand activations.</p>
+                
+                <p>Deep expertise in ad technology platforms, real-time bidding systems, cloud infrastructure (AWS/GCP), ML integration, and coordinating distributed engineering, product, and data teams under ambiguous, high-pressure conditions.</p>
+
+                <p>This isn't theory — it's pattern recognition from hundreds of technical programs, tens of millions in managed budgets, and navigating every failure mode you're trying to avoid.</p>
+                
+                <div class="credentials-footer">
+                    UC Berkeley MS · Previously: Walmart Connect, Google for Education, Airbnb, McCann Worldgroup, PBS, Salesforce
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="form-section" id="reserve-form">
+        <div class="container">
+            <h2>Reserve Your Engagement</h2>
+            <p class="form-intro">Limited availability. If you're ready, we move fast. No discovery circus.</p>
+            
+            <div class="form-container">
+                <form action="https://formcarry.com/s/iy1FfC8V_yO" method="POST">
+                    
+                    <!-- Decision Gate -->
+                    <div class="form-group">
+                        <label>Where are you right now?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="decision_status" value="Ready to proceed - send invoice for selected engagement" required>
+                                <span>Ready to proceed — send invoice for my selected engagement</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="decision_status" value="One clarification, then I'm ready to proceed" required>
+                                <span>One clarification, then I'm ready to proceed</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Service Selection -->
+                    <div class="form-group">
+                        <label for="service">Which engagement are you reserving?</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select an engagement</option>
+                            <option value="Technical Strategy Session ($4,500)">Technical Strategy Session ($4,500)</option>
+                            <option value="Program Rescue Audit ($8,500)">Program Rescue Audit ($8,500)</option>
+                            <option value="Platform Selection Sprint ($6,500)">Platform Selection Sprint ($6,500)</option>
+                            <option value="Technical Fractional PM ($6,500/mo, 3-month min)">Technical Fractional PM ($6,500/mo · 3-month min)</option>
+                        </select>
+                    </div>
+
+                    <!-- Challenge (tight prompt) -->
+                    <div class="form-group">
+                        <label for="challenge">What are we solving in one sentence?</label>
+                        <textarea id="challenge" name="challenge" placeholder="Example: AR try-on launch is 8 weeks behind and vendor is burning budget." required></textarea>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div class="form-group">
+                        <label>Timeline</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="timeline" value="Decision/start within 7-14 days" required>
+                                <span>Decision / start within 7–14 days</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="timeline" value="Decision this month" required>
+                                <span>Decision this month</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Budget -->
+                    <div class="form-group">
+                        <label>Budget</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="budget" value="Budget approved for this engagement" required>
+                                <span>Budget approved for this engagement</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="budget" value="Verbal approval / in final sign-off" required>
+                                <span>Verbal approval / in final sign-off</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Essentials -->
+                    <div class="form-group">
+                        <label for="company">Company or Project Name</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">Website</label>
+                        <input type="url" id="website" name="website" placeholder="https://">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Best Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <!-- Hidden: fast-lane flag for automation -->
+                    <input type="hidden" name="lead_type" value="Pixique Strategic Engagement">
+
+                    <button type="submit" class="submit-button">Reserve Engagement — Invoice in 4 Hours</button>
+                    
+                    <p class="form-note">If you're a fit, you'll receive a Stripe invoice within 4 business hours. Strategy Session: invoice only (no sales call). Audit/Sprint/Fractional: short written confirmation, then invoice. Engagements are scheduled within 7–14 days of payment. Urgent timelines by request.</p>
+                </form>
+            </div>
+        </div>
     </div>
-    
-    <!-- Platform Selection Sprint -->
-    <div class="service-card reveal">
-        <div class="service-header">
-            <div class="service-title">Platform Selection Sprint</div>
-            <div class="service-price">$9,500</div>
+
+    <footer>
+        <div class="container">
+            <p><strong>PIXIQUE</strong></p>
+            <p style="margin-top: 8px;">Technical strategy for premium brands.</p>
+            <p style="margin-top: 24px;">Remote · Worldwide</p>
         </div>
-        <div class="service-description">
-            Overwhelmed by technical options? Get expert vendor evaluation, comparison analysis, and implementation roadmap so you can move forward with confidence.
-        </div>
-        <div class="service-ideal">
-            <strong>Ideal for:</strong>
-            E-commerce platform selection · AR/VR production partners · Marketing tech stack · Platform migration decisions
-        </div>
-        <div class="service-delivery">Comparison matrix + recommendation deck + implementation timeline (async delivery)</div>
-    </div>
-    
-    <!-- Technical Fractional PM -->
-    <div class="service-card reveal">
-        <div class="service-header">
-            <div class="service-title">Technical Fractional PM</div>
-            <div class="service-price">$9,500/mo</div>
-        </div>
-        <div class="service-description">
-            Monthly strategic oversight for your technical initiatives. Expert program management without full-time overhead. Keep projects on track, vendors accountable, and risks managed.
-        </div>
-        <div class="service-ideal">
-            <strong>Includes:</strong>
-            15 hours/month strategic oversight · Weekly async updates via Loom · Vendor/team coordination · Risk management · One 60-min call/month
-        </div>
-        <div class="service-delivery">3-month minimum commitment · Async-first with optional monthly sync</div>
-    </div>
-</div>
+    </footer>
+
+    <script>
+        // Scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all reveal elements
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        document.querySelectorAll('.stat-box').forEach(el => observer.observe(el));
+        document.querySelectorAll('.step').forEach((el, index) => {
+            el.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(el);
+        });
+
+        // Form animation on focus
+        const formInputs = document.querySelectorAll('input, textarea, select');
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'translateX(4px)';
+                this.parentElement.style.transition = 'transform 0.3s ease';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'translateX(0)';
+            });
+        });
+
+        // Submit button ripple effect is handled by CSS
+        
+        // Smooth scroll for any internal links (if added later)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
