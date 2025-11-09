@@ -3,14 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixique — Technical Strategy for Premium Brands</title>
+    <title>Pixique — Principal-Led Technical Strategy for High-Stakes Initiatives</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
             line-height: 1.6;
@@ -18,637 +13,654 @@
             background: #0a0a0a;
             overflow-x: hidden;
         }
-        
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-        
+        html { scroll-behavior: smooth; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
         /* Header */
-        header {
-            padding: 120px 0 100px;
+        header { 
+            padding: 120px 0 90px; 
             position: relative;
         }
-        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 80% 20%, rgba(16,185,129,0.06) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(16,185,129,0.04) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        header > * {
+            position: relative;
+            z-index: 1;
+        }
         .logo {
             font-size: 18px;
             font-weight: 700;
             letter-spacing: 3px;
-            margin-bottom: 60px;
+            margin-bottom: 32px;
             color: #fff;
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
         }
-        
         .availability {
             display: inline-block;
-            background: rgba(5, 150, 105, 0.15);
+            background: rgba(16,185,129,0.08);
             color: #10b981;
-            padding: 10px 20px;
+            padding: 8px 18px;
             border-radius: 24px;
-            font-size: 13px;
+            font-size: 11px;
             font-weight: 500;
-            margin-bottom: 40px;
-            border: 1px solid rgba(5, 150, 105, 0.3);
+            margin-bottom: 24px;
+            border: 1px solid rgba(16,185,129,0.3);
             opacity: 0;
-            animation: fadeInUp 0.8s ease 0.2s forwards;
+            animation: fadeInUp 0.8s ease 0.12s forwards;
         }
-        
         .availability::before {
             content: "●";
             margin-right: 8px;
             animation: pulse 2s ease-in-out infinite;
         }
-        
         h1 {
-            font-size: 56px;
-            font-weight: 600;
-            letter-spacing: -0.03em;
-            margin-bottom: 28px;
-            line-height: 1.1;
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            margin-bottom: 24px;
+            line-height: 1.05;
             color: #ffffff;
-            max-width: 900px;
+            max-width: 920px;
             opacity: 0;
-            animation: fadeInUp 0.8s ease 0.4s forwards;
+            animation: fadeInUp 0.8s ease 0.25s forwards;
         }
-        
+        h1 .highlight {
+            color: #10b981;
+            position: relative;
+        }
         .subtitle {
-            font-size: 20px;
+            font-size: 17px;
             color: #a3a3a3;
-            margin-bottom: 48px;
-            line-height: 1.6;
-            max-width: 700px;
+            margin-bottom: 18px;
+            line-height: 1.7;
+            max-width: 780px;
             opacity: 0;
-            animation: fadeInUp 0.8s ease 0.6s forwards;
+            animation: fadeInUp 0.8s ease 0.35s forwards;
         }
-        
-        /* Stats Section */
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0 14px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.45s forwards;
+        }
+        .hero-tag {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid #262626;
+            color: #9ca3af;
+        }
+        .hero-note {
+            font-size: 14px;
+            color: #9ca3af;
+            max-width: 600px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.55s forwards;
+        }
+        .hero-min {
+            font-size: 14px;
+            color: #f97316;
+            font-weight: 600;
+            margin-top: 8px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.65s forwards;
+        }
+
+        /* Stats */
         .stats-section {
-            padding: 80px 0;
-            border-top: 1px solid #1a1a1a;
-            border-bottom: 1px solid #1a1a1a;
+            padding: 60px 0 70px;
+            border-top: 1px solid #111827;
+            border-bottom: 1px solid #111827;
         }
-        
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 60px;
         }
-        
         .stat-box {
             text-align: center;
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(18px);
             transition: all 0.6s ease;
         }
-        
-        .stat-box.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .stat-box.visible { opacity: 1; transform: translateY(0); }
+        .stat-icon {
+            margin-bottom: 16px;
+            display: inline-block;
         }
-        
         .stat-number {
-            font-size: 56px;
+            font-size: 48px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 12px;
-            background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
-        
         .stat-label {
-            font-size: 14px;
-            color: #737373;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+            font-size: 13px;
+            color: #9ca3af;
+            line-height: 1.5;
         }
-        
-        /* Section Styling */
-        section {
-            padding: 100px 0;
-        }
-        
+
+        /* Sections / Typography */
+        section { padding: 90px 0; }
         h2 {
-            font-size: 40px;
+            font-size: 32px;
             font-weight: 600;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             letter-spacing: -0.02em;
             color: #ffffff;
             text-align: center;
         }
-        
         h3 {
-            font-size: 22px;
+            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
             letter-spacing: -0.01em;
             color: #ffffff;
         }
-        
         p {
-            margin-bottom: 16px;
-            color: #a3a3a3;
-            font-size: 16px;
+            margin-bottom: 12px;
+            color: #9ca3af;
+            font-size: 14px;
             line-height: 1.7;
         }
-        
-        /* Services Grid */
+
+        /* Services */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            margin-bottom: 60px;
+            gap: 24px;
+            margin-bottom: 24px;
         }
-        
         .service-card {
-            background: linear-gradient(135deg, #0f0f0f 0%, #0a0a0a 100%);
-            border: 1px solid #1a1a1a;
-            border-radius: 8px;
-            padding: 40px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, #050505 0%, #020202 100%);
+            border: 1px solid #111827;
+            border-radius: 10px;
+            padding: 26px 24px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            overflow: hidden;
+            overflow: visible;
         }
-        
         .service-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(16,185,129,0.3), transparent);
             opacity: 0;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.3s ease;
         }
-        
         .service-card:hover {
-            transform: translateY(-4px);
-            border-color: #2a2a2a;
-            background: linear-gradient(135deg, #141414 0%, #0f0f0f 100%);
+            transform: translateY(-2px);
+            border-color: #10b98133;
+            box-shadow: 0 14px 40px rgba(0,0,0,0.6);
         }
+        .service-card:hover::before { opacity: 1; }
         
-        .service-card:hover::before {
-            opacity: 1;
+        /* Flagship styling */
+        .service-card--flagship {
+            border: 2px solid #10b981;
+            box-shadow: 0 0 40px rgba(16,185,129,0.12);
+            transform: scale(1.02);
+        }
+        .service-card--flagship:hover {
+            transform: scale(1.02) translateY(-2px);
+            box-shadow: 0 0 40px rgba(16,185,129,0.2), 0 14px 40px rgba(0,0,0,0.6);
+        }
+        .flagship-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .service-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #1a1a1a;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
         }
-        
+        .service-label {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1.7px;
+            color: #6b7280;
+            margin-bottom: 2px;
+        }
         .service-title {
-            font-size: 24px;
+            font-size: 16px;
             font-weight: 600;
-            color: #ffffff;
-            transition: color 0.3s ease;
+            color: #e5e5e5;
         }
-        
-        .service-card:hover .service-title {
-            color: #10b981;
-        }
-        
         .service-price {
-            font-size: 20px;
+            font-size: 15px;
             font-weight: 600;
             color: #10b981;
+            white-space: nowrap;
         }
-        
         .service-description {
-            font-size: 15px;
-            color: #a3a3a3;
-            margin-bottom: 24px;
-            line-height: 1.7;
+            font-size: 13px;
+            color: #9ca3af;
+            margin-bottom: 10px;
         }
-        
         .service-ideal {
-            font-size: 14px;
-            color: #737373;
-            margin-bottom: 16px;
-            line-height: 1.6;
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 8px;
         }
-        
         .service-ideal strong {
             color: #e5e5e5;
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 2px;
         }
-        
-        .service-delivery {
-            font-size: 13px;
-            color: #525252;
-            font-style: italic;
-            padding-top: 16px;
-            border-top: 1px solid #1a1a1a;
+        .service-meta {
+            font-size: 10px;
+            color: #4b5563;
+            padding-top: 8px;
+            border-top: 1px solid #111827;
         }
-        
+
+        /* Instant Booking Section */
+        .instant-booking {
+            background: linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(16,185,129,0.02) 100%);
+            padding: 70px 0;
+            border-top: 1px solid rgba(16,185,129,0.15);
+            border-bottom: 1px solid rgba(16,185,129,0.15);
+        }
+        .booking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .booking-card {
+            background: #050505;
+            border: 1px solid #111827;
+            border-radius: 10px;
+            padding: 28px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .booking-card:hover {
+            transform: translateY(-3px);
+            border-color: #10b98133;
+            box-shadow: 0 14px 40px rgba(0,0,0,0.6);
+        }
+        .booking-card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #e5e5e5;
+            margin-bottom: 8px;
+        }
+        .booking-card-price {
+            font-size: 28px;
+            font-weight: 600;
+            color: #10b981;
+            margin-bottom: 18px;
+        }
+        .stripe-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #fff;
+            text-align: center;
+            padding: 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .stripe-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 26px rgba(16,185,129,0.22);
+        }
+        .booking-note {
+            font-size: 10px;
+            color: #6b7280;
+            margin-top: 10px;
+        }
+
         /* How It Works */
-        .how-it-works {
-            background: linear-gradient(135deg, #0f0f0f 0%, #0a0a0a 100%);
-            border: 1px solid #1a1a1a;
-            border-radius: 8px;
-            padding: 50px;
+        .how-it-works-wrapper {
+            background: linear-gradient(135deg, #050505 0%, #020202 100%);
+            border: 1px solid #111827;
+            border-radius: 10px;
+            padding: 26px 24px;
         }
-        
+        .how-intro {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-bottom: 14px;
+        }
+        .how-intro strong { color: #e5e5e5; }
+        .how-intro .not-fit { color: #f97316; }
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
+            gap: 18px;
         }
-        
         .step {
             display: flex;
-            gap: 20px;
+            gap: 10px;
             opacity: 0;
-            transform: translateX(-20px);
+            transform: translateX(-10px);
             transition: all 0.6s ease;
         }
-        
-        .step.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
+        .step.visible { opacity: 1; transform: translateX(0); }
         .step-number {
             flex-shrink: 0;
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-            border: 1px solid #262626;
-            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            border-radius: 999px;
+            border: 1px solid #1f2937;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 12px;
+            font-weight: 600;
             color: #10b981;
-            transition: all 0.3s ease;
+            background: radial-gradient(circle at 30% 0, #111827, #020202);
         }
-        
-        .step:hover .step-number {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: #0a0a0a;
-            transform: scale(1.1);
-        }
-        
-        .step-content h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-        
-        .step-content p {
-            font-size: 15px;
-            line-height: 1.6;
-        }
-        
-        /* Ideal Clients */
-        .clients-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .clients-list ul {
-            list-style: none;
-        }
-        
+        .step-content h3 { font-size: 13px; margin-bottom: 4px; }
+        .step-content p { font-size: 11px; margin-bottom: 0; }
+
+        /* Who We Work With */
+        .clients-list { max-width: 800px; margin: 0 auto; }
+        .clients-list ul { list-style: none; }
         .clients-list li {
-            padding: 20px 0;
-            border-bottom: 1px solid #1a1a1a;
-            color: #a3a3a3;
-            font-size: 16px;
-            transition: all 0.3s ease;
+            padding: 12px 0;
+            border-bottom: 1px solid #111827;
+            color: #9ca3af;
+            font-size: 13px;
             position: relative;
-            padding-left: 30px;
+            padding-left: 22px;
+            transition: all 0.25s ease;
         }
-        
         .clients-list li::before {
             content: "→";
             position: absolute;
             left: 0;
+            top: 12px;
             color: #10b981;
-            font-weight: 600;
+            font-size: 10px;
             opacity: 0;
-            transform: translateX(-10px);
-            transition: all 0.3s ease;
+            transform: translateX(-5px);
+            transition: all 0.25s ease;
         }
-        
         .clients-list li:hover {
             color: #e5e5e5;
-            padding-left: 40px;
+            padding-left: 28px;
         }
-        
         .clients-list li:hover::before {
             opacity: 1;
             transform: translateX(0);
         }
-        
-        .clients-list li:last-child {
-            border-bottom: none;
-        }
-        
+        .clients-list li:last-child { border-bottom: none; }
         .ideal-note {
             text-align: center;
-            margin-top: 40px;
-            padding: 28px;
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.02) 100%);
-            border: 1px solid rgba(16, 185, 129, 0.1);
-            border-radius: 8px;
+            margin-top: 22px;
+            padding: 16px 18px;
+            background: radial-gradient(circle at top, rgba(16,185,129,0.06), transparent);
+            border: 1px solid rgba(16,185,129,0.18);
+            border-radius: 10px;
+            font-size: 12px;
         }
-        
-        .ideal-note p {
-            color: #e5e5e5;
-            font-size: 16px;
-            margin: 0;
-        }
-        
+        .ideal-note strong { color: #e5e5e5; }
+        .ideal-note span { color: #9ca3af; }
+
         /* Credentials */
         .credentials {
-            background: linear-gradient(135deg, #0f0f0f 0%, #0a0a0a 100%);
-            border: 1px solid #1a1a1a;
-            border-radius: 8px;
-            padding: 50px;
+            background: linear-gradient(135deg, #050505 0%, #020202 100%);
+            border: 1px solid #111827;
+            border-radius: 10px;
+            padding: 26px 24px;
             max-width: 900px;
             margin: 0 auto;
         }
-        
-        .credentials p {
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 24px;
+        .quote {
+            border-left: 3px solid #10b981;
+            padding-left: 16px;
+            margin: 18px 0;
+            font-style: italic;
+            color: #e5e5e5;
+            font-size: 11px;
         }
-        
+        .quote span {
+            display: block;
+            margin-top: 4px;
+            color: #9ca3af;
+            font-style: normal;
+            font-size: 10px;
+        }
         .credentials-footer {
-            margin-top: 32px;
-            padding-top: 32px;
-            border-top: 1px solid #1a1a1a;
-            font-size: 14px;
-            color: #737373;
+            margin-top: 14px;
+            padding-top: 10px;
+            border-top: 1px solid #111827;
+            font-size: 10px;
+            color: #6b7280;
             text-align: center;
         }
-        
-        /* Form Section */
+
+        /* Form */
         .form-section {
-            background: linear-gradient(135deg, #0f0f0f 0%, #050505 100%);
-            border-top: 1px solid #1a1a1a;
-            padding: 100px 0;
-            margin-top: 100px;
+            background: #020202;
+            border-top: 1px solid #111827;
+            padding: 70px 0 80px;
+            margin-top: 60px;
         }
-        
-        .form-section h2 {
-            margin-bottom: 16px;
+        .form-header {
+            text-align: center;
+            margin-bottom: 32px;
         }
-        
+        .form-divider {
+            text-align: center;
+            margin-bottom: 40px;
+        }
         .form-intro {
             text-align: center;
-            color: #737373;
-            margin-bottom: 60px;
-            font-size: 16px;
+            color: #9ca3af;
+            margin-bottom: 10px;
+            font-size: 12px;
         }
-        
+        .form-intro strong { color: #e5e5e5; }
+        .form-warning {
+            text-align: center;
+            color: #f97316;
+            font-size: 11px;
+            margin-bottom: 16px;
+        }
         .form-container {
             max-width: 700px;
             margin: 0 auto;
-            background: #0a0a0a;
-            padding: 50px;
-            border-radius: 8px;
-            border: 1px solid #1a1a1a;
+            background: #020202;
+            padding: 26px 24px;
+            border-radius: 10px;
+            border: 1px solid #111827;
         }
-        
-        .form-group {
-            margin-bottom: 32px;
-        }
-        
+        .form-group { margin-bottom: 18px; }
         label {
             display: block;
-            font-weight: 600;
-            margin-bottom: 12px;
+            font-weight: 500;
+            margin-bottom: 6px;
             color: #e5e5e5;
-            font-size: 15px;
+            font-size: 12px;
         }
-        
         input[type="text"],
         input[type="email"],
         input[type="url"],
         textarea,
         select {
             width: 100%;
-            padding: 16px;
-            background: #0f0f0f;
-            border: 1px solid #262626;
+            padding: 11px;
+            background: #050505;
+            border: 1px solid #111827;
             border-radius: 6px;
-            font-size: 15px;
+            font-size: 12px;
             font-family: inherit;
             color: #e5e5e5;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
-        
         input:focus,
         textarea:focus,
         select:focus {
             outline: none;
             border-color: #10b981;
-            background: #141414;
+            background: #020817;
         }
-        
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
+        textarea { min-height: 80px; resize: vertical; }
         select {
             cursor: pointer;
             appearance: none;
             background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23737373' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 16px center;
-            padding-right: 45px;
+            background-position: right 10px center;
+            padding-right: 30px;
         }
-        
         .radio-group {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 6px;
         }
-        
         .radio-option {
             display: flex;
-            align-items: center;
-            padding: 16px;
-            background: #0f0f0f;
-            border: 1px solid #262626;
+            align-items: flex-start;
+            gap: 6px;
+            padding: 8px 9px;
+            background: #050505;
+            border: 1px solid #111827;
             border-radius: 6px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
+            font-size: 11px;
+            color: #9ca3af;
         }
-        
         .radio-option:hover {
-            border-color: #404040;
-            background: #141414;
+            border-color: #374151;
+            background: #020817;
         }
-        
-        .radio-option input[type="radio"]:checked + span {
-            color: #10b981;
-        }
-        
         .radio-option input[type="radio"] {
-            margin-right: 12px;
             cursor: pointer;
             accent-color: #10b981;
+            margin-top: 2px;
         }
-        
         .submit-button {
             width: 100%;
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: #ffffff;
-            padding: 18px;
+            padding: 13px 16px;
             border: none;
-            border-radius: 6px;
-            font-size: 16px;
+            border-radius: 7px;
+            font-size: 13px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
             position: relative;
             overflow: hidden;
+            margin-top: 4px;
         }
-        
         .submit-button::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
+            top: 50%; left: 50%;
+            width: 0; height: 0;
+            background: rgba(255,255,255,0.15);
+            border-radius: 999px;
             transform: translate(-50%, -50%);
-            transition: width 0.6s ease, height 0.6s ease;
+            transition: width 0.5s ease, height 0.5s ease;
         }
-        
-        .submit-button:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-        
+        .submit-button:hover::before { width: 220px; height: 220px; }
         .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+            transform: translateY(-1px);
+            box-shadow: 0 10px 26px rgba(16,185,129,0.22);
         }
-        
         .submit-button:active {
             transform: translateY(0);
+            box-shadow: none;
         }
-        
         .form-note {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #525252;
+            margin-top: 10px;
+            font-size: 10px;
+            color: #6b7280;
             text-align: center;
         }
-        
+        .form-note a {
+            color: #10b981;
+            text-decoration: underline;
+        }
+
         /* Footer */
         footer {
             text-align: center;
-            padding: 80px 40px 60px;
-            border-top: 1px solid #1a1a1a;
+            padding: 40px 40px 30px;
+            border-top: 1px solid #111827;
+            margin-top: 30px;
         }
-        
-        footer p {
-            color: #525252;
-            margin-bottom: 8px;
-        }
-        
-        footer strong {
-            color: #ffffff;
-            letter-spacing: 3px;
-            font-size: 16px;
-        }
-        
+        footer p { color: #6b7280; margin-bottom: 4px; font-size: 10px; }
+        footer strong { color: #ffffff; letter-spacing: 3px; font-size: 12px; }
+
         /* Animations */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(26px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
         @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
+            0%,100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
-        
-        /* Scroll Reveal */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(22px);
             transition: all 0.8s ease;
         }
-        
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         /* Responsive */
         @media (max-width: 1024px) {
-            .services-grid,
-            .steps-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                gap: 40px;
-            }
+            .services-grid, .steps-grid { grid-template-columns: 1fr; }
+            .stats-grid { gap: 30px; }
+            .booking-grid { grid-template-columns: 1fr; max-width: 400px; }
         }
-        
         @media (max-width: 768px) {
-            .container {
-                padding: 0 24px;
-            }
-            
-            h1 {
-                font-size: 40px;
-            }
-            
-            h2 {
-                font-size: 32px;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-            
-            .form-container {
-                padding: 32px 24px;
-            }
-            
-            .how-it-works {
-                padding: 32px 24px;
-            }
-            
-            .credentials {
-                padding: 32px 24px;
-            }
+            .container { padding: 0 22px; }
+            h1 { font-size: 42px; }
+            h2 { font-size: 26px; }
+            .stats-grid { grid-template-columns: 1fr; gap: 20px; }
+            .stat-number { font-size: 36px; }
+            .form-container,
+            .how-it-works-wrapper,
+            .credentials { padding: 20px 18px; }
+            .service-card--flagship { transform: scale(1); }
+            .service-card--flagship:hover { transform: scale(1) translateY(-2px); }
         }
     </style>
 </head>
@@ -656,9 +668,26 @@
     <div class="container">
         <header>
             <div class="logo">PIXIQUE</div>
-            <span class="availability">Available for Q4 2025 / Q1 2026</span>
-            <h1>Most recently: Managing 140+ brand programs at Walmart including celebrity-founded brands, premium partnerships, and multi-channel activations.</h1>
-            <p class="subtitle">Now: Strategic advisor for brands facing high-stakes technical decisions. When your $500K project is at risk, you need someone who's been in the room when it goes wrong—and knows how to fix it.</p>
+            <div class="availability">Reviewing Q4 2025 / Q1 2026 initiatives — Limited capacity</div>
+            <h1>When your <span class="highlight">$2M</span> technical initiative cannot afford to fail.</h1>
+            <p class="subtitle">
+                Pixique is a principal-led technical strategy practice. I step in when you're about to fund, scale, or rescue a high-stakes digital initiative — and you need someone who has actually seen these programs break in the real world.
+            </p>
+            <p class="subtitle">
+                Most brands discover the truth after burning $500K and 9 months. I prevent that — or give you a clean, defensible way to stop.
+            </p>
+            <div class="hero-tags">
+                <div class="hero-tag">Principal-Led</div>
+                <div class="hero-tag">Async-First</div>
+                <div class="hero-tag">Vendor-Agnostic</div>
+                <div class="hero-tag">High-Stakes Only</div>
+            </div>
+            <p class="hero-note">
+                If you move quickly, have authority, and value blunt, defensible recommendations over exploratory workshops, you're in the right place.
+            </p>
+            <p class="hero-min">
+                Engagements start at $25,000. If that's out of scope, we're not a fit.
+            </p>
         </header>
     </div>
 
@@ -666,16 +695,34 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-box">
-                    <div class="stat-number">140+</div>
-                    <div class="stat-label">Programs Delivered</div>
+                    <div class="stat-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="15" stroke="#10b981" stroke-width="2"/>
+                            <path d="M10 16L14 20L22 12" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="stat-number">$1M–$5M</div>
+                    <div class="stat-label">Typical program budgets I manage</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">25%</div>
-                    <div class="stat-label">Avg Timeline Reduction</div>
+                    <div class="stat-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="15" stroke="#10b981" stroke-width="2"/>
+                            <path d="M16 8v8l5 3" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="stat-number">$50K–$100K</div>
+                    <div class="stat-label">Monthly burn when decisions stall</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">7+ Yrs</div>
-                    <div class="stat-label">Enterprise Experience</div>
+                    <div class="stat-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="15" stroke="#10b981" stroke-width="2"/>
+                            <path d="M9 16l4 4 10-10" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="stat-number">6–12 months</div>
+                    <div class="stat-label">Delays avoided with early intervention</div>
                 </div>
             </div>
         </div>
@@ -683,113 +730,184 @@
 
     <section>
         <div class="container">
-            <h2 class="reveal">Strategic Engagements</h2>
-            
-            <div class="reveal" style="text-align: center; margin-bottom: 60px; padding: 40px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.03) 100%); border: 1px solid rgba(16, 185, 129, 0.15); border-radius: 8px;">
-                <h3 style="color: #10b981; font-size: 16px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; font-weight: 600;">Flagship Offer</h3>
-                <p style="font-size: 28px; font-weight: 600; color: #ffffff; margin-bottom: 12px; line-height: 1.3;">90-Minute Technical Strategy Intensive — $6,500</p>
-                <p style="font-size: 16px; color: #a3a3a3; margin-bottom: 24px;">Fixed scope. Async-friendly. Scheduled within 7–14 days of payment.</p>
-                <p style="font-size: 15px; color: #e5e5e5; margin-bottom: 0;">Ready now? <a href="#reserve-form" style="color: #10b981; text-decoration: none; font-weight: 600; border-bottom: 1px solid #10b981;">Skip to reservation form</a> or <a href="https://buy.stripe.com/5kQ3cu0TFggY6pN0rgeQM00" style="color: #10b981; text-decoration: none; font-weight: 600; border-bottom: 1px solid #10b981;">pay directly via Stripe</a></p>
-            </div>
-            
+            <h2 class="reveal">Productized Strategic Engagements</h2>
+
             <div class="services-grid">
-                <div class="service-card reveal">
+                <!-- Decision OS - FLAGSHIP -->
+                <div class="service-card service-card--flagship reveal">
+                    <div class="flagship-badge">Flagship Offer</div>
                     <div class="service-header">
-                        <div class="service-title">Technical Strategy Session</div>
-                        <div class="service-price">$6,500</div>
+                        <div>
+                            <div class="service-label">Most Popular</div>
+                            <div class="service-title">Decision OS — Strategic Clarity Sprint</div>
+                        </div>
+                        <div class="service-price">$25,000</div>
                     </div>
                     <div class="service-description">
-                        Stuck on a critical technical decision? Get expert analysis and a clear action plan in one intensive session. Leave with confidence on your next move.
+                        10-day intensive for one critical technical decision. Architecture options, risk analysis, vendor evaluation, and a board-ready recommendation.
                     </div>
                     <div class="service-ideal">
-                        <strong>Ideal for:</strong>
-                        Evaluating AR/VR vendors · Choosing tech stack · Scoping complex projects · Getting unstuck on stalled initiatives
+                        <strong>Built for:</strong>
+                        C-suite, founders, and product leaders deciding whether to greenlight, pivot, or kill a $500K–$2M initiative.
                     </div>
-                    <div class="service-delivery">90-minute strategic session + written action plan delivered within 48 hours</div>
+                    <div class="service-meta">
+                        10 days async · Loom walkthrough + PDF · Hard yes/no recommendation. No discovery theater.
+                    </div>
                 </div>
-                
+
+                <!-- Program Rescue -->
                 <div class="service-card reveal">
                     <div class="service-header">
-                        <div class="service-title">Program Rescue Audit</div>
-                        <div class="service-price">$15,000</div>
+                        <div>
+                            <div class="service-label">Failing Initiative</div>
+                            <div class="service-title">Program Rescue — Recovery & De-Risk</div>
+                        </div>
+                        <div class="service-price">$50,000</div>
                     </div>
                     <div class="service-description">
-                        Your technical project is behind, over budget, or stuck. Get an independent assessment of what's broken and a prioritized recovery roadmap.
+                        Forensic audit of a slipping or failing program. Root cause, vendor performance, architecture reality, and a 90-day recovery or exit plan.
                     </div>
                     <div class="service-ideal">
-                        <strong>What you get:</strong>
-                        Full project audit · Root cause analysis · Recovery plan · Vendor/team performance assessment · Risk mitigation strategy
+                        <strong>Best for:</strong>
+                        Funded programs ($500K–$5M+) already red or politically sensitive where delay is burning $50K–$100K/month.
                     </div>
-                    <div class="service-delivery">7-10 days async review + 60-minute presentation of findings + Q&A</div>
+                    <div class="service-meta">
+                        10 days async · Executive summary · Risk register · Vendor scorecard · Recovery roadmap or clean kill recommendation.
+                    </div>
                 </div>
-                
+
+                <!-- Platform & Partner -->
                 <div class="service-card reveal">
                     <div class="service-header">
-                        <div class="service-title">Platform Selection Sprint</div>
-                        <div class="service-price">$9,500</div>
+                        <div>
+                            <div class="service-label">Selection</div>
+                            <div class="service-title">Platform & Partner Selection</div>
+                        </div>
+                        <div class="service-price">$35,000</div>
                     </div>
                     <div class="service-description">
-                        Overwhelmed by technical options? Get expert vendor evaluation, comparison analysis, and implementation roadmap so you can move forward with confidence.
+                        Structured, vendor-agnostic evaluation of platforms or production partners with scoring matrix and implementation roadmap.
                     </div>
                     <div class="service-ideal">
-                        <strong>Ideal for:</strong>
-                        E-commerce platform selection · AR/VR production partners · Marketing tech stack · Platform migration decisions
+                        <strong>Use when:</strong>
+                        Choosing commerce, martech, AR/VR, or core platforms where a wrong call means a $500K–$1M do-over.
                     </div>
-                    <div class="service-delivery">Comparison matrix + recommendation deck + implementation timeline (async delivery)</div>
+                    <div class="service-meta">
+                        ~14 days async · Comparison matrix · Risk analysis · Board-ready recommendation deck.
+                    </div>
                 </div>
-                
+
+                <!-- Fractional Executive -->
                 <div class="service-card reveal">
                     <div class="service-header">
-                        <div class="service-title">Technical Fractional PM</div>
-                        <div class="service-price">$9,500/mo</div>
+                        <div>
+                            <div class="service-label">Ongoing Oversight</div>
+                            <div class="service-title">Technical Fractional Executive</div>
+                        </div>
+                        <div class="service-price">$18,000/mo</div>
                     </div>
                     <div class="service-description">
-                        Monthly strategic oversight for your technical initiatives. Expert program management without full-time overhead. Keep projects on track, vendors accountable, and risks managed.
+                        VP-level technical program leadership without the full-time hire. Strategic oversight, vendor management, risk mitigation, and exec-ready reporting.
                     </div>
                     <div class="service-ideal">
-                        <strong>Includes:</strong>
-                        15 hours/month strategic oversight · Weekly async updates via Loom · Vendor/team coordination · Risk management · One 60-min call/month
+                        <strong>Reserved for:</strong>
+                        Organizations running continuous multi-six-figure initiatives who need senior judgment, not more PMs.
                     </div>
-                    <div class="service-delivery">3-month minimum commitment · Async-first with optional monthly sync</div>
+                    <div class="service-meta">
+                        6-month minimum · Principal-led · Async-first with precise touchpoints.
+                    </div>
                 </div>
             </div>
+
+            <p class="reveal" style="text-align:center; font-size:11px; color:#6b7280; max-width:720px; margin:0 auto;">
+                All engagements are principal-led. When a project demands deep specialization (data, infra, creative ops), I bring in a vetted senior bench under the Pixique methodology. No junior swaps. No offloading your risk to untested teams.
+            </p>
         </div>
     </section>
 
-    <section style="background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%); padding: 100px 0;">
+    <!-- INSTANT BOOKING SECTION -->
+    <section class="instant-booking" id="instant-booking">
         <div class="container">
-            <h2 class="reveal">How Pixique Works</h2>
-            <div class="how-it-works reveal">
+            <h2 class="reveal">Ready to Move Fast?</h2>
+            <p class="reveal" style="text-align: center; font-size: 14px; color: #9ca3af; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                If you're funding a <strong style="color: #e5e5e5;">$500K+ initiative</strong> and need strategic clarity in the next 10 days, skip the form and book directly via Stripe.
+            </p>
+            
+            <div class="booking-grid reveal">
+                <!-- Decision OS -->
+                <div class="booking-card">
+                    <div class="booking-card-title">Decision OS</div>
+                    <div class="booking-card-price">$25,000</div>
+                    <a href="https://buy.stripe.com/5kQ3cu0TFggY6pN0rgeQM00" class="stripe-button">
+                        Book Now via Stripe
+                    </a>
+                    <p class="booking-note">Immediate confirmation · Kickoff within 48 hours</p>
+                </div>
+
+                <!-- Program Rescue -->
+                <div class="booking-card">
+                    <div class="booking-card-title">Program Rescue</div>
+                    <div class="booking-card-price">$50,000</div>
+                    <a href="https://buy.stripe.com/RESCUE_PAYMENT_LINK" class="stripe-button">
+                        Book Now via Stripe
+                    </a>
+                    <p class="booking-note">Audit begins immediately upon payment</p>
+                </div>
+
+                <!-- Platform Selection -->
+                <div class="booking-card">
+                    <div class="booking-card-title">Platform Selection</div>
+                    <div class="booking-card-price">$35,000</div>
+                    <a href="https://buy.stripe.com/PLATFORM_PAYMENT_LINK" class="stripe-button">
+                        Book Now via Stripe
+                    </a>
+                    <p class="booking-note">Evaluation starts within 48 hours</p>
+                </div>
+            </div>
+
+            <p class="reveal" style="text-align: center; font-size: 11px; color: #6b7280; margin-top: 28px;">
+                After payment, you'll receive an onboarding link via email. For fractional engagements or custom configurations, use the form below.
+            </p>
+        </div>
+    </section>
+
+    <section style="background: linear-gradient(180deg, #050505 0%, #020202 100%);">
+        <div class="container">
+            <h2 class="reveal">How Pixique Operates</h2>
+            <div class="how-it-works-wrapper reveal">
+                <p class="how-intro">
+                    <strong>Async-native. Outcome-locked.</strong> Work runs through a tight operating system using Loom, Notion, and secure channels — built for executives who want decisions, not standing meetings.
+                </p>
+                <p class="how-intro">
+                    <span class="not-fit">If you need weekly brainstorms, consensus-building, or RFP theatrics, Pixique is not a fit.</span>
+                </p>
                 <div class="steps-grid">
                     <div class="step">
                         <div class="step-number">1</div>
                         <div class="step-content">
-                            <h3>Submit application</h3>
-                            <p>Describe your challenge, timeline, and budget. You'll receive a decision within 4 business hours.</p>
+                            <h3>Book or Apply</h3>
+                            <p>Book directly via Stripe (standard engagements) or submit application for custom scope. Clear yes/no within 4 business hours for applications.</p>
                         </div>
                     </div>
-                    
                     <div class="step">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h3>Payment secures your slot</h3>
-                            <p>Once approved, pay via Stripe invoice. Prep begins within 24 hours; sessions and deliverables are scheduled within 7–14 days. Urgent timelines by request.</p>
+                            <h3>Payment Secures Slot</h3>
+                            <p>Stripe payment or approved invoice locks your engagement. Prep begins within 24 hours of payment confirmation.</p>
                         </div>
                     </div>
-                    
                     <div class="step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h3>Kickoff briefing</h3>
-                            <p>Share context, docs, and constraints. For strategy sessions: schedule your call. For audits/sprints: async review begins.</p>
+                            <h3>Signal-Rich Onboarding</h3>
+                            <p>Async review of decks, architecture, contracts, and constraints. One focused touchpoint if required — no discovery circus.</p>
                         </div>
                     </div>
-                    
                     <div class="step">
                         <div class="step-number">4</div>
                         <div class="step-content">
                             <h3>Delivery</h3>
-                            <p>Receive strategic analysis, action plans, and recommendations. Most engagements include one follow-up Q&A session.</p>
+                            <p>Defensible recommendation, clear path forward, and a short Q&A window. Then you execute with conviction.</p>
                         </div>
                     </div>
                 </div>
@@ -799,19 +917,18 @@
 
     <section>
         <div class="container">
-            <h2 class="reveal">Who We Work With</h2>
+            <h2 class="reveal">Who Pixique Works With</h2>
             <div class="clients-list reveal">
                 <ul>
-                    <li>Beauty and wellness brands launching technical products (AR try-on, personalization engines, digital experiences)</li>
-                    <li>Hospitality groups navigating platform selection or digital transformation</li>
-                    <li>DTC brands at inflection points (scaling tech, migrating platforms, evaluating vendors)</li>
-                    <li>Creative agencies needing fractional technical program management for client projects</li>
-                    <li>Leadership teams stuck on high-stakes technical decisions</li>
+                    <li>Founders & CMOs funding AR/VR, personalization, or experiential commerce at $500K–$5M scale.</li>
+                    <li>CTOs & product leaders owning platform migrations or complex multi-vendor builds.</li>
+                    <li>Private equity and board members needing independent eyes on critical technical bets.</li>
+                    <li>Agency leadership who require a senior technical brain their client will trust on day one.</li>
+                    <li>Operators who make decisions quickly and understand the cost of delay.</li>
                 </ul>
-                
                 <div class="ideal-note">
-                    <p><strong>Ideal clients are decisive, value expertise over exploration, and need strategic clarity to move forward.</strong></p>
-                    <p style="margin-top: 12px; font-size: 15px; color: #a3a3a3;">If you need internal consensus, months of exploration, or three rounds of pitches, we're not your partner.</p>
+                    <p><strong>Ideal clients</strong> are funded, time-sensitive, and ready to act. They value speed, truth, and expertise over exploration.</p>
+                    <p><span>Not a fit for unfunded experiments, "just exploring," hourly rate shoppers, or decision-by-committee.</span></p>
                 </div>
             </div>
         </div>
@@ -819,23 +936,23 @@
 
     <section>
         <div class="container">
-            <h2 class="reveal">Led By Someone Who's Navigated This at Enterprise Scale</h2>
+            <h2 class="reveal">What Qualifies Me to Charge This Much</h2>
             <div class="credentials reveal">
-                <p>Pixique is led by a Technical Program Manager with 7+ years driving large-scale technical initiatives at Walmart, Google, Airbnb, and McCann Worldgroup.</p>
-                
-                <p>Most recently (2025): Program Manager at Walmart managing creative production for premium brand partnerships including celebrity-founded brands. Coordinated 140+ programs annually across display ads, video content, email campaigns, brand pages, and in-store TV.</p>
-                
-                <p>Track record includes reducing delivery timelines by 25% through operational frameworks, directing end-to-end AR/VR production (Unity/Unreal Engine) for global brand activations, and deep expertise in ad technology platforms, real-time bidding systems, cloud infrastructure (AWS/GCP), and ML integration.</p>
-
-                <p>This isn't theory — it's pattern recognition from hundreds of technical programs, tens of millions in managed budgets, and navigating every failure mode you're trying to avoid.</p>
-                
-                <div style="border-left: 3px solid #10b981; padding-left: 30px; margin: 40px 0; font-style: italic; color: #e5e5e5;">
+                <p>
+                    I've managed 140+ programs annually across Walmart's highest-profile brand partnerships — including celebrity-founded brands and multi-million dollar campaigns — plus work with Google for Education, Airbnb, McCann Worldgroup, PBS, and Salesforce.
+                </p>
+                <p>
+                    I've directed AR/VR production in Unity and Unreal Engine, built operational frameworks that cut delivery timelines by 25%, and sat in the rooms where $2M programs were one bad decision away from failure.
+                </p>
+                <p>
+                    This is not theory. It's pattern recognition from hundreds of technical programs and every failure mode you're trying to avoid. The expensive mistake you're about to make? I've already seen it play out — and how to stop it.
+                </p>
+                <div class="quote">
                     "When she left, people cried. She managed 140+ programs annually for our highest-profile brand partnerships and never missed a deadline."
-                    <div style="margin-top: 12px; font-style: normal; color: #a3a3a3; font-size: 14px;">— Walmart Stakeholder, 2025</div>
+                    <span>— Walmart Stakeholder, 2025</span>
                 </div>
-                
                 <div class="credentials-footer">
-                    UC Berkeley MS · Previously: Walmart, Google for Education, Airbnb, McCann Worldgroup, PBS, Salesforce
+                    Pixique is a principal-led studio. UC Berkeley MS · Remote · Worldwide.
                 </div>
             </div>
         </div>
@@ -843,76 +960,112 @@
 
     <div class="form-section" id="reserve-form">
         <div class="container">
-            <h2>Reserve Your Engagement</h2>
-            <p class="form-intro">Limited availability. If you're ready, we move fast. No discovery circus.</p>
+            <div class="form-header">
+                <h2>Custom Scope or Fractional Engagement?</h2>
+                <p class="form-intro">
+                    For fractional engagements, custom configurations, or if you need to discuss fit before committing, use this form.
+                </p>
+                <p class="form-intro">
+                    <strong>For standard engagements (Decision OS, Program Rescue, Platform Selection), <a href="#instant-booking">book directly via Stripe above</a>.</strong>
+                </p>
+            </div>
             
+            <div class="form-divider">
+                <svg width="60" height="4" viewBox="0 0 60 4" fill="none">
+                    <rect width="60" height="4" rx="2" fill="url(#gradient)"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0" x2="60" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#10b981"/>
+                            <stop offset="1" stop-color="#059669"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+
             <div class="form-container">
                 <form action="https://formcarry.com/s/iy1FfC8V_yO" method="POST">
-                    
-                    <!-- Decision Gate -->
                     <div class="form-group">
                         <label>Where are you right now?</label>
                         <div class="radio-group">
                             <label class="radio-option">
                                 <input type="radio" name="decision_status" value="Ready to proceed - send invoice for selected engagement" required>
-                                <span>Ready to proceed — send invoice for my selected engagement</span>
+                                <span>Ready to proceed — send invoice for my selected engagement.</span>
                             </label>
                             <label class="radio-option">
                                 <input type="radio" name="decision_status" value="One clarification, then I'm ready to proceed" required>
-                                <span>One clarification, then I'm ready to proceed</span>
+                                <span>One clarification, then I'm ready to proceed.</span>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Service Selection -->
                     <div class="form-group">
                         <label for="service">Which engagement are you reserving?</label>
                         <select id="service" name="service" required>
                             <option value="">Select an engagement</option>
-                            <option value="Technical Strategy Session ($6,500)">Technical Strategy Session ($6,500)</option>
-                            <option value="Program Rescue Audit ($15,000)">Program Rescue Audit ($15,000)</option>
-                            <option value="Platform Selection Sprint ($9,500)">Platform Selection Sprint ($9,500)</option>
-                            <option value="Technical Fractional PM ($9,500/mo, 3-month min)">Technical Fractional PM ($9,500/mo · 3-month min)</option>
+                            <option value="Technical Fractional Executive ($18,000/mo, 6-month min)">Technical Fractional Executive ($18,000/mo · 6-month min)</option>
+                            <option value="Custom Scope - Need Discussion">Custom Scope — Need Discussion</option>
+                            <option value="Decision OS ($25,000) - prefer invoice">Decision OS ($25,000) — prefer invoice over Stripe</option>
+                            <option value="Program Rescue ($50,000) - prefer invoice">Program Rescue ($50,000) — prefer invoice over Stripe</option>
+                            <option value="Platform Selection ($35,000) - prefer invoice">Platform Selection ($35,000) — prefer invoice over Stripe</option>
                         </select>
                     </div>
 
-                    <!-- Challenge (tight prompt) -->
                     <div class="form-group">
-                        <label for="challenge">What are we solving in one sentence?</label>
-                        <textarea id="challenge" name="challenge" placeholder="Example: AR try-on launch is 8 weeks behind and vendor is burning budget." required></textarea>
+                        <label for="challenge">What are we solving, in one sentence?</label>
+                        <textarea id="challenge" name="challenge" placeholder="Example: Our AR try-on launch is 8 weeks behind and our vendor has no working prototype." required></textarea>
                     </div>
 
-                    <!-- Timeline -->
+                    <div class="form-group">
+                        <label for="risk">What's at stake if this goes wrong?</label>
+                        <textarea id="risk" name="risk" placeholder="Example: A wrong platform choice means ~$800K wasted and missing our Q2 launch window." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Who is the decision-maker on this initiative?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="decision_maker" value="I am (C-suite, VP, Founder)" required>
+                                <span>I am (C-suite, VP, Founder).</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="decision_maker" value="Recommending directly to C-suite/Board" required>
+                                <span>I'm recommending directly to C-suite/Board.</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="decision_maker" value="Committee / unclear authority" required>
+                                <span>Decision by committee / unclear authority. (Note: unlikely fit.)</span>
+                            </label>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label>Timeline</label>
                         <div class="radio-group">
                             <label class="radio-option">
-                                <input type="radio" name="timeline" value="Decision/start within 7-14 days" required>
-                                <span>Decision / start within 7–14 days</span>
+                                <input type="radio" name="timeline" value="Decision/start within 7–14 days" required>
+                                <span>Decision / start within 7–14 days.</span>
                             </label>
                             <label class="radio-option">
                                 <input type="radio" name="timeline" value="Decision this month" required>
-                                <span>Decision this month</span>
+                                <span>Decision this month.</span>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Budget -->
                     <div class="form-group">
-                        <label>Budget</label>
+                        <label>Budget Status</label>
                         <div class="radio-group">
                             <label class="radio-option">
-                                <input type="radio" name="budget" value="Budget approved for this engagement" required>
-                                <span>Budget approved for this engagement</span>
+                                <input type="radio" name="budget" value="Initiative funded at $500K+; $25K+ approved for Pixique" required>
+                                <span>Initiative funded at $500K+; $25K+ approved for Pixique.</span>
                             </label>
                             <label class="radio-option">
-                                <input type="radio" name="budget" value="Verbal approval / in final sign-off" required>
-                                <span>Verbal approval / in final sign-off</span>
+                                <input type="radio" name="budget" value="In final approval; aligned with Pixique minimums" required>
+                                <span>In final approval; aligned with Pixique's minimums.</span>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Essentials -->
                     <div class="form-group">
                         <label for="company">Company or Project Name</label>
                         <input type="text" id="company" name="company" required>
@@ -933,12 +1086,14 @@
                         <input type="email" id="email" name="email" required>
                     </div>
 
-                    <!-- Hidden: fast-lane flag for automation -->
                     <input type="hidden" name="lead_type" value="Pixique Strategic Engagement">
 
-                    <button type="submit" class="submit-button">Reserve Engagement — Decision & Invoice in 4 Hours</button>
-                    
-                    <p class="form-note">If you're a fit, you'll receive confirmation and a Stripe invoice within 4 business hours. Strategy Session: invoice only (no sales call). All engagements: prep begins within 24 hours of payment; live sessions and deliverables are scheduled within 7–14 days. Urgent timelines by request.</p>
+                    <button type="submit" class="submit-button">
+                        Submit Application — Decision in 4 Business Hours
+                    </button>
+                    <p class="form-note">
+                        If the initiative is a fit, you'll receive confirmation and a Stripe invoice. If not, you'll get a fast no so you can move on. For instant booking, <a href="#instant-booking">use Stripe links above</a>.
+                    </p>
                 </form>
             </div>
         </div>
@@ -947,18 +1102,13 @@
     <footer>
         <div class="container">
             <p><strong>PIXIQUE</strong></p>
-            <p style="margin-top: 8px;">Technical strategy for premium brands.</p>
-            <p style="margin-top: 24px;">Remote · Worldwide</p>
+            <p>Principal-led technical strategy for high-stakes initiatives.</p>
+            <p>Remote · Worldwide</p>
         </div>
     </footer>
 
     <script>
-        // Scroll reveal animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -967,41 +1117,11 @@
             });
         }, observerOptions);
 
-        // Observe all reveal elements
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         document.querySelectorAll('.stat-box').forEach(el => observer.observe(el));
         document.querySelectorAll('.step').forEach((el, index) => {
-            el.style.transitionDelay = `${index * 0.1}s`;
+            el.style.transitionDelay = `${index * 0.06}s`;
             observer.observe(el);
-        });
-
-        // Form animation on focus
-        const formInputs = document.querySelectorAll('input, textarea, select');
-        formInputs.forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'translateX(4px)';
-                this.parentElement.style.transition = 'transform 0.3s ease';
-            });
-            
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'translateX(0)';
-            });
-        });
-
-        // Submit button ripple effect is handled by CSS
-        
-        // Smooth scroll for any internal links (if added later)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
         });
     </script>
 </body>
