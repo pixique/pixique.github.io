@@ -963,144 +963,55 @@
         </div>
     </section>
 
-    <div class="form-section" id="reserve-form">
-        <div class="container">
-            <div class="form-header">
-                <h2>Custom Scope or Fractional Engagement?</h2>
-                <p class="form-intro">
-                    For fractional engagements or custom configurations outside our standard offerings, use this form.
-                </p>
-                <p class="form-intro">
-                    <strong>For standard engagements (Decision OS, Program Rescue, Platform Selection), <a href="#instant-booking">book directly via Stripe above</a>.</strong>
-                </p>
-            </div>
+   <section style="background: #020202; border-top: 1px solid #111827; padding: 80px 0; margin-top: 60px;">
+    <div class="container">
+        <h2 style="font-size: 32px; font-weight: 600; margin-bottom: 32px; letter-spacing: -0.02em; color: #ffffff; text-align: center;">
+            Fractional Executive Oversight?
+        </h2>
+        
+        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 15px; color: #9ca3af; margin-bottom: 24px; line-height: 1.7;">
+                The Technical Fractional Executive engagement ($18,000/month, 6-month minimum) is reserved for organizations running continuous multi-six-figure initiatives.
+            </p>
             
-            <div class="form-divider">
-                <svg width="60" height="4" viewBox="0 0 60 4" fill="none">
-                    <rect width="60" height="4" rx="2" fill="url(#gradient)"/>
-                    <defs>
-                        <linearGradient id="gradient" x1="0" x2="60" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#10b981"/>
-                            <stop offset="1" stop-color="#059669"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-            </div>
-
-            <div class="form-container">
-                <form action="https://formcarry.com/s/iy1FfC8V_yO" method="POST">
-                    <div class="form-group">
-                        <label>Where are you right now?</label>
-                        <div class="radio-group">
-                            <label class="radio-option">
-                                <input type="radio" name="decision_status" value="Ready to proceed - send invoice for selected engagement" required>
-                                <span>Ready to proceed — send invoice for my selected engagement.</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="decision_status" value="One clarification, then I'm ready to proceed" required>
-                                <span>One clarification, then I'm ready to proceed.</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="service">Which engagement are you reserving?</label>
-                        <select id="service" name="service" required>
-                            <option value="">Select an engagement</option>
-                            <option value="Technical Fractional Executive ($18,000/mo, 6-month min)">Technical Fractional Executive ($18,000/mo · 6-month min)</option>
-                            <option value="Custom Scope - Need Discussion">Custom Scope — Need Discussion</option>
-                        </select>
-                        <p class="form-helper">Interested in a standard engagement but have questions first? Select "Custom Scope" and mention which service.</p>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="challenge">What are we solving, in one sentence?</label>
-                        <textarea id="challenge" name="challenge" placeholder="Example: Our AR try-on launch is 8 weeks behind and our vendor has no working prototype." required></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="risk">What's at stake if this goes wrong?</label>
-                        <textarea id="risk" name="risk" placeholder="Example: A wrong platform choice means ~$800K wasted and missing our Q2 launch window." required></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Who is the decision-maker on this initiative?</label>
-                        <div class="radio-group">
-                            <label class="radio-option">
-                                <input type="radio" name="decision_maker" value="I am (C-suite, VP, Founder)" required>
-                                <span>I am (C-suite, VP, Founder).</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="decision_maker" value="Recommending directly to C-suite/Board" required>
-                                <span>I'm recommending directly to C-suite/Board.</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="decision_maker" value="Committee / unclear authority" required>
-                                <span>Decision by committee / unclear authority. (Note: unlikely fit.)</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Timeline</label>
-                        <div class="radio-group">
-                            <label class="radio-option">
-                                <input type="radio" name="timeline" value="Decision/start within 7–14 days" required>
-                                <span>Decision / start within 7–14 days.</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="timeline" value="Decision this month" required>
-                                <span>Decision this month.</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Budget Status</label>
-                        <div class="radio-group">
-                            <label class="radio-option">
-                                <input type="radio" name="budget" value="Initiative funded at $500K+; $25K+ approved for Pixique" required>
-                                <span>Initiative funded at $500K+; $25K+ approved for Pixique.</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="budget" value="In final approval; aligned with Pixique minimums" required>
-                                <span>In final approval; aligned with Pixique's minimums.</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="company">Company or Project Name</label>
-                        <input type="text" id="company" name="company" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="website">Website</label>
-                        <input type="url" id="website" name="website" placeholder="https://">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Best Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <input type="hidden" name="lead_type" value="Pixique Strategic Engagement">
-
-                    <button type="submit" class="submit-button">
-                        Submit Application — Decision in 4 Business Hours
-                    </button>
-                    <p class="form-note">
-                        If the initiative is a fit, you'll receive confirmation and a Stripe invoice. If not, you'll get a fast no so you can move on. For instant booking, <a href="#instant-booking">use Stripe links above</a>.
-                    </p>
-                </form>
-            </div>
+            <p style="font-size: 15px; color: #9ca3af; margin-bottom: 32px; line-height: 1.7;">
+                This requires a brief qualification conversation to ensure fit. If you're funding $500K+ in ongoing technical programs and need senior oversight without a full-time hire, let's talk.
+            </p>
+            
+            <a href="mailto:hello@pixique.com?subject=Fractional%20Executive%20Inquiry" 
+               style="display: inline-block; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #fff; padding: 14px 28px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.25s ease;"
+               onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 10px 26px rgba(16,185,129,0.22)';"
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                Email to Discuss Fractional Engagement
+            </a>
+            
+            <p style="font-size: 11px; color: #6b7280; margin-top: 20px;">
+                You'll receive a response within 4 business hours.
+            </p>
         </div>
     </div>
+</section>
+```
+
+---
+
+## Visual Guide
+
+**Your HTML structure should look like this:**
+```
+...
+</section> <!-- End of "What Qualifies Me" section -->
+
+<!-- OLD: Form section was here - DELETE IT -->
+
+<!-- NEW: Simple fractional CTA goes here -->
+<section style="background: #020202; border-top: 1px solid #111827...">
+    ...
+</section>
+
+<footer>
+    ...
+</footer>
 
     <footer>
         <div class="container">
