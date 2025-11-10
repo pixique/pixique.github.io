@@ -1028,30 +1028,6 @@
     </div>
 </footer>
 
-<script>
-    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    document.querySelectorAll('.stat-box').forEach(el => observer.observe(el));
-    document.querySelectorAll('.step').forEach((el, index) => {
-        el.style.transitionDelay = `${index * 0.06}s`;
-        observer.observe(el);
-    });
-</script>
-</body>
-</html>
-
-<footer>
-    ...
-</footer>
-
     <footer>
         <div class="container">
             <p><strong>PIXIQUE</strong></p>
