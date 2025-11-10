@@ -505,6 +505,11 @@
             border: 1px solid #111827;
         }
         .form-group { margin-bottom: 18px; }
+        .form-helper {
+            font-size: 11px;
+            color: #6b7280;
+            margin-top: 8px;
+        }
         label {
             display: block;
             font-weight: 500;
@@ -936,7 +941,7 @@
 
     <section>
         <div class="container">
-            <h2 class="reveal">Qualifications</h2>
+            <h2 class="reveal">What Qualifies Me to Charge This Much</h2>
             <div class="credentials reveal">
                 <p>
                     I've managed 140+ programs annually across Walmart's highest-profile brand partnerships — including celebrity-founded brands and multi-million dollar campaigns — plus work with Google for Education, Airbnb, McCann Worldgroup, PBS, and Salesforce.
@@ -963,7 +968,7 @@
             <div class="form-header">
                 <h2>Custom Scope or Fractional Engagement?</h2>
                 <p class="form-intro">
-                    For fractional engagements, custom configurations, or if you need to discuss fit before committing, use this form.
+                    For fractional engagements or custom configurations outside our standard offerings, use this form.
                 </p>
                 <p class="form-intro">
                     <strong>For standard engagements (Decision OS, Program Rescue, Platform Selection), <a href="#instant-booking">book directly via Stripe above</a>.</strong>
@@ -1004,10 +1009,8 @@
                             <option value="">Select an engagement</option>
                             <option value="Technical Fractional Executive ($18,000/mo, 6-month min)">Technical Fractional Executive ($18,000/mo · 6-month min)</option>
                             <option value="Custom Scope - Need Discussion">Custom Scope — Need Discussion</option>
-                            <option value="Decision OS ($25,000) - prefer invoice">Decision OS ($25,000) — prefer invoice over Stripe</option>
-                            <option value="Program Rescue ($50,000) - prefer invoice">Program Rescue ($50,000) — prefer invoice over Stripe</option>
-                            <option value="Platform Selection ($35,000) - prefer invoice">Platform Selection ($35,000) — prefer invoice over Stripe</option>
                         </select>
+                        <p class="form-helper">Interested in a standard engagement but have questions first? Select "Custom Scope" and mention which service.</p>
                     </div>
 
                     <div class="form-group">
@@ -1121,7 +1124,7 @@
         document.querySelectorAll('.stat-box').forEach(el => observer.observe(el));
         document.querySelectorAll('.step').forEach((el, index) => {
             el.style.transitionDelay = `${index * 0.06}s`;
-            observer.observe(el);
+            observer.observe(el));
         });
     </script>
 </body>
