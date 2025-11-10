@@ -991,23 +991,62 @@
         </div>
     </div>
 </section>
-```
-
----
-
-## Visual Guide
-
-**Your HTML structure should look like this:**
-```
-...
-</section> <!-- End of "What Qualifies Me" section -->
-
-<!-- OLD: Form section was here - DELETE IT -->
-
-<!-- NEW: Simple fractional CTA goes here -->
-<section style="background: #020202; border-top: 1px solid #111827...">
-    ...
+<section style="background: #020202; border-top: 1px solid #111827; padding: 80px 0; margin-top: 60px;">
+    <div class="container">
+        <h2 style="font-size: 32px; font-weight: 600; margin-bottom: 32px; letter-spacing: -0.02em; color: #ffffff; text-align: center;">
+            Fractional Executive Oversight?
+        </h2>
+        
+        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 15px; color: #9ca3af; margin-bottom: 24px; line-height: 1.7;">
+                The Technical Fractional Executive engagement ($18,000/month, 6-month minimum) is reserved for organizations running continuous multi-six-figure initiatives.
+            </p>
+            
+            <p style="font-size: 15px; color: #9ca3af; margin-bottom: 32px; line-height: 1.7;">
+                This requires a brief qualification conversation to ensure fit. If you're funding $500K+ in ongoing technical programs and need senior oversight without a full-time hire, let's talk.
+            </p>
+            
+            <a href="mailto:hello@pixique.com?subject=Fractional%20Executive%20Inquiry" 
+               style="display: inline-block; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #fff; padding: 14px 28px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.25s ease;"
+               onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 10px 26px rgba(16,185,129,0.22)';"
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                Email to Discuss Fractional Engagement
+            </a>
+            
+            <p style="font-size: 11px; color: #6b7280; margin-top: 20px;">
+                You'll receive a response within 4 business hours.
+            </p>
+        </div>
+    </div>
 </section>
+
+<footer>
+    <div class="container">
+        <p><strong>PIXIQUE</strong></p>
+        <p>Principal-led technical strategy for high-stakes initiatives.</p>
+        <p>Remote · Worldwide</p>
+    </div>
+</footer>
+
+<script>
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.stat-box').forEach(el => observer.observe(el));
+    document.querySelectorAll('.step').forEach((el, index) => {
+        el.style.transitionDelay = `${index * 0.06}s`;
+        observer.observe(el);
+    });
+</script>
+</body>
+</html>
 
 <footer>
     ...
