@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmed — Pixique</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #e5e5e5;
+            background: #0a0a0a;
+            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .confirmation-container {
+            max-width: 600px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+        
+        .checkmark-container {
+            margin-bottom: 32px;
+        }
+        
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(16,185,129,0.15) 0%, rgba(16,185,129,0.05) 100%);
+            border: 2px solid #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: scaleIn 0.6s ease 0.3s both;
+        }
+        
+        .checkmark svg {
+            width: 40px;
+            height: 40px;
+            stroke: #10b981;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+        
+        .checkmark-path {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: drawCheck 0.8s ease 0.5s forwards;
+        }
+        
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #10b981;
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+        
+        .message {
+            font-size: 16px;
+            color: #9ca3af;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #050505 0%, #020202 100%);
+            border: 1px solid #111827;
+            border-radius: 10px;
+            padding: 28px;
+            margin: 32px 0;
+            text-align: left;
+        }
+        
+        .info-box h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #e5e5e5;
+            margin-bottom: 16px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #111827;
+        }
+        
+        .info-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .info-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            margin-top: 2px;
+        }
+        
+        .info-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #10b981;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+        
+        .info-content {
+            flex: 1;
+        }
+        
+        .info-content strong {
+            display: block;
+            color: #e5e5e5;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        .info-content p {
+            color: #9ca3af;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .contact-box {
+            background: radial-gradient(circle at top, rgba(16,185,129,0.08), transparent);
+            border: 1px solid rgba(16,185,129,0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 32px;
+        }
+        
+        .contact-box p {
+            font-size: 13px;
+            color: #9ca3af;
+            margin-bottom: 12px;
+        }
+        
+        .contact-box a {
+            color: #10b981;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid #10b981;
+        }
+        
+        .contact-box a:hover {
+            color: #059669;
+            border-bottom-color: #059669;
+        }
+        
+        .home-link {
+            display: inline-block;
+            margin-top: 32px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .home-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(16,185,129,0.22);
+        }
+        
+        footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid #111827;
+        }
+        
+        footer p {
+            font-size: 11px;
+            color: #6b7280;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes drawCheck {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .message {
+                font-size: 15px;
+            }
+            
+            .info-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <div class="logo">PIXIQUE</div>
+        
+        <div class="checkmark-container">
+            <div class="checkmark">
+                <svg viewBox="0 0 52 52">
+                    <path class="checkmark-path" d="M14 27l7.5 7.5L38 18"/>
+                </svg>
+            </div>
+        </div>
+        
+        <h1>Payment Confirmed</h1>
+        <p class="subtitle">Welcome to Pixique</p>
+        
+        <p class="message">
+            Your engagement is secured. You'll receive a detailed onboarding email within the next 24 hours with everything you need to get started.
+        </p>
+        
+        <div class="info-box">
+            <h2>What Happens Next</h2>
+            
+            <div class="info-item">
+                <div class="info-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <div class="info-content">
+                    <strong>Onboarding Email (Within 24 Hours)</strong>
+                    <p>You'll receive a secure link to schedule your kickoff session and share project context, docs, and constraints.</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <div class="info-content">
+                    <strong>Kickoff Scheduled (Within 48 Hours)</strong>
+                    <p>We'll align on scope, deliverables, and timeline. Prep begins immediately after our kickoff conversation.</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <div class="info-content">
+                    <strong>Delivery on Schedule</strong>
+                    <p>Your engagement deliverables will be completed within the timeframe outlined in your service description.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-box">
+            <p>Questions in the meantime? Email directly at <a href="mailto:hello@pixique.com">hello@pixique.com</a></p>
+            <p style="margin: 0;">Check your spam folder if you don't see the onboarding email within 24 hours.</p>
+        </div>
+        
+        <a href="https://pixique.com" class="home-link">Return to Pixique</a>
+        
+        <footer>
+            <p><strong>PIXIQUE</strong> · Principal-led technical strategy</p>
+            <p style="margin-top: 8px;">Remote · Worldwide</p>
+        </footer>
+    </div>
+</body>
+</html>
