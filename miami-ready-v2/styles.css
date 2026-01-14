@@ -264,6 +264,95 @@ input {
     margin-top: 12px;
 }
 
+/* Vision Gallery */
+.vision-gallery {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 90vw;
+}
+
+.gallery-image-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-nav {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.gallery-nav:hover {
+    background: var(--bg-hover);
+    transform: scale(1.1);
+}
+
+.gallery-nav:active {
+    transform: scale(0.95);
+}
+
+.image-caption {
+    font-size: 13px;
+    color: var(--text-2);
+    margin-top: 12px;
+    text-align: center;
+}
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.gallery-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--bg-card-2);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.gallery-dots .dot:hover {
+    background: var(--text-3);
+}
+
+.gallery-dots .dot.active {
+    background: var(--teal);
+    transform: scale(1.2);
+}
+
+/* Swipe hint animation */
+@keyframes swipe-hint {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+}
+
+.vision-full-img {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
 /* ===== MOTIVATION CARD (legacy) ===== */
 .motivation-card {
     margin: 0 20px 24px;

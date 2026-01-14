@@ -104,6 +104,13 @@ function app() {
         },
         baseline: { roundness: 32, protrusion: 25 },
 
+        // Vision/Motivation images
+        visionImages: [
+            { src: 'goal.png', caption: 'The goal' },
+            { src: 'miami-vision.jpg', caption: 'Miami sunset vibes' },
+        ],
+        currentVisionIndex: 0,
+
         // Workout mode
         workoutMode: false,
         workoutStep: 0,
@@ -556,6 +563,19 @@ function app() {
             this.save();
             this.showScanModal = false;
             this.scanData = { date: this.iso(new Date()), roundness: null, protrusion: null };
+        },
+
+        // ===== VISION GALLERY =====
+        get currentVisionImage() {
+            return this.visionImages[this.currentVisionIndex] || this.visionImages[0];
+        },
+
+        nextVisionImage() {
+            this.currentVisionIndex = (this.currentVisionIndex + 1) % this.visionImages.length;
+        },
+
+        prevVisionImage() {
+            this.currentVisionIndex = (this.currentVisionIndex - 1 + this.visionImages.length) % this.visionImages.length;
         },
 
         // ===== SETTINGS =====
