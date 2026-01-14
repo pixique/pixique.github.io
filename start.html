@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start a Conversation — Pixique</title>
+    <meta name="description" content="Tell us about your business and what's feeling heavy. We'll respond within 48 hours if we think we can help.">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A1918'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='55' fill='%23FAF8F5' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-cream: #FAF8F5;
+            --color-warm-white: #FFFEFB;
+            --color-ink: #1A1918;
+            --color-ink-soft: #3D3B39;
+            --color-ink-muted: #6B6866;
+            --color-taupe: #C4BAB0;
+            --color-taupe-light: #E8E4DF;
+            --color-accent: #8B7355;
+            --color-accent-soft: #A69280;
+            --color-accent-pale: #F5F0EB;
+            --color-sage: #7A8B7A;
+            --color-sage-pale: #F0F3F0;
+            --color-error: #B54B4B;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
+            --radius: 4px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--color-ink);
+            background-color: var(--color-cream);
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            background: var(--color-cream);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.625rem;
+            font-weight: 500;
+            color: var(--color-ink);
+            text-decoration: none;
+        }
+
+        .back-link {
+            font-size: 14px;
+            color: var(--color-ink-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--color-ink);
+        }
+
+        /* Main */
+        main {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 80px 32px 120px;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--color-ink);
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: var(--color-ink-muted);
+            margin-bottom: 48px;
+            line-height: 1.8;
+        }
+
+        /* Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-ink);
+            letter-spacing: 0.02em;
+        }
+
+        .label-hint {
+            font-size: 13px;
+            font-weight: 300;
+            color: var(--color-ink-muted);
+            margin-top: 4px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        textarea,
+        select {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 300;
+            padding: 16px 18px;
+            border: 1px solid var(--color-taupe-light);
+            border-radius: var(--radius);
+            background: var(--color-warm-white);
+            color: var(--color-ink);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            width: 100%;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px var(--color-accent-pale);
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B6866' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 48px;
+        }
+
+        ::placeholder {
+            color: var(--color-taupe);
+        }
+
+        /* Submit */
+        button[type="submit"] {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 18px 40px;
+            background: var(--color-ink);
+            color: var(--color-warm-white);
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        /* Privacy note */
+        .privacy-note {
+            font-size: 13px;
+            color: var(--color-ink-muted);
+            line-height: 1.7;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--color-taupe-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            main {
+                padding: 60px 24px 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">Pixique</a>
+            <a href="index.html" class="back-link">Back to Home</a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Start a Conversation</h1>
+        <p class="intro">Tell us a bit about your business and what's feeling heavy. We'll respond within 48 hours if we think we can help.</p>
+
+        <form action="https://formspree.io/f/xrbonled" method="POST">
+            <!-- Honeypot field for spam protection -->
+            <input type="text" name="_gotcha" style="display:none">
+
+            <div class="form-group">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" required placeholder="First and last name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="you@company.com">
+            </div>
+
+            <div class="form-group">
+                <label for="business">Business name</label>
+                <input type="text" id="business" name="business" required placeholder="Your company or brand">
+            </div>
+
+            <div class="form-group">
+                <label for="website">Website</label>
+                <p class="label-hint">Optional, but helps us understand your business faster.</p>
+                <input type="url" id="website" name="website" placeholder="https://yourcompany.com">
+            </div>
+
+            <div class="form-group">
+                <label for="revenue">Approximate annual revenue</label>
+                <select id="revenue" name="revenue" required>
+                    <option value="" disabled selected>Select a range</option>
+                    <option value="under-500k">Under $500K</option>
+                    <option value="500k-1m">$500K - $1M</option>
+                    <option value="1m-3m">$1M - $3M</option>
+                    <option value="3m-5m">$3M - $5M</option>
+                    <option value="5m-10m">$5M - $10M</option>
+                    <option value="over-10m">Over $10M</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="team-size">Team size</label>
+                <select id="team-size" name="team_size" required>
+                    <option value="" disabled selected>Select a range</option>
+                    <option value="just-me">Just me</option>
+                    <option value="2-5">2-5 people</option>
+                    <option value="6-15">6-15 people</option>
+                    <option value="16-30">16-30 people</option>
+                    <option value="over-30">Over 30 people</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="heavy">What's feeling heavy?</label>
+                <p class="label-hint">In a few sentences, describe the operational drag you're experiencing. What's slipping? What's taking too long? What keeps you up at night?</p>
+                <textarea id="heavy" name="whats_heavy" required placeholder="e.g., Handoffs between my team keep failing. Projects take twice as long as they should. I'm the bottleneck for every decision..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="tried">What have you already tried?</label>
+                <p class="label-hint">Tools, hires, processes, consultants — anything you've attempted to fix this.</p>
+                <textarea id="tried" name="already_tried" placeholder="e.g., We implemented Asana last year but nobody uses it. Hired an ops manager who left after 6 months..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="timeline">When do you want to start?</label>
+                <select id="timeline" name="timeline" required>
+                    <option value="" disabled selected>Select a timeline</option>
+                    <option value="asap">As soon as possible</option>
+                    <option value="1-2-weeks">In the next 1-2 weeks</option>
+                    <option value="next-month">Next month</option>
+                    <option value="next-quarter">Next quarter</option>
+                    <option value="just-exploring">Just exploring for now</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="referral">How did you hear about us?</label>
+                <input type="text" id="referral" name="referral" placeholder="Referral, search, LinkedIn, etc.">
+            </div>
+
+            <button type="submit">Submit</button>
+
+            <p class="privacy-note"><strong>What happens after you submit?</strong> We'll review your submission and respond within 48 hours. If we think we can help, we'll send a short note with questions or a proposal. If we're not the right fit, we'll let you know. Your information stays private and won't be shared.</p>
+        </form>
+    </main>
+
+</body>
+</html>

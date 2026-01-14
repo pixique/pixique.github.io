@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral Partners — Pixique</title>
+    <meta name="description" content="Earn 10% on referrals to Pixique. We help your clients fix their operations so you can focus on what you do best.">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A1918'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='55' fill='%23FAF8F5' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-cream: #FAF8F5;
+            --color-warm-white: #FFFEFB;
+            --color-ink: #1A1918;
+            --color-ink-soft: #3D3B39;
+            --color-ink-muted: #6B6866;
+            --color-taupe: #C4BAB0;
+            --color-taupe-light: #E8E4DF;
+            --color-accent: #8B7355;
+            --color-accent-soft: #A69280;
+            --color-accent-pale: #F5F0EB;
+            --color-sage: #7A8B7A;
+            --color-sage-pale: #F0F3F0;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
+            --radius: 4px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--color-ink);
+            background-color: var(--color-cream);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            background: var(--color-cream);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .header-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.625rem;
+            font-weight: 500;
+            color: var(--color-ink);
+            text-decoration: none;
+        }
+
+        .back-link {
+            font-size: 14px;
+            color: var(--color-ink-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--color-ink);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 80px;
+            background: var(--color-warm-white);
+        }
+
+        .hero-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-lead {
+            font-size: 1.15rem;
+            color: var(--color-ink-muted);
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        /* Main content */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 32px 120px;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: var(--color-ink);
+        }
+
+        p {
+            color: var(--color-ink-soft);
+            margin-bottom: 20px;
+        }
+
+        section {
+            margin-bottom: 64px;
+        }
+
+        /* Partner benefits */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .benefit {
+            padding: 28px;
+            background: var(--color-warm-white);
+            border-radius: var(--radius);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .benefit-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .benefit-label {
+            font-size: 14px;
+            color: var(--color-ink-muted);
+        }
+
+        /* Ideal partner */
+        .partner-types {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .partner-types li {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--color-taupe-light);
+            color: var(--color-ink-soft);
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .partner-types li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        .partner-types li:last-child {
+            border-bottom: none;
+        }
+
+        /* How it works */
+        .steps {
+            display: grid;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 48px 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--color-ink);
+            color: var(--color-warm-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+        }
+
+        .step-content h3 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--color-ink);
+        }
+
+        .step-content p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        /* CTA box */
+        .cta-box {
+            background: var(--color-ink);
+            color: var(--color-warm-white);
+            padding: 48px;
+            border-radius: var(--radius);
+            text-align: center;
+            margin-top: 64px;
+        }
+
+        .cta-box h2 {
+            color: var(--color-warm-white);
+            margin-bottom: 16px;
+        }
+
+        .cta-box p {
+            color: var(--color-taupe);
+            margin-bottom: 32px;
+        }
+
+        .cta-box a {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 18px 40px;
+            background: var(--color-warm-white);
+            color: var(--color-ink);
+            border-radius: var(--radius);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-box a:hover {
+            background: var(--color-accent);
+            color: var(--color-warm-white);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-ink);
+            padding: 40px 0;
+        }
+
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--color-warm-white);
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--color-ink-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 80px 0 60px;
+            }
+
+            main {
+                padding: 60px 24px 100px;
+            }
+
+            .cta-box {
+                padding: 36px 24px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">Pixique</a>
+            <a href="index.html" class="back-link">Back to Home</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <p class="section-label">Referral Partners</p>
+            <h1>Your clients' operations aren't your job. Let us handle it.</h1>
+            <p class="hero-lead">You serve business owners who are growing fast and struggling to keep up. We fix their operations so they can focus on what you help them with.</p>
+        </div>
+    </section>
+
+    <main>
+        <section>
+            <h2>The partnership</h2>
+            <p>When your clients mention things feeling heavy behind the scenes — missed handoffs, bottlenecked decisions, tools nobody uses — that's not your problem to solve. But you can point them to someone who will.</p>
+            <p>We run a 3-4 week sprint that maps what's heavy and resets their core operations. Then we exit. No ongoing relationship that competes with yours.</p>
+
+            <div class="benefits">
+                <div class="benefit">
+                    <div class="benefit-value">10%</div>
+                    <div class="benefit-label">Referral fee on closed deals</div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-value">$1.5–2K</div>
+                    <div class="benefit-label">Per successful referral</div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-value">3–4 wks</div>
+                    <div class="benefit-label">Then we're gone</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Ideal partners</h2>
+            <p>You serve business owners who are building something real — and you've noticed they're drowning in operational chaos that's not your area.</p>
+
+            <ul class="partner-types">
+                <li>Bookkeepers and accountants</li>
+                <li>Fractional CFOs</li>
+                <li>Brand designers and creative agencies</li>
+                <li>Business attorneys</li>
+                <li>HR consultants</li>
+                <li>Marketing strategists</li>
+                <li>Business coaches (who don't do ops)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>How it works</h2>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>You spot the fit</h3>
+                        <p>A client mentions operational pain — things slipping, tools not working, holding everything in their head. That's our signal.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>You make the intro</h3>
+                        <p>Email us at <a href="mailto:hello@pixique.com" style="color: var(--color-accent);">hello@pixique.com</a> with your client CC'd, or share this page and let them reach out directly.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>We take it from there</h3>
+                        <p>We'll respond within 48 hours, assess fit, and handle the engagement. You stay in the loop but don't do any work.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>You get paid</h3>
+                        <p>10% referral fee paid within 30 days of project start. $1,500–$2,000 per closed deal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>What we tell them</h2>
+            <p>When a client comes to us through you, we let them know you made the introduction. It reflects well on you — you're the person who connects them with real solutions, not just advice.</p>
+            <p>And since we exit after the sprint, there's no ongoing relationship that competes with yours. We reset the ops, then we're gone.</p>
+        </section>
+
+        <div class="cta-box">
+            <h2>Want to partner?</h2>
+            <p>Send us a quick email introducing yourself. We'll respond with everything you need to start referring clients.</p>
+            <a href="mailto:hello@pixique.com?subject=Partnership Inquiry">Get in Touch</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-logo">Pixique</span>
+            <span class="footer-text">© 2025 Pixique LLC. All rights reserved.</span>
+        </div>
+    </footer>
+
+</body>
+</html>
