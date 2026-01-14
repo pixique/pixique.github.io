@@ -1,1069 +1,1287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pixique — 10-Day Creative Operations Rescue</title>
-  <meta name="description" content="10-day forensic audit for creative teams in crisis. We diagnose what's broken, stop the chaos, and deliver a 90-day recovery roadmap. Starts in 48 hours." />
-  
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://pixique.com/" />
-  <meta property="og:title" content="Pixique — 10-Day Creative Operations Rescue" />
-  <meta property="og:description" content="10-day forensic audit for creative teams in crisis. Starts in 48 hours." />
-  <meta property="og:image" content="https://pixique.com/og-image.jpg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixique — Operational Excellence for Growing Businesses</title>
+    <meta name="description" content="High-touch operational sprints for growing businesses. We come in, fix what's broken, and leave you with systems that work — without us. 3-4 weeks. $15-20K.">
 
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:title" content="Pixique — 10-Day Creative Operations Rescue" />
-  <meta property="twitter:description" content="10-day forensic audit for creative teams in crisis." />
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Pixique",
-    "description": "Creative Operations Rescue and System Installation",
-    "url": "https://pixique.com",
-    "email": "hello@pixique.com",
-    "priceRange": "$25000-$27000",
-    "areaServed": "Worldwide",
-    "serviceType": ["Creative Operations Rescue", "Production System Design", "Campaign Crisis Recovery"]
-  }
-  </script>
-  
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230d4f3c'/%3E%3Ctext x='50' y='72' font-family='Georgia,serif' font-size='65' fill='white' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E" />
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY_HERE"></script>
-  
-  <style>
-    :root {
-      --ink: #1a1a1a;
-      --soft: #4a4a4a;
-      --muted: #7a7a7a;
-      --light: #a0a0a0;
-      --bg: #faf9f7;
-      --cream: #f5f3ef;
-      --forest: #0d4f3c;
-      --forest-light: #1a6b52;
-      --forest-pale: #e8f0ed;
-      --amber: #d4850d;
-      --amber-pale: #fef8f0;
-      --radius: 4px;
-      --shadow: 0 1px 3px rgba(0,0,0,0.06);
-      --shadow-lg: 0 8px 30px rgba(0,0,0,0.06);
-    }
-    
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    
-    body {
-      font-family: 'DM Sans', -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.7;
-      font-size: 17px;
-      -webkit-font-smoothing: antialiased;
-    }
-    
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
-    .container--narrow { max-width: 800px; }
-    
-    /* Header */
-    header {
-      padding: 20px 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(250,249,247,0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,0.04);
-    }
-    
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    
-    .logo {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 22px;
-      letter-spacing: 0.01em;
-      color: var(--forest);
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      align-items: center;
-    }
-    
-    .nav-links a {
-      text-decoration: none;
-      color: var(--soft);
-      font-size: 15px;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    
-    .nav-links a:hover { color: var(--forest); }
-    
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 28px;
-      border-radius: var(--radius);
-      font-weight: 600;
-      font-size: 15px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .btn-primary {
-      background: var(--forest);
-      color: #fff;
-    }
-    
-    .btn-primary:hover {
-      background: var(--forest-light);
-    }
-    
-    .btn-secondary {
-      background: transparent;
-      color: var(--forest);
-      border: 1.5px solid var(--forest);
-    }
-    
-    .btn-secondary:hover {
-      background: var(--forest);
-      color: #fff;
-    }
-    
-    .btn-ghost {
-      background: transparent;
-      color: var(--soft);
-      padding: 14px 20px;
-    }
-    
-    .btn-ghost:hover {
-      color: var(--forest);
-    }
-    
-    .btn-amber {
-      background: var(--amber);
-      color: #fff;
-    }
-    
-    .btn-amber:hover {
-      background: #c27a0c;
-    }
-    
-    /* Hero */
-    .hero {
-      padding: 160px 0 100px;
-    }
-    
-    .hero-content {
-      max-width: 720px;
-    }
-    
-    .eyebrow {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 24px;
-    }
-    
-    h1 {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: clamp(40px, 5vw, 56px);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      font-weight: 400;
-      margin-bottom: 24px;
-      color: var(--ink);
-    }
-    
-    .hero-lead {
-      font-size: 19px;
-      color: var(--soft);
-      line-height: 1.75;
-      margin-bottom: 40px;
-    }
-    
-    .hero-ctas {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    
-    .hero-speed {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 15px;
-      color: var(--amber);
-      font-weight: 600;
-      margin-top: 20px;
-    }
-    
-    .fit-box {
-      margin-top: 28px;
-      padding: 18px 20px;
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      font-size: 15px;
-      color: var(--soft);
-    }
-    
-    .fit-box p {
-      margin: 0;
-    }
-    
-    .fit-box p + p {
-      margin-top: 8px;
-    }
-    
-    .fit-box strong {
-      color: var(--ink);
-    }
-    
-    /* Sections */
-    section { padding: 100px 0; }
-    
-    .section-label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--forest);
-      margin-bottom: 16px;
-    }
-    
-    h2 {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: clamp(32px, 4vw, 42px);
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-    
-    .section-lead {
-      font-size: 18px;
-      color: var(--soft);
-      line-height: 1.75;
-      max-width: 600px;
-    }
-    
-    /* Problem Section */
-    .problem {
-      background: var(--cream);
-    }
-    
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-    
-    .problem-list {
-      list-style: none;
-      margin-top: 40px;
-    }
-    
-    .problem-list li {
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      font-size: 16px;
-      color: var(--soft);
-      padding-left: 24px;
-      position: relative;
-    }
-    
-    .problem-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 24px;
-      width: 8px;
-      height: 8px;
-      background: var(--amber);
-      border-radius: 50%;
-    }
-    
-    .cost-box {
-      background: #fff;
-      padding: 40px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-lg);
-    }
-    
-    .cost-box h3 {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 24px;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-    
-    .cost-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      font-size: 15px;
-    }
-    
-    .cost-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-    
-    .cost-item span:first-child {
-      color: var(--soft);
-    }
-    
-    .cost-item span:last-child {
-      font-weight: 600;
-      color: var(--amber);
-    }
-    
-    .cost-total {
-      margin-top: 24px;
-      padding-top: 24px;
-      border-top: 2px solid var(--ink);
-      display: flex;
-      justify-content: space-between;
-      font-size: 18px;
-      font-weight: 600;
-    }
-    
-    /* Proof Section */
-    .proof {
-      background: var(--forest);
-      color: #fff;
-    }
-    
-    .proof h2 { color: #fff; }
-    .proof .section-lead { color: rgba(255,255,255,0.7); }
-    
-    .proof-intro {
-      max-width: 600px;
-      margin-bottom: 64px;
-    }
-    
-    .proof-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-      margin-bottom: 64px;
-    }
-    
-    .proof-stat {
-      text-align: center;
-    }
-    
-    .proof-stat-number {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 48px;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-    
-    .proof-stat-label {
-      font-size: 14px;
-      color: rgba(255,255,255,0.6);
-    }
-    
-    .proof-context {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 40px;
-      background: rgba(255,255,255,0.05);
-      border-radius: var(--radius);
-    }
-    
-    .proof-context p {
-      font-size: 17px;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.75;
-    }
-    
-    /* Rescue Section */
-    .rescue {
-      background: var(--amber-pale);
-    }
-    
-    .rescue-intro {
-      max-width: 700px;
-      margin: 0 auto 64px;
-      text-align: center;
-    }
-    
-    .rescue-intro .section-label {
-      color: var(--amber);
-    }
-    
-    .rescue-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-bottom: 48px;
-    }
-    
-    .rescue-card {
-      background: #fff;
-      padding: 32px;
-      border-radius: var(--radius);
-    }
-    
-    .rescue-card h4 {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 20px;
-      font-weight: 400;
-      margin-bottom: 12px;
-    }
-    
-    .rescue-card ul {
-      list-style: none;
-    }
-    
-    .rescue-card li {
-      font-size: 15px;
-      color: var(--soft);
-      padding: 8px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-    
-    .rescue-card li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--amber);
-      font-weight: 600;
-    }
-    
-    .rescue-pricing {
-      background: #fff;
-      padding: 48px;
-      border-radius: var(--radius);
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-      border: 2px solid var(--amber);
-    }
-    
-    .rescue-pricing-amount {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 56px;
-      color: var(--amber);
-      margin-bottom: 16px;
-    }
-    
-    .rescue-pricing-terms {
-      font-size: 16px;
-      color: var(--soft);
-      margin-bottom: 32px;
-    }
-    
-    .rescue-pricing-speed {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--amber-pale);
-      padding: 12px 24px;
-      border-radius: 24px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--amber);
-      margin-top: 24px;
-    }
-    
-    .start-steps {
-      margin-top: 18px;
-      text-align: left;
-      font-size: 14px;
-      color: var(--soft);
-      display: grid;
-      gap: 10px;
-    }
-    
-    .start-steps strong {
-      color: var(--ink);
-    }
-    
-    /* Full System Section */
-    .full-system {
-      background: var(--cream);
-    }
-    
-    .full-system-intro {
-      max-width: 700px;
-      margin: 0 auto 64px;
-      text-align: center;
-    }
-    
-    .module-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-bottom: 48px;
-    }
-    
-    .module-card {
-      background: #fff;
-      padding: 32px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(0,0,0,0.04);
-    }
-    
-    .module-number {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--forest);
-      letter-spacing: 0.05em;
-      margin-bottom: 12px;
-    }
-    
-    .module-card h4 {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 20px;
-      font-weight: 400;
-      margin-bottom: 12px;
-    }
-    
-    .module-card p {
-      font-size: 15px;
-      color: var(--soft);
-      line-height: 1.65;
-    }
-    
-    .full-system-pricing {
-      background: #fff;
-      padding: 48px;
-      border-radius: var(--radius);
-      max-width: 700px;
-      margin: 0 auto;
-      border: 2px solid var(--forest);
-    }
-    
-    .full-system-pricing h3 {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 28px;
-      font-weight: 400;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-    
-    .full-system-pricing-amount {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 48px;
-      color: var(--forest);
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    
-    .full-system-pricing-desc {
-      font-size: 16px;
-      color: var(--soft);
-      line-height: 1.7;
-      margin-bottom: 28px;
-      text-align: center;
-    }
-    
-    .full-system-includes {
-      background: var(--forest-pale);
-      padding: 24px;
-      border-radius: var(--radius);
-      margin-bottom: 28px;
-    }
-    
-    .full-system-includes h4 {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--forest);
-      margin-bottom: 12px;
-    }
-    
-    .full-system-includes ul {
-      list-style: none;
-    }
-    
-    .full-system-includes li {
-      font-size: 15px;
-      color: var(--soft);
-      padding: 6px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-    
-    .full-system-includes li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--forest);
-    }
-    
-    .full-system-terms {
-      font-size: 14px;
-      color: var(--muted);
-      text-align: center;
-      margin-top: 20px;
-    }
-    
-    /* Contact */
-    .contact {
-      background: var(--ink);
-      color: #fff;
-    }
-    
-    .contact h2 { color: #fff; }
-    .contact .section-lead { color: rgba(255,255,255,0.6); }
-    
-    .contact-intro {
-      max-width: 560px;
-      margin: 0 auto 48px;
-      text-align: center;
-    }
-    
-    .contact-options {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .contact-card {
-      background: rgba(255,255,255,0.04);
-      padding: 40px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.1);
-      text-align: center;
-    }
-    
-    .contact-card h3 {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 24px;
-      color: #fff;
-      margin-bottom: 12px;
-    }
-    
-    .contact-card p {
-      font-size: 15px;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 28px;
-    }
-    
-    /* Footer */
-    footer {
-      padding: 40px 0;
-      text-align: center;
-      background: var(--cream);
-    }
-    
-    .footer-logo {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 20px;
-      color: var(--forest);
-      margin-bottom: 8px;
-    }
-    
-    footer p {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-    
-    footer a {
-      color: var(--forest);
-      text-decoration: none;
-    }
-    
-    footer a:hover {
-      text-decoration: underline;
-    }
-    
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .problem-grid,
-      .rescue-grid,
-      .contact-options {
-        grid-template-columns: 1fr;
-      }
-      
-      .module-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      
-      .proof-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      
-      .hero { padding: 130px 0 80px; }
-      
-      h1 { font-size: 34px; }
-      
-      section { padding: 72px 0; }
-      
-      .module-grid,
-      .proof-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pixique.com/">
+    <meta property="og:title" content="Pixique — Operational Excellence for Growing Businesses">
+    <meta property="og:description" content="High-touch operational sprints for growing businesses. We diagnose the chaos, rebuild your operations, and hand you back a business that runs cleaner.">
+    <meta property="og:image" content="https://pixique.com/og-image.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Pixique — We make your business run like it should have all along.">
+    <meta property="twitter:description" content="High-touch operational sprints for growing businesses. 3-4 weeks. Clean exit.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Pixique",
+        "description": "Operational sprints for growing service businesses",
+        "url": "https://pixique.com",
+        "email": "hello@pixique.com",
+        "priceRange": "$15,000-$20,000",
+        "areaServed": "Worldwide",
+        "serviceType": ["Operational Audit", "Workflow Rebuild", "Systems Design", "Process Documentation"]
+    }
+    </script>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A1918'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='55' fill='%23FAF8F5' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-cream: #FAF8F5;
+            --color-warm-white: #FFFEFB;
+            --color-ink: #1A1918;
+            --color-ink-soft: #3D3B39;
+            --color-ink-muted: #6B6866;
+            --color-taupe: #C4BAB0;
+            --color-taupe-light: #E8E4DF;
+            --color-accent: #8B7355;
+            --color-accent-soft: #A69280;
+            --color-accent-pale: #F5F0EB;
+            --color-sage: #7A8B7A;
+            --color-sage-pale: #F0F3F0;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.08);
+            --radius: 4px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--color-ink);
+            background-color: var(--color-cream);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Utility */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .container--narrow {
+            max-width: 800px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 400;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5.5vw, 4rem);
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(1.875rem, 4vw, 2.75rem);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            line-height: 1.3;
+        }
+
+        p {
+            color: var(--color-ink-soft);
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 248, 245, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.625rem;
+            font-weight: 500;
+            color: var(--color-ink);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--color-ink-muted);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--color-ink);
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background: var(--color-ink);
+            color: var(--color-warm-white) !important;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--color-accent);
+            color: var(--color-warm-white) !important;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--color-ink);
+            color: var(--color-warm-white);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-ink);
+            border: 1px solid var(--color-ink);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-ink);
+            color: var(--color-warm-white);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--color-ink-muted);
+            padding: 18px 24px;
+        }
+
+        .btn-ghost:hover {
+            color: var(--color-ink);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 140px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 60%;
+            height: 140%;
+            background: radial-gradient(ellipse at center, var(--color-taupe-light) 0%, transparent 70%);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            margin-bottom: 28px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--color-accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-ink-muted);
+            max-width: 560px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .hero-fit {
+            margin-top: 48px;
+            padding: 24px 28px;
+            background: var(--color-warm-white);
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            max-width: 520px;
+        }
+
+        .hero-fit p {
+            font-size: 15px;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .hero-fit p + p {
+            margin-top: 10px;
+        }
+
+        .hero-fit strong {
+            color: var(--color-ink);
+            font-weight: 500;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 120px 0;
+        }
+
+        .section-header {
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            margin-bottom: 20px;
+        }
+
+        .section-lead {
+            font-size: 1.125rem;
+            color: var(--color-ink-muted);
+            max-width: 600px;
+            line-height: 1.75;
+        }
+
+        /* Problem Section */
+        .problem {
+            background: var(--color-warm-white);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .problem-list {
+            list-style: none;
+            margin-top: 40px;
+        }
+
+        .problem-list li {
+            padding: 18px 0;
+            border-bottom: 1px solid var(--color-taupe-light);
+            color: var(--color-ink-soft);
+            font-size: 1rem;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .problem-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 26px;
+            width: 8px;
+            height: 8px;
+            background: var(--color-accent);
+            border-radius: 50%;
+        }
+
+        .problem-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Cost Box */
+        .cost-box {
+            background: var(--color-cream);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cost-box h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 28px;
+            color: var(--color-ink);
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--color-taupe-light);
+            font-size: 15px;
+        }
+
+        .cost-item:last-child {
+            border-bottom: none;
+        }
+
+        .cost-item span:first-child {
+            color: var(--color-ink-soft);
+        }
+
+        .cost-item span:last-child {
+            font-weight: 500;
+            color: var(--color-accent);
+        }
+
+        .cost-total {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 2px solid var(--color-ink);
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1rem;
+        }
+
+        .cost-total span:first-child {
+            font-weight: 500;
+            color: var(--color-ink);
+        }
+
+        .cost-total span:last-child {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            color: var(--color-ink);
+        }
+
+        /* Solution Section */
+        .solution {
+            background: var(--color-cream);
+            text-align: center;
+        }
+
+        .solution-content {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .solution h2 {
+            margin-bottom: 24px;
+        }
+
+        .solution p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* Sprint Section */
+        .sprint {
+            background: var(--color-ink);
+            color: var(--color-warm-white);
+        }
+
+        .sprint .section-label {
+            color: var(--color-accent-soft);
+        }
+
+        .sprint h2 {
+            color: var(--color-warm-white);
+            margin-bottom: 20px;
+        }
+
+        .sprint-header {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
+            padding-bottom: 80px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .sprint-intro p {
+            color: var(--color-taupe);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .sprint-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sprint-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .sprint-detail-label {
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-accent-soft);
+        }
+
+        .sprint-detail-value {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            color: var(--color-warm-white);
+        }
+
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .deliverable {
+            padding: 36px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+        }
+
+        .deliverable:hover {
+            background: rgba(255,255,255,0.04);
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .deliverable-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .deliverable h3 {
+            color: var(--color-warm-white);
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .deliverable p {
+            color: var(--color-taupe);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: var(--color-accent-pale);
+        }
+
+        .pricing-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pricing-box {
+            background: var(--color-warm-white);
+            padding: 56px 48px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .pricing-amount {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            color: var(--color-ink);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .pricing-terms {
+            font-size: 1.05rem;
+            color: var(--color-ink-muted);
+            margin-bottom: 36px;
+        }
+
+        .pricing-includes {
+            background: var(--color-cream);
+            padding: 28px;
+            border-radius: var(--radius);
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .pricing-includes h4 {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 16px;
+        }
+
+        .pricing-includes ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 24px;
+        }
+
+        .pricing-includes li {
+            font-size: 14px;
+            color: var(--color-ink-soft);
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .pricing-includes li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        .pricing-guarantee {
+            margin-top: 28px;
+            padding: 20px 24px;
+            background: var(--color-sage-pale);
+            border-radius: var(--radius);
+            font-size: 14px;
+            color: var(--color-ink-soft);
+            line-height: 1.7;
+        }
+
+        .pricing-guarantee strong {
+            color: var(--color-ink);
+            font-weight: 500;
+        }
+
+        /* Boundaries Section */
+        .boundaries {
+            background: var(--color-warm-white);
+        }
+
+        .boundaries-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .boundaries h2 {
+            margin-bottom: 24px;
+        }
+
+        .boundaries-intro p {
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .boundaries-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 32px;
+        }
+
+        .boundaries-list li {
+            color: var(--color-ink-muted);
+            font-size: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .boundaries-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--color-taupe);
+        }
+
+        .boundaries-quote {
+            padding: 48px;
+            background: var(--color-cream);
+            border-radius: var(--radius);
+        }
+
+        .boundaries-quote blockquote {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-style: italic;
+            color: var(--color-ink);
+            line-height: 1.4;
+        }
+
+        /* Fit Section */
+        .fit {
+            background: var(--color-cream);
+        }
+
+        .fit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+        }
+
+        .fit h2 {
+            margin-bottom: 24px;
+        }
+
+        .fit-column h3 {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-ink-muted);
+            margin-bottom: 24px;
+        }
+
+        .fit-list {
+            list-style: none;
+        }
+
+        .fit-list li {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--color-taupe-light);
+            color: var(--color-ink-soft);
+            font-size: 1rem;
+        }
+
+        .fit-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(to bottom, var(--color-warm-white), var(--color-cream));
+        }
+
+        .about-content {
+            max-width: 800px;
+        }
+
+        .about h2 {
+            margin-bottom: 36px;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-credentials {
+            display: flex;
+            gap: 56px;
+            margin-top: 56px;
+            padding-top: 48px;
+            border-top: 1px solid var(--color-taupe-light);
+        }
+
+        .credential {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .credential-value {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--color-accent);
+            line-height: 1;
+        }
+
+        .credential-label {
+            font-size: 13px;
+            color: var(--color-ink-muted);
+            margin-top: 8px;
+            letter-spacing: 0.02em;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--color-cream);
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            padding: 28px;
+            background: var(--color-warm-white);
+            border-radius: var(--radius);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .faq-item h4 {
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--color-ink);
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: var(--color-ink-muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--color-ink);
+            color: var(--color-warm-white);
+            text-align: center;
+            padding: 140px 0;
+        }
+
+        .contact h2 {
+            color: var(--color-warm-white);
+            margin-bottom: 20px;
+        }
+
+        .contact > .container > p {
+            color: var(--color-taupe);
+            font-size: 1.15rem;
+            margin-bottom: 48px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact .btn-primary {
+            background: var(--color-warm-white);
+            color: var(--color-ink);
+        }
+
+        .contact .btn-primary:hover {
+            background: var(--color-accent);
+            color: var(--color-warm-white);
+        }
+
+        .contact-email {
+            margin-top: 40px;
+            font-size: 15px;
+            color: var(--color-taupe);
+        }
+
+        .contact-email a {
+            color: var(--color-warm-white);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .contact-email a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-ink);
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--color-warm-white);
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--color-ink-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--color-ink-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-warm-white);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .problem-grid,
+            .sprint-header,
+            .boundaries-grid,
+            .fit-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-credentials {
+                flex-wrap: wrap;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 120px 0 80px;
+                min-height: auto;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .boundaries-list,
+            .pricing-includes ul {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .hero-ctas .btn {
+                width: 100%;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .footer-links {
+                order: -1;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            opacity: 0;
+            animation: fadeUp 0.7s ease-out forwards;
+        }
+
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+        .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+        .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+    </style>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <nav class="nav">
-      <div class="logo">Pixique</div>
-      <div class="nav-links">
-        <a href="#rescue">Rescue</a>
-        <a href="#proof">Proof</a>
-        <a href="#full-system">Full System</a>
-        <a href="#contact">Start</a>
-      </div>
-      <a href="https://book.stripe.com/bJebJ0gSDc0IbK74HweQM04" class="btn btn-amber">Secure a Rescue Slot</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="eyebrow">Emergency Intervention</div>
-      
-      <h1>10-day creative operations rescue for enterprise teams in crisis.</h1>
-      
-      <p class="hero-lead">
-        We diagnose what's actually broken in your creative operations, identify the root cause and decision logjam, and deliver a 90-day recovery roadmap—or a kill/continue decision if the program can't be saved.
-      </p>
-      
-      <div class="hero-ctas">
-        <a href="https://book.stripe.com/bJebJ0gSDc0IbK74HweQM04" class="btn btn-amber">Secure a Rescue Slot — $25K</a>
-        <a href="#full-system" class="btn btn-ghost">See Full System Install →</a>
-      </div>
-      
-      <div class="hero-speed">
-        <span>⚡</span>
-        <span>Kickoff within 48 hours</span>
-      </div>
-      
-      <div class="fit-box">
-        <p><strong>For:</strong> Enterprise teams shipping 50+ campaigns/year with budget authority and decision-makers available for interviews.</p>
-        <p><strong>Not for:</strong> Teams without executive sponsorship + stakeholder access, or anyone looking for a tool rollout without operational change.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="problem">
-  <div class="container">
-    <div class="problem-grid">
-      <div>
-        <div class="section-label">The Problem</div>
-        <h2>Creative chaos is expensive.</h2>
-        <p class="section-lead">
-          You're running dozens of campaigns across distributed teams. Somewhere along the way, the wheels came off. Now you're firefighting instead of leading.
-        </p>
-        
-        <ul class="problem-list">
-          <li>Projects live in email. Status lives in someone's head.</li>
-          <li>You tried Asana (or Monday, or Wrike). It didn't stick.</li>
-          <li>Meetings run 60-90 minutes. You have 12 of them this week.</li>
-          <li>Timelines slip and no one knows until it's too late.</li>
-          <li>Handoffs between teams create confusion, not clarity.</li>
-          <li>Your team is burning out. Trust is eroding.</li>
-        </ul>
-      </div>
-      
-      <div class="cost-box">
-        <h3>What this costs you</h3>
-        <div class="cost-item">
-          <span>Missed deadlines (rework, rush fees)</span>
-          <span>$15-30K/mo</span>
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">Pixique</a>
+            <nav>
+                <a href="#approach">Approach</a>
+                <a href="#sprint">The Sprint</a>
+                <a href="#about">About</a>
+                <a href="start.html" class="nav-cta">Start a Conversation</a>
+            </nav>
         </div>
-        <div class="cost-item">
-          <span>Wasted meeting time (12 hrs/wk × team)</span>
-          <span>$8-15K/mo</span>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="section-label">Operational Excellence</p>
+                <h1>We make your business run like it <em>should have</em> all along.</h1>
+                <p class="hero-subtitle">High-touch operational sprints for growing businesses. We come in, fix what's broken, and leave you with systems that work — without us.</p>
+                <div class="hero-ctas">
+                    <a href="start.html" class="btn btn-primary">Start a Conversation</a>
+                    <a href="#sprint" class="btn btn-ghost">See How It Works →</a>
+                </div>
+                <div class="hero-fit">
+                    <p><strong>For:</strong> Service businesses doing $1M–$10M who've outgrown duct-tape operations but don't need a full-time ops hire.</p>
+                    <p><strong>Not for:</strong> Teams looking for ongoing support, Slack access, or someone to manage day-to-day.</p>
+                </div>
+            </div>
         </div>
-        <div class="cost-item">
-          <span>Delayed campaigns (lost media value)</span>
-          <span>$20-50K/mo</span>
+    </section>
+
+    <section class="problem" id="approach">
+        <div class="container">
+            <div class="problem-grid">
+                <div>
+                    <p class="section-label">The Reality</p>
+                    <h2>You built something real. But the back-end became a mess.</h2>
+                    <p class="section-lead">Things slip. Handoffs break. You're holding too much in your head. You're spending your best hours managing chaos instead of growing.</p>
+                    <ul class="problem-list">
+                        <li>Workflows that only exist in your memory</li>
+                        <li>Handoffs that fail silently</li>
+                        <li>Tools that don't talk to each other</li>
+                        <li>A team waiting on you for every decision</li>
+                        <li>The constant feeling of things slipping</li>
+                    </ul>
+                </div>
+                <div class="cost-box">
+                    <h3>What operational chaos actually costs</h3>
+                    <div class="cost-item">
+                        <span>Missed deadlines & rework</span>
+                        <span>$5–15K/mo</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Wasted meeting time</span>
+                        <span>$3–8K/mo</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Delayed projects & lost revenue</span>
+                        <span>$10–25K/mo</span>
+                    </div>
+                    <div class="cost-item">
+                        <span>Employee burnout & turnover</span>
+                        <span>$5–15K/mo</span>
+                    </div>
+                    <div class="cost-total">
+                        <span>Total operational drag</span>
+                        <span>$23–63K/mo</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="cost-item">
-          <span>Employee turnover (burnout)</span>
-          <span>$10-25K/mo</span>
+    </section>
+
+    <section class="solution">
+        <div class="container">
+            <div class="solution-content">
+                <p class="section-label">The Solution</p>
+                <h2>You don't need another tool. You need someone to fix it.</h2>
+                <p>Someone to come in, see the whole picture, rebuild what's broken, and leave you with something that actually works — without you holding it together.</p>
+            </div>
         </div>
-        <div class="cost-total">
-          <span>Total operational drag</span>
-          <span>$50-120K/mo</span>
+    </section>
+
+    <section class="sprint" id="sprint">
+        <div class="container">
+            <div class="sprint-header">
+                <div class="sprint-intro">
+                    <p class="section-label">The Offering</p>
+                    <h2>The Signature Sprint</h2>
+                    <p>A 3–4 week engagement where we diagnose the chaos, rebuild your core operations, and hand you back a business that runs cleaner. Then we leave.</p>
+                </div>
+                <div class="sprint-details">
+                    <div class="sprint-detail">
+                        <span class="sprint-detail-label">Duration</span>
+                        <span class="sprint-detail-value">3–4 Weeks</span>
+                    </div>
+                    <div class="sprint-detail">
+                        <span class="sprint-detail-label">Investment</span>
+                        <span class="sprint-detail-value">$15,000 – $20,000</span>
+                    </div>
+                    <div class="sprint-detail">
+                        <span class="sprint-detail-label">Communication</span>
+                        <span class="sprint-detail-value">Fully Async</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="deliverables-grid">
+                <div class="deliverable">
+                    <div class="deliverable-number">01</div>
+                    <h3>Operations Diagnosis</h3>
+                    <p>A clear-eyed assessment of where you're leaking time, money, and energy. Not a 50-page report — an actionable map with priorities ranked by impact.</p>
+                </div>
+                <div class="deliverable">
+                    <div class="deliverable-number">02</div>
+                    <h3>Workflow Architecture</h3>
+                    <p>Your operations redesigned — end-to-end workflows, clear ownership, standardized handoffs. A system built for how your business actually runs.</p>
+                </div>
+                <div class="deliverable">
+                    <div class="deliverable-number">03</div>
+                    <h3>System Build</h3>
+                    <p>We personally implement the 1–2 highest-leverage systems. Built for durability. Documented for adoption. Good beats perfect.</p>
+                </div>
+                <div class="deliverable">
+                    <div class="deliverable-number">04</div>
+                    <h3>Handoff + Exit</h3>
+                    <p>Loom walkthroughs of every system. A 60-day stabilization plan. Clear boundaries on what we fixed and what we didn't. Then we're gone.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="rescue" class="rescue">
-  <div class="container">
-    <div class="rescue-intro">
-      <div class="section-label">Program Rescue</div>
-      <h2>10 days. Root causes. Recovery roadmap.</h2>
-      <p class="section-lead">
-        Not surface-level consulting. A forensic audit that identifies the real bottleneck, decision logjam, and system failure—then gives you the exact fix sequence.
-      </p>
-    </div>
-    
-    <div class="rescue-grid">
-      <div class="rescue-card">
-        <h4>What we do</h4>
-        <ul>
-          <li>Stakeholder interviews (leadership + team)</li>
-          <li>Process mapping & bottleneck analysis</li>
-          <li>Tool stack audit</li>
-          <li>Vendor performance assessment</li>
-          <li>Root cause analysis (not symptoms)</li>
-          <li>Decision dynamics mapping</li>
-        </ul>
-      </div>
-      
-      <div class="rescue-card">
-        <h4>What you get</h4>
-        <ul>
-          <li>Executive readout deck with findings</li>
-          <li>90-day recovery roadmap (prioritized)</li>
-          <li>Week 1 quick-win recommendations</li>
-          <li>Tool configuration plan</li>
-          <li>Kill/continue decision (if appropriate)</li>
-          <li>Zoom presentation + written deliverables</li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="rescue-pricing">
-      <div class="rescue-pricing-amount">$25,000</div>
-      <p class="rescue-pricing-terms">
-        Flat fee. 10 business days. Paid in full before work begins.
-      </p>
-      <a href="https://book.stripe.com/bJebJ0gSDc0IbK74HweQM04" class="btn btn-amber" style="width:100%">Secure a Rescue Slot</a>
-      <div class="rescue-pricing-speed">
-        <span>⚡</span>
-        <span>Kickoff within 48 hours</span>
-      </div>
-      <p style="margin-top:24px;font-size:14px;color:var(--soft);text-align:center;">
-        <strong>Clarity guarantee:</strong> If you don't leave with a clear root-cause diagnosis and prioritized plan, we extend 3 days at no cost. Extension applies to analysis + documentation only (no implementation).
-      </p>
-      
-      <div class="start-steps">
-        <div><strong>1)</strong> Payment + kickoff scheduled (within 48 hours)</div>
-        <div><strong>2)</strong> Interviews + artifact review (days 1–6)</div>
-        <div><strong>3)</strong> Exec readout + 90-day plan (days 7–10)</div>
-      </div>
-    </div>
-    
-    <div style="max-width:700px;margin:64px auto 0;padding:32px;background:#fff;border-radius:var(--radius);border-left:4px solid var(--amber);">
-      <p style="font-size:15px;color:var(--soft);line-height:1.7;margin-bottom:12px;">
-        <strong style="color:var(--ink);">Recent rescue:</strong> Fortune 500 retail organization with stalled workflow rollout and high team attrition. Diagnosed in 8 days: decision authority was fragmented across multiple stakeholders with no tiebreaker protocol. Recovery plan reduced approval cycles from 10+ days to 3.
-      </p>
-      <p style="font-size:13px;color:var(--muted);">
-        — Anonymized client example
-      </p>
-    </div>
-    
-    <div style="max-width:700px;margin:48px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-      <div style="padding:20px;background:#fff;border-radius:var(--radius);border:1px solid rgba(0,0,0,0.06);">
-        <p style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px;">Do you need access to our tools?</p>
-        <p style="font-size:14px;color:var(--soft);margin:0;">Read-only is fine. We can work with screenshots if tool access isn't available.</p>
-      </div>
-      <div style="padding:20px;background:#fff;border-radius:var(--radius);border:1px solid rgba(0,0,0,0.06);">
-        <p style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px;">How much time will we spend?</p>
-        <p style="font-size:14px;color:var(--soft);margin:0;">~3–5 hrs exec time, ~6–10 hrs team time total across the 10 days.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-content">
+                <p class="section-label">Investment</p>
+                <div class="pricing-box">
+                    <div class="pricing-amount">$15,000 – $20,000</div>
+                    <p class="pricing-terms">Flat fee. 3–4 weeks. Paid before work begins.</p>
 
-<section id="proof" class="proof">
-  <div class="container">
-    <div class="proof-intro">
-      <div class="section-label" style="color:rgba(255,255,255,0.5)">Track Record</div>
-      <h2>This system works.</h2>
-      <p class="section-lead">
-        Pixique's founder spent four years managing creative operations for a Fortune 100 retail media division, running 140+ annual campaigns with a 97.6% on-time delivery rate across high-profile brand partnerships.
-      </p>
-    </div>
-    
-    <div class="proof-grid">
-      <div class="proof-stat">
-        <div class="proof-stat-number">97.6%</div>
-        <div class="proof-stat-label">On-time delivery</div>
-      </div>
-      <div class="proof-stat">
-        <div class="proof-stat-number">140+</div>
-        <div class="proof-stat-label">Campaigns per year</div>
-      </div>
-      <div class="proof-stat">
-        <div class="proof-stat-number">4</div>
-        <div class="proof-stat-label">Time zones coordinated</div>
-      </div>
-      <div class="proof-stat">
-        <div class="proof-stat-number">$13M+</div>
-        <div class="proof-stat-label">Media spend managed</div>
-      </div>
-    </div>
-    
-    <div class="proof-context">
-      <p style="font-style:italic;font-size:20px;line-height:1.6;">
-        "Never missed a deadline across 140+ programs annually for our highest-profile partnerships. The system just worked."
-      </p>
-      <p style="margin-top:16px;font-size:14px;color:rgba(255,255,255,0.5);">
-        — Senior Stakeholder, Fortune 100 Retail Media Division
-      </p>
-    </div>
-    
-    <div class="proof-context" style="margin-top:24px;">
-      <p>
-        We've worked inside both worlds. At one Fortune 500, we watched teams drown in email chains and 90-minute status meetings while a half-implemented project management tool gathered dust. At another, we ran 140+ campaigns annually with near-perfect delivery—because the system was airtight. Same caliber of people. Completely different outcomes. The difference was the operating system.
-      </p>
-    </div>
-  </div>
-</section>
+                    <div class="pricing-includes">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li>Operations diagnosis report</li>
+                            <li>Workflow architecture design</li>
+                            <li>1–2 system builds</li>
+                            <li>Complete documentation</li>
+                            <li>Loom walkthroughs</li>
+                            <li>60-day stabilization plan</li>
+                        </ul>
+                    </div>
 
-<section id="full-system" class="full-system">
-  <div class="container">
-    <div class="full-system-intro">
-      <div class="section-label">Full Transformation</div>
-      <h2>Want the complete system? Here's how it works.</h2>
-      <p class="section-lead">
-        If you're not in crisis—or if you want us to implement the recovery roadmap—we install the full creative operating system. Diagnostic, design, implementation, stabilization. You keep everything when we leave.
-      </p>
-    </div>
-    
-    <div class="module-grid">
-      <div class="module-card">
-        <div class="module-number">01</div>
-        <h4>Control Tower</h4>
-        <p>One person owns the whole picture. Timelines, assets, feedback loops, approvals—tracked in a single view so nothing slips.</p>
-      </div>
-      
-      <div class="module-card">
-        <div class="module-number">02</div>
-        <h4>Standard Pipeline</h4>
-        <p>Every project follows the same path: Request → Kickoff → Creative → Review → Handoff. No ambiguity. No "how do we do this again?"</p>
-      </div>
-      
-      <div class="module-card">
-        <div class="module-number">03</div>
-        <h4>Delivery Standards</h4>
-        <p>Defined timelines for every project type. Leadership knows exactly how long creative takes—and why—before work begins.</p>
-      </div>
-      
-      <div class="module-card">
-        <div class="module-number">04</div>
-        <h4>Tool Configuration</h4>
-        <p>Your existing tools (Wrike, Asana, Monday, Notion) configured to run the system. Custom views, automations, dashboards.</p>
-      </div>
-      
-      <div class="module-card">
-        <div class="module-number">05</div>
-        <h4>Decision Rules</h4>
-        <p>Who signs off. Where decisions live. What gets escalated and when. No more "I thought you were handling that."</p>
-      </div>
-      
-      <div class="module-card">
-        <div class="module-number">06</div>
-        <h4>Templates & Playbooks</h4>
-        <p>Kickoff docs, handoff checklists, brief templates, naming conventions. Everything documented so the system runs without us.</p>
-      </div>
-    </div>
-    
-    <div class="full-system-pricing">
-      <h3>Creative OS: Flagship</h3>
-      <div class="full-system-pricing-amount">$27,000/mo</div>
-      <p class="full-system-pricing-desc">
-        Complete diagnostic, design, implementation, and stabilization. You get the full system—installed in your tools, documented completely, transferred to your team.
-      </p>
-      <div class="full-system-includes">
-        <h4>Includes</h4>
-        <ul>
-          <li>Diagnostic report with cost analysis</li>
-          <li>Complete system design package</li>
-          <li>Tool configuration & automations</li>
-          <li>Templates & playbooks</li>
-          <li>Team training (recorded)</li>
-          <li>Weekly control-tower oversight</li>
-        </ul>
-      </div>
-      <a href="https://forms.gle/RPFFcjJZbVyEEyQ16" class="btn btn-primary" style="width:100%">Request SOW</a>
-      <p class="full-system-terms">6-month minimum · 2 clients at a time · Billed monthly in advance</p>
-    </div>
-  </div>
-</section>
+                    <a href="start.html" class="btn btn-primary" style="width: 100%;">Start a Conversation</a>
 
-<section id="contact" class="contact">
-  <div class="container">
-    <div class="contact-intro">
-      <div class="section-label" style="color:rgba(255,255,255,0.5)">Get Started</div>
-      <h2>Two ways to work with us.</h2>
-      <p class="section-lead">
-        Need immediate help? Book a rescue. Want the full transformation? Apply below.
-      </p>
-    </div>
-    
-    <div class="contact-options">
-      <div class="contact-card">
-        <h3>Program Rescue</h3>
-        <p>10-day forensic audit. Starts in 48 hours. $25K flat fee.</p>
-        <a href="https://book.stripe.com/bJebJ0gSDc0IbK74HweQM04" class="btn btn-amber" style="width:100%">Secure a Rescue Slot</a>
-      </div>
-      
-      <div class="contact-card">
-        <h3>Full System Install</h3>
-        <p>6-month engagement. Complete transformation. $27K/month.</p>
-        <a href="https://forms.gle/RPFFcjJZbVyEEyQ16" class="btn btn-primary" style="width:100%">Request SOW</a>
-      </div>
-    </div>
-    
-    <p style="text-align:center;margin-top:48px;font-size:15px;color:rgba(255,255,255,0.6);">
-      Questions? Email <a href="mailto:hello@pixique.com" style="color:#fff;text-decoration:underline;">hello@pixique.com</a>
-    </p>
-  </div>
-</section>
+                    <div class="pricing-guarantee">
+                        <strong>Clarity guarantee:</strong> If you don't leave with a clear diagnosis and documented systems you can actually use, we extend the engagement at no additional cost.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  <div class="container">
-    <div class="footer-logo">Pixique</div>
-    <p>Creative Operations Rescue & System Installation</p>
-    <p><a href="https://www.linkedin.com/company/pixique-llc" target="_blank">LinkedIn</a></p>
-    <p style="margin-top:12px;font-size:12px;">© 2025 Pixique LLC. All rights reserved.</p>
-  </div>
-</footer>
+    <section class="boundaries">
+        <div class="container">
+            <div class="boundaries-grid">
+                <div class="boundaries-intro">
+                    <p class="section-label">Boundaries</p>
+                    <h2>What this isn't.</h2>
+                    <p>We don't do open-ended engagements. No retainers. No Slack channels. No "quick questions." This is a defined scope with a clean ending.</p>
+                    <ul class="boundaries-list">
+                        <li>Ongoing management</li>
+                        <li>Ad-hoc availability</li>
+                        <li>Slack access</li>
+                        <li>Team coaching</li>
+                        <li>Open-ended revisions</li>
+                        <li>"While you're here..."</li>
+                    </ul>
+                </div>
+                <div class="boundaries-quote">
+                    <blockquote>"We come in. We fix it. We go."</blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fit">
+        <div class="container">
+            <div class="fit-grid">
+                <div class="fit-column">
+                    <p class="section-label">Fit</p>
+                    <h2>Is this for you?</h2>
+                    <h3>This works if you:</h3>
+                    <ul class="fit-list">
+                        <li>Have a business that's working — but running you ragged</li>
+                        <li>Know the back-end is a mess and are ready to fix it</li>
+                        <li>Trust expertise and don't need to micromanage</li>
+                        <li>Want results, not a relationship that drags on</li>
+                    </ul>
+                </div>
+                <div class="fit-column" style="padding-top: 100px;">
+                    <h3>This doesn't work if you:</h3>
+                    <ul class="fit-list">
+                        <li>Need constant reassurance or access</li>
+                        <li>Want to negotiate scope mid-project</li>
+                        <li>Expect on-demand availability</li>
+                        <li>Are looking for someone to convince you it's worth it</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <p class="section-label">About</p>
+                <h2>Built on a decade of doing this at scale.</h2>
+                <p class="about-text">Pixique is led by a former Fortune 500 program leader who spent nine years managing large-scale operations for companies like Google, Airbnb, and Walmart Connect.</p>
+                <p class="about-text">She built Pixique for businesses that have outgrown duct-tape operations but don't need — or want — a full-time ops hire. Just someone to come in, fix what's broken, and leave you with something that works.</p>
+                <div class="about-credentials">
+                    <div class="credential">
+                        <span class="credential-value">140+</span>
+                        <span class="credential-label">Campaigns managed annually</span>
+                    </div>
+                    <div class="credential">
+                        <span class="credential-value">97.6%</span>
+                        <span class="credential-label">On-time delivery rate</span>
+                    </div>
+                    <div class="credential">
+                        <span class="credential-value">9+</span>
+                        <span class="credential-label">Years at Fortune 500</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <div class="faq-header">
+                <p class="section-label">Questions</p>
+                <h2>Before you reach out</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How much of my time will this take?</h4>
+                    <p>One 60-minute onboarding call. After that, everything is async — you'll spend roughly 2–3 hours total reviewing deliverables and providing feedback.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What tools do you use?</h4>
+                    <p>Whatever you're already using. We configure your existing stack (Notion, Asana, Monday, Airtable, etc.) rather than introducing new tools.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What if we need more help after?</h4>
+                    <p>We offer optional add-ons: additional system builds ($5–10K) and a 2-week stabilization sprint ($3–5K). But the goal is to leave you self-sufficient.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How do I know if I'm ready?</h4>
+                    <p>If you're asking this question, you probably are. The businesses we work with know they have a problem — they just haven't had time to fix it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Ready to fix what's broken?</h2>
+            <p>A short form to tell us about your business. We'll respond within 48 hours if we think we can help.</p>
+            <a href="start.html" class="btn btn-primary">Start a Conversation</a>
+            <p class="contact-email">Or email directly: <a href="mailto:hello@pixique.com">hello@pixique.com</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-inner">
+            <span class="footer-logo">Pixique</span>
+            <div class="footer-links">
+                <a href="articles/what-to-fix-first.html">Articles</a>
+                <a href="partners.html">Referral Partners</a>
+                <a href="https://www.linkedin.com/company/pixique-llc" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <span class="footer-text">© 2025 Pixique LLC. All rights reserved.</span>
+        </div>
+    </footer>
 
 </body>
 </html>
