@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What to Fix First When Your Ops Are a Mess — Pixique</title>
+    <meta name="description" content="When everything feels broken, where do you start? A framework for prioritizing operational fixes based on leverage, not urgency.">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://pixique.com/articles/what-to-fix-first.html">
+    <meta property="og:title" content="What to Fix First When Your Ops Are a Mess">
+    <meta property="og:description" content="When everything feels broken, where do you start? A framework for prioritizing operational fixes based on leverage, not urgency.">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A1918'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='55' fill='%23FAF8F5' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-cream: #FAF8F5;
+            --color-warm-white: #FFFEFB;
+            --color-ink: #1A1918;
+            --color-ink-soft: #3D3B39;
+            --color-ink-muted: #6B6866;
+            --color-taupe: #C4BAB0;
+            --color-taupe-light: #E8E4DF;
+            --color-accent: #8B7355;
+            --color-accent-soft: #A69280;
+            --color-accent-pale: #F5F0EB;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+            --radius: 4px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--color-ink);
+            background-color: var(--color-cream);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            background: var(--color-cream);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .header-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.625rem;
+            font-weight: 500;
+            color: var(--color-ink);
+            text-decoration: none;
+        }
+
+        .back-link {
+            font-size: 14px;
+            color: var(--color-ink-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--color-ink);
+        }
+
+        /* Article */
+        article {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 32px 120px;
+        }
+
+        .article-meta {
+            font-size: 13px;
+            color: var(--color-ink-muted);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.25rem, 5vw, 3rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .article-intro {
+            font-size: 1.2rem;
+            color: var(--color-ink-muted);
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--color-taupe-light);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin-top: 56px;
+            margin-bottom: 20px;
+            color: var(--color-ink);
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 400;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            color: var(--color-ink);
+        }
+
+        p {
+            color: var(--color-ink-soft);
+            margin-bottom: 24px;
+        }
+
+        strong {
+            font-weight: 500;
+            color: var(--color-ink);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        ul, ol {
+            margin-bottom: 24px;
+            padding-left: 24px;
+            color: var(--color-ink-soft);
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        blockquote {
+            margin: 40px 0;
+            padding: 24px 32px;
+            background: var(--color-warm-white);
+            border-left: 3px solid var(--color-accent);
+            border-radius: var(--radius);
+            font-style: italic;
+        }
+
+        blockquote p {
+            margin: 0;
+            color: var(--color-ink);
+        }
+
+        /* CTA */
+        .article-cta {
+            margin-top: 64px;
+            padding: 40px;
+            background: var(--color-ink);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .article-cta h3 {
+            font-family: var(--font-display);
+            color: var(--color-warm-white);
+            margin: 0 0 12px 0;
+        }
+
+        .article-cta p {
+            color: var(--color-taupe);
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+
+        .article-cta a {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 16px 32px;
+            background: var(--color-warm-white);
+            color: var(--color-ink);
+            border-radius: var(--radius);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .article-cta a:hover {
+            background: var(--color-accent);
+            color: var(--color-warm-white);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-ink);
+            padding: 40px 0;
+        }
+
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--color-warm-white);
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--color-ink-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            article {
+                padding: 60px 24px 100px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">Pixique</a>
+            <a href="../index.html" class="back-link">Back to Home</a>
+        </div>
+    </header>
+
+    <article>
+        <p class="article-meta">Operations</p>
+
+        <h1>What to Fix First When Your Ops Are a Mess</h1>
+
+        <p class="article-intro">When everything feels broken, you can't fix it all at once. Here's how to figure out where to start — and why most founders get the sequence wrong.</p>
+
+        <p>You know your operations are a mess. Projects slip. Handoffs fail. You're the bottleneck for everything. Your team is burning out, and you're spending your best hours managing chaos instead of growing the business.</p>
+
+        <p>The instinct is to tackle whatever's screaming loudest. The missed deadline. The angry client. The tool that nobody uses. But firefighting isn't fixing — it's just surviving.</p>
+
+        <p>The real question is: <strong>where do you start when everything needs attention?</strong></p>
+
+        <h2>The wrong way to prioritize</h2>
+
+        <p>Most founders prioritize by urgency. Whatever exploded most recently gets fixed first. This feels productive because you're solving real problems. But it creates a pattern:</p>
+
+        <ul>
+            <li>You fix the symptom, not the cause</li>
+            <li>The same types of problems keep recurring</li>
+            <li>You never get ahead of the chaos — just keep up with it</li>
+        </ul>
+
+        <p>Urgency-based prioritization is reactive. It optimizes for putting out fires, not preventing them.</p>
+
+        <h2>The right way to prioritize</h2>
+
+        <p>Instead of urgency, prioritize by <strong>leverage</strong>. Ask: which fix will prevent the most downstream problems?</p>
+
+        <p>High-leverage fixes share three characteristics:</p>
+
+        <ol>
+            <li><strong>They affect multiple workflows.</strong> A fix to your project intake process ripples through every project. A fix to one specific client issue doesn't.</li>
+            <li><strong>They reduce owner-dependency.</strong> If you're the bottleneck, fixes that let others make decisions without you have compounding returns.</li>
+            <li><strong>They're durable.</strong> A clear decision rule lasts. A one-time workaround doesn't.</li>
+        </ol>
+
+        <h2>Where to actually start</h2>
+
+        <p>In most founder-led service businesses, the highest-leverage fixes fall into three categories. Start here, in this order:</p>
+
+        <h3>1. Decision rights</h3>
+
+        <p>Who can say yes? Who can say no? When does something need to escalate to you?</p>
+
+        <p>Most operational chaos traces back to unclear decision authority. People wait for you because they don't know if they're allowed to decide. Or they make decisions you'd override, creating rework.</p>
+
+        <blockquote>
+            <p>The fastest path to getting yourself out of the loop: write down which decisions can be made without you, and by whom.</p>
+        </blockquote>
+
+        <p>This doesn't require fancy tools or new software. It requires clarity. A simple document that says "Sarah can approve vendor invoices under $500" removes dozens of future interruptions.</p>
+
+        <h3>2. Handoff points</h3>
+
+        <p>Where does work move from one person (or phase) to another?</p>
+
+        <p>Handoffs are where things break. The brief gets lost. The context doesn't transfer. The next person doesn't know what "done" looks like.</p>
+
+        <p>For each major handoff in your business, define:</p>
+
+        <ul>
+            <li>What information must transfer</li>
+            <li>What format it should be in</li>
+            <li>Who confirms the handoff happened</li>
+        </ul>
+
+        <p>Again, this isn't about tools. You can run handoffs through Slack, email, or a shared doc. The structure matters more than the medium.</p>
+
+        <h3>3. Single sources of truth</h3>
+
+        <p>Where does accurate information live?</p>
+
+        <p>When people don't know where to find the right answer, they either guess, ask you, or use outdated information. All three create problems.</p>
+
+        <p>Pick the most frequent questions your team asks you. For each one, create a canonical location where the answer lives and always gets updated. Then train people to look there first.</p>
+
+        <p>This creates a flywheel: the more people use the single source of truth, the more they trust it, the less they interrupt you.</p>
+
+        <h2>What about tools?</h2>
+
+        <p>Notice that none of these fixes require new software. That's intentional.</p>
+
+        <p>Tools are amplifiers. They make good systems better and bad systems worse. If your underlying operations are unclear — fuzzy decision rights, broken handoffs, scattered information — a new tool will just automate the mess.</p>
+
+        <p>Fix the thinking first. Then choose tools that support it.</p>
+
+        <h2>The sequence matters</h2>
+
+        <p>You might be tempted to tackle all three at once. Don't.</p>
+
+        <p>Start with decision rights. This is usually the fastest fix and unlocks the others. Once people know what they can decide, handoffs get cleaner because they're not waiting for approval. And single sources of truth become more useful because people trust that the information is authoritative.</p>
+
+        <p>Work on one category at a time. Get it working. Then move to the next.</p>
+
+        <h2>When to get help</h2>
+
+        <p>If you can articulate what's broken and have 10-15 hours to dedicate to fixing it, you can probably do this yourself.</p>
+
+        <p>But if you're so deep in the chaos that you can't see the system clearly — or you simply don't have the time — bringing in someone external can compress months of gradual improvement into weeks.</p>
+
+        <p>The key is finding someone who'll fix the operations and leave, not someone who wants to stay forever. You don't need a fractional COO. You need a sprint to get things working, then ownership returns to you.</p>
+
+        <div class="article-cta">
+            <h3>Need help fixing what's broken?</h3>
+            <p>We run 3-4 week sprints that diagnose operational chaos and rebuild core systems. Then we exit.</p>
+            <a href="../start.html">Start a Conversation</a>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-logo">Pixique</span>
+            <span class="footer-text">© 2025 Pixique LLC. All rights reserved.</span>
+        </div>
+    </footer>
+
+</body>
+</html>
