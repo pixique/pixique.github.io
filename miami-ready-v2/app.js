@@ -59,7 +59,7 @@ const EXERCISES = {
     'Lower A': {
         name: 'Shelf + Side',
         warmup: [
-            { name: 'Broomstick Reset', time: '2 min', video: '38S_O339ksc' },
+            { name: 'Broomstick Reset', time: '2 min', video: 'lueEJGjTuPQ' },
             { name: 'Cat-Cow', time: '1 min', video: 'kqnua4rHVVA' },
             { name: 'Dead Bugs', time: '2 min', video: '4XLEnwUr1gk' },
             { name: 'Floor I-Y-W', time: '2 min', video: 'kE_uYpT35I8' },
@@ -76,7 +76,7 @@ const EXERCISES = {
     'Lower B': {
         name: 'Under-Butt',
         warmup: [
-            { name: 'Broomstick Reset', time: '2 min', video: '38S_O339ksc' },
+            { name: 'Broomstick Reset', time: '2 min', video: 'lueEJGjTuPQ' },
             { name: 'Cat-Cow', time: '1 min', video: 'kqnua4rHVVA' },
             { name: 'Dead Bugs', time: '2 min', video: '4XLEnwUr1gk' },
             { name: 'Floor I-Y-W', time: '2 min', video: 'kE_uYpT35I8' },
@@ -93,7 +93,7 @@ const EXERCISES = {
     'Lower C': {
         name: 'Side-Glute + Stability',
         warmup: [
-            { name: 'Broomstick Reset', time: '2 min', video: '38S_O339ksc' },
+            { name: 'Broomstick Reset', time: '2 min', video: 'lueEJGjTuPQ' },
             { name: 'Cat-Cow', time: '1 min', video: 'kqnua4rHVVA' },
             { name: 'Dead Bugs', time: '2 min', video: '4XLEnwUr1gk' },
             { name: 'Floor I-Y-W', time: '2 min', video: 'kE_uYpT35I8' },
