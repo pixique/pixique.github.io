@@ -62,7 +62,7 @@ const EXERCISES = {
             { name: 'Broomstick Reset', time: '2 min', video: 'lueEJGjTuPQ' },
             { name: 'Cat-Cow', time: '1 min', video: 'kqnua4rHVVA' },
             { name: 'Dead Bugs', time: '2 min', video: '4XLEnwUr1gk' },
-            { name: 'Floor I-Y-W', time: '2 min', video: 'kE_uYpT35I8' },
+            { name: 'Floor I-Y-W', time: '2 min', video: 'yU3bPzL4dGc' },
             { name: 'Hip Flexor Stretch', time: '1 min', video: 'YQmpO9VT2X4' },
         ],
         exercises: [
@@ -79,7 +79,7 @@ const EXERCISES = {
             { name: 'Broomstick Reset', time: '2 min', video: 'lueEJGjTuPQ' },
             { name: 'Cat-Cow', time: '1 min', video: 'kqnua4rHVVA' },
             { name: 'Dead Bugs', time: '2 min', video: '4XLEnwUr1gk' },
-            { name: 'Floor I-Y-W', time: '2 min', video: 'kE_uYpT35I8' },
+            { name: 'Floor I-Y-W', time: '2 min', video: 'yU3bPzL4dGc' },
             { name: 'Hip Flexor Stretch', time: '1 min', video: 'YQmpO9VT2X4' },
         ],
         exercises: [
@@ -96,7 +96,7 @@ const EXERCISES = {
             { name: 'Broomstick Reset', time: '2 min', video: 'lueEJGjTuPQ' },
             { name: 'Cat-Cow', time: '1 min', video: 'kqnua4rHVVA' },
             { name: 'Dead Bugs', time: '2 min', video: '4XLEnwUr1gk' },
-            { name: 'Floor I-Y-W', time: '2 min', video: 'kE_uYpT35I8' },
+            { name: 'Floor I-Y-W', time: '2 min', video: 'yU3bPzL4dGc' },
             { name: 'Hip Flexor Stretch', time: '1 min', video: 'YQmpO9VT2X4' },
         ],
         exercises: [
