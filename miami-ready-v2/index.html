@@ -311,7 +311,14 @@
 
                 <!-- Week View -->
                 <div class="week-view">
-                    <h3>This Week</h3>
+                    <div class="week-nav-header">
+                        <button class="week-nav-btn" @click="prevWeek()" :disabled="!canGoPrevWeek">‹</button>
+                        <div class="week-nav-label">
+                            <span x-text="weekLabel"></span>
+                            <button class="btn-today" @click="goToCurrentWeek()" x-show="viewingWeekOffset !== 0">Today</button>
+                        </div>
+                        <button class="week-nav-btn" @click="nextWeek()" :disabled="!canGoNextWeek">›</button>
+                    </div>
                     <div class="week-grid">
                         <template x-for="day in weekDates" :key="day.iso">
                             <div class="week-day"

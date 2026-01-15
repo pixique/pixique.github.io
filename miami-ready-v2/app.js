@@ -132,6 +132,9 @@ function app() {
         quickLogData: {},
         scanData: { date: '', roundness: null, protrusion: null },
 
+        // Week navigation
+        viewingWeekOffset: 0, // 0 = current week, -1 = last week, etc.
+
         // Constants
         connections: CONNECTIONS,
 
@@ -233,7 +236,7 @@ function app() {
         get weekDates() {
             const today = new Date();
             const start = new Date(today);
-            start.setDate(start.getDate() - start.getDay());
+            start.setDate(start.getDate() - start.getDay() + (this.viewingWeekOffset * 7));
             return Array.from({ length: 7 }, (_, i) => {
                 const d = new Date(start);
                 d.setDate(d.getDate() + i);
@@ -245,6 +248,30 @@ function app() {
                     schedule: this.getSchedule(d),
                 };
             });
+        },
+
+        get weekLabel() {
+            const dates = this.weekDates;
+            if (dates.length === 0) return '';
+            const first = this.parseIso(dates[0].iso);
+            const last = this.parseIso(dates[6].iso);
+            return `${this.formatDate(first)} - ${this.formatDate(last)}`;
+        },
+
+        get canGoNextWeek() {
+            // Can go forward up to program end
+            const lastDay = this.weekDates[6];
+            if (!lastDay) return false;
+            const lastDate = this.parseIso(lastDay.iso);
+            return lastDate < CONFIG.END_DATE;
+        },
+
+        get canGoPrevWeek() {
+            // Can go back to program start
+            const firstDay = this.weekDates[0];
+            if (!firstDay) return false;
+            const firstDate = this.parseIso(firstDay.iso);
+            return firstDate > CONFIG.START_DATE;
         },
 
         get allDays() {
@@ -361,6 +388,24 @@ function app() {
         },
 
         // ===== ACTIONS =====
+
+        // Week Navigation
+        prevWeek() {
+            if (this.canGoPrevWeek) {
+                this.viewingWeekOffset--;
+            }
+        },
+
+        nextWeek() {
+            if (this.canGoNextWeek) {
+                this.viewingWeekOffset++;
+            }
+        },
+
+        goToCurrentWeek() {
+            this.viewingWeekOffset = 0;
+        },
+
         addProtein(amount) {
             const data = this.days[this.todayISO] || {};
             data.protein = (data.protein || 0) + amount;
