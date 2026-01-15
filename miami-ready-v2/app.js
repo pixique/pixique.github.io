@@ -135,6 +135,10 @@ function app() {
         // Week navigation
         viewingWeekOffset: 0, // 0 = current week, -1 = last week, etc.
 
+        // Cloud sync
+        cloudBinId: '',
+        cloudApiKey: '',
+
         // Constants
         connections: CONNECTIONS,
 
@@ -143,6 +147,10 @@ function app() {
             this.load();
             this.selectedDate = this.iso(new Date());
             this.scanData.date = this.iso(new Date());
+            // Load cloud credentials
+            const creds = this.getCloudCredentials();
+            this.cloudBinId = creds.binId;
+            this.cloudApiKey = creds.apiKey;
         },
 
         // ===== COMPUTED PROPERTIES =====
@@ -655,6 +663,75 @@ function app() {
                 }
             };
             reader.readAsText(file);
+        },
+
+        // ===== CLOUD SYNC =====
+        async cloudPush() {
+            const binId = localStorage.getItem('miami-bin');
+            const apiKey = localStorage.getItem('miami-key');
+            if (!binId || !apiKey) {
+                alert('Please enter Bin ID and API Key in Settings first');
+                return;
+            }
+            try {
+                const data = { days: this.days, scans: this.scans, settings: this.settings, baseline: this.baseline };
+                const response = await fetch(`https://api.jsonbin.io/v3/b/${binId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json', 'X-Master-Key': apiKey },
+                    body: JSON.stringify(data)
+                });
+                if (response.ok) {
+                    alert('✓ Synced to cloud!');
+                } else {
+                    alert('Sync failed. Check your Bin ID and API Key.');
+                }
+            } catch (e) {
+                alert('Error: ' + e.message);
+            }
+        },
+
+        async cloudPull() {
+            const binId = localStorage.getItem('miami-bin');
+            const apiKey = localStorage.getItem('miami-key');
+            if (!binId || !apiKey) {
+                alert('Please enter Bin ID and API Key in Settings first');
+                return;
+            }
+            if (!confirm('Replace local data with cloud data?')) return;
+            try {
+                const response = await fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`, {
+                    headers: { 'X-Master-Key': apiKey }
+                });
+                if (response.ok) {
+                    const result = await response.json();
+                    const data = result.record || result;
+                    if (data.days) this.days = data.days;
+                    if (data.scans) this.scans = data.scans;
+                    if (data.settings) this.settings = { ...this.settings, ...data.settings };
+                    if (data.baseline) this.baseline = data.baseline;
+                    this.save();
+                    alert('✓ Loaded from cloud!');
+                } else {
+                    alert('Failed to load. Check your Bin ID and API Key.');
+                }
+            } catch (e) {
+                alert('Error: ' + e.message);
+            }
+        },
+
+        saveCloudCredentials(binId, apiKey) {
+            if (binId) localStorage.setItem('miami-bin', binId);
+            if (apiKey) localStorage.setItem('miami-key', apiKey);
+            if (binId && apiKey) {
+                alert('Keys saved!');
+            }
+        },
+
+        getCloudCredentials() {
+            return {
+                binId: localStorage.getItem('miami-bin') || '',
+                apiKey: localStorage.getItem('miami-key') || ''
+            };
         },
 
         resetAll() {

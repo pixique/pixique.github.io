@@ -485,6 +485,29 @@
                     </div>
                 </div>
 
+                <div class="settings-section">
+                    <h3>Cloud Sync</h3>
+                    <p class="setting-desc">Sync across devices with JSONbin.io (free)</p>
+                    <div class="setting-row">
+                        <label>Bin ID</label>
+                        <input type="text" x-model="cloudBinId" placeholder="Your bin ID">
+                    </div>
+                    <div class="setting-row">
+                        <label>API Key</label>
+                        <input type="password" x-model="cloudApiKey" placeholder="Your master key">
+                    </div>
+                    <div class="setting-buttons">
+                        <button class="btn-secondary" @click="saveCloudCredentials(cloudBinId, cloudApiKey)">Save Keys</button>
+                    </div>
+                    <div class="setting-buttons" style="margin-top: 8px;">
+                        <button class="btn-secondary" @click="cloudPush()">Push to Cloud</button>
+                        <button class="btn-secondary" @click="cloudPull()">Pull from Cloud</button>
+                    </div>
+                    <p class="setting-hint" x-show="getCloudCredentials().binId">
+                        Keys saved locally
+                    </p>
+                </div>
+
                 <div class="settings-section danger">
                     <h3>Reset</h3>
                     <button class="btn-danger" @click="resetAll()">Delete All Data</button>
