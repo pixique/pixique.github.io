@@ -6,30 +6,6 @@
     <title>Pixique — Operational Excellence for Growing Businesses</title>
     <meta name="description" content="High-touch operational sprints for founder-led service businesses. We come in, reset what's heavy, and leave you with systems that run clean — without us. 3-4 weeks. $15-20K.">
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pixique.com/">
-    <meta property="og:title" content="Pixique — Operational Excellence for Growing Businesses">
-    <meta property="og:description" content="High-touch operational sprints for founder-led service businesses. We map what's heavy, reset your core workflows, and leave you with systems that run clean.">
-    <meta property="og:image" content="https://pixique.com/og-image.jpg">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Pixique — Operational Excellence for Growing Businesses">
-    <meta property="twitter:description" content="High-touch operational sprints for founder-led service businesses. 3-4 weeks. Clean exit.">
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Pixique",
-        "description": "Operational sprints for growing service businesses",
-        "url": "https://pixique.com",
-        "email": "hello@pixique.com",
-        "priceRange": "$15,000-$20,000",
-        "areaServed": "Worldwide",
-        "serviceType": ["Operational Sprint", "Systems Reset", "Workflow Architecture", "Process Documentation"]
-    }
-    </script>
-
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A1918'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='55' fill='%23FAF8F5' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,17 +21,21 @@
             --color-ink-muted: #6B6866;
             --color-taupe: #C4BAB0;
             --color-taupe-light: #E8E4DF;
-            --color-accent: #8B7355;
-            --color-accent-soft: #A69280;
-            --color-accent-pale: #F5F0EB;
-            --color-sage: #7A8B7A;
+            --color-accent: #C4917C;
+            --color-accent-deep: #A67563;
+            --color-accent-soft: #D4A594;
+            --color-accent-pale: #F5EBE7;
+            --color-blush: #E8D4CE;
+            --color-sage: #8B9E8B;
             --color-sage-pale: #F0F3F0;
             --font-display: 'Cormorant Garamond', Georgia, serif;
             --font-body: 'Outfit', -apple-system, sans-serif;
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
             --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
             --shadow-lg: 0 8px 40px rgba(0,0,0,0.08);
+            --shadow-soft: 0 20px 60px rgba(196,145,124,0.15);
             --radius: 4px;
+            --radius-lg: 12px;
         }
 
         * {
@@ -76,17 +56,13 @@
             color: var(--color-ink);
             background-color: var(--color-cream);
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        /* Utility */
         .container {
-            max-width: 1140px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 32px;
-        }
-
-        .container--narrow {
-            max-width: 800px;
         }
 
         /* Typography */
@@ -96,14 +72,14 @@
         }
 
         h1 {
-            font-size: clamp(2.5rem, 5.5vw, 4rem);
-            line-height: 1.12;
+            font-size: clamp(2.75rem, 6vw, 4.25rem);
+            line-height: 1.1;
             letter-spacing: -0.02em;
         }
 
         h2 {
-            font-size: clamp(1.875rem, 4vw, 2.75rem);
-            line-height: 1.2;
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            line-height: 1.15;
             letter-spacing: -0.01em;
         }
 
@@ -118,7 +94,7 @@
 
         /* Header */
         header {
-            padding: 24px 0;
+            padding: 20px 0;
             position: fixed;
             top: 0;
             left: 0;
@@ -168,19 +144,20 @@
             display: inline-flex;
             align-items: center;
             padding: 12px 24px;
-            background: var(--color-ink);
+            background: var(--color-accent);
             color: var(--color-warm-white) !important;
             font-size: 13px;
             font-weight: 400;
             letter-spacing: 0.04em;
             text-transform: uppercase;
-            border-radius: var(--radius);
+            border-radius: 100px;
             transition: all 0.3s ease;
         }
 
         .nav-cta:hover {
-            background: var(--color-accent);
+            background: var(--color-accent-deep);
             color: var(--color-warm-white) !important;
+            transform: translateY(-1px);
         }
 
         /* Buttons */
@@ -192,73 +169,38 @@
             font-family: var(--font-body);
             font-size: 13px;
             font-weight: 400;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
             text-decoration: none;
-            padding: 18px 40px;
-            border-radius: var(--radius);
+            padding: 18px 36px;
+            border-radius: 100px;
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
         }
 
         .btn-primary {
-            background: var(--color-ink);
+            background: var(--color-accent);
             color: var(--color-warm-white);
+            box-shadow: 0 4px 20px rgba(196,145,124,0.3);
         }
 
         .btn-primary:hover {
-            background: var(--color-accent);
+            background: var(--color-accent-deep);
             transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(196,145,124,0.4);
         }
 
         .btn-secondary {
-            background: transparent;
+            background: var(--color-warm-white);
             color: var(--color-ink);
-            border: 1px solid var(--color-ink);
+            border: 1px solid var(--color-taupe-light);
         }
 
         .btn-secondary:hover {
             background: var(--color-ink);
             color: var(--color-warm-white);
-        }
-
-        .btn-ghost {
-            background: transparent;
-            color: var(--color-ink-muted);
-            padding: 18px 24px;
-        }
-
-        .btn-ghost:hover {
-            color: var(--color-ink);
-        }
-
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 140px 0 100px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -20%;
-            right: -10%;
-            width: 60%;
-            height: 140%;
-            background: radial-gradient(ellipse at center, var(--color-taupe-light) 0%, transparent 70%);
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 720px;
+            border-color: var(--color-ink);
         }
 
         .section-label {
@@ -268,11 +210,72 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--color-accent);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 140px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 80%;
+            height: 160%;
+            background: radial-gradient(ellipse at center, var(--color-blush) 0%, transparent 60%);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 560px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--color-warm-white);
+            border: 1px solid var(--color-taupe-light);
+            border-radius: 100px;
+            font-size: 12px;
+            color: var(--color-ink-muted);
+            margin-bottom: 28px;
+        }
+
+        .hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--color-sage);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
         .hero h1 {
-            margin-bottom: 28px;
+            margin-bottom: 24px;
         }
 
         .hero h1 em {
@@ -281,10 +284,9 @@
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--color-ink-muted);
-            max-width: 560px;
-            margin-bottom: 40px;
+            margin-bottom: 36px;
             line-height: 1.8;
         }
 
@@ -292,32 +294,162 @@
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
-            margin-bottom: 32px;
         }
 
-        .hero-fit {
-            margin-top: 48px;
-            padding: 24px 28px;
+        /* Hero Visual - Isometric Blocks */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 500px;
+        }
+
+        .iso-container {
+            position: relative;
+            transform: rotateX(60deg) rotateZ(-45deg);
+            transform-style: preserve-3d;
+        }
+
+        .iso-block {
+            position: absolute;
+            width: 80px;
+            background: linear-gradient(135deg, var(--color-accent-pale) 0%, var(--color-blush) 100%);
+            border-radius: 4px;
+            transform-style: preserve-3d;
+        }
+
+        .iso-block::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            background: var(--color-accent-soft);
+            transform: rotateX(-90deg) translateY(-10px);
+            transform-origin: top;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .iso-block::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 100%;
+            right: -20px;
+            background: var(--color-accent);
+            transform: rotateY(90deg) translateX(10px);
+            transform-origin: left;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .iso-block:nth-child(1) { height: 60px; left: 0; bottom: 0; animation: float1 4s ease-in-out infinite; }
+        .iso-block:nth-child(2) { height: 100px; left: 90px; bottom: 0; animation: float2 4s ease-in-out infinite 0.2s; }
+        .iso-block:nth-child(3) { height: 140px; left: 180px; bottom: 0; animation: float3 4s ease-in-out infinite 0.4s; }
+        .iso-block:nth-child(4) { height: 180px; left: 270px; bottom: 0; animation: float4 4s ease-in-out infinite 0.6s; }
+
+        @keyframes float1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        @keyframes float2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        @keyframes float3 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes float4 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+        /* Floating Testimonials */
+        .float-card {
+            position: absolute;
             background: var(--color-warm-white);
-            border: 1px solid rgba(0,0,0,0.06);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-sm);
-            max-width: 520px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            padding: 16px 20px;
+            font-size: 13px;
+            max-width: 220px;
+            z-index: 10;
+            animation: floatCard 6s ease-in-out infinite;
         }
 
-        .hero-fit p {
-            font-size: 15px;
-            margin: 0;
-            line-height: 1.7;
+        .float-card-1 {
+            top: 10%;
+            right: 5%;
+            animation-delay: 0s;
         }
 
-        .hero-fit p + p {
-            margin-top: 10px;
+        .float-card-2 {
+            bottom: 20%;
+            left: 0%;
+            animation-delay: 2s;
         }
 
-        .hero-fit strong {
-            color: var(--color-ink);
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .float-card-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-accent-soft), var(--color-accent));
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
             font-weight: 500;
+        }
+
+        .float-card p {
+            margin: 0;
+            color: var(--color-ink-soft);
+            line-height: 1.5;
+        }
+
+        .float-card-tag {
+            margin-top: 8px;
+            font-size: 11px;
+            color: var(--color-accent);
+            font-weight: 500;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            padding: 48px 0;
+            border-top: 1px solid var(--color-taupe-light);
+            border-bottom: 1px solid var(--color-taupe-light);
+            background: var(--color-warm-white);
+        }
+
+        .trust-bar-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .trust-bar-label {
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-ink-muted);
+        }
+
+        .trust-logos {
+            display: flex;
+            gap: 48px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .trust-logo {
+            height: 24px;
+            width: auto;
+            opacity: 0.5;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .trust-logo:hover {
+            opacity: 0.8;
+            filter: grayscale(0%);
         }
 
         /* Section Styling */
@@ -327,22 +459,24 @@
 
         .section-header {
             margin-bottom: 64px;
+            text-align: center;
         }
 
         .section-header h2 {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .section-lead {
-            font-size: 1.125rem;
+            font-size: 1.1rem;
             color: var(--color-ink-muted);
-            max-width: 600px;
+            max-width: 560px;
+            margin: 0 auto;
             line-height: 1.75;
         }
 
         /* Problem Section */
         .problem {
-            background: var(--color-warm-white);
+            background: var(--color-cream);
         }
 
         .problem-grid {
@@ -350,6 +484,16 @@
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: start;
+        }
+
+        .problem-content h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .problem-content .section-lead {
+            text-align: left;
+            margin: 0;
         }
 
         .problem-list {
@@ -383,10 +527,11 @@
 
         /* Cost Box */
         .cost-box {
-            background: var(--color-cream);
+            background: var(--color-warm-white);
             padding: 40px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-md);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(196,145,124,0.1);
         }
 
         .cost-box h3 {
@@ -437,30 +582,68 @@
             color: var(--color-ink);
         }
 
-        /* Solution Section */
-        .solution {
-            background: var(--color-cream);
+        /* Metrics Section */
+        .metrics {
+            background: var(--color-warm-white);
+            padding: 100px 0;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .metric-card {
             text-align: center;
+            padding: 32px 24px;
+            background: var(--color-cream);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-taupe-light);
         }
 
-        .solution-content {
-            max-width: 680px;
-            margin: 0 auto;
+        .metric-label {
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-ink-muted);
+            margin-bottom: 16px;
         }
 
-        .solution h2 {
-            margin-bottom: 24px;
+        .metric-value {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 8px;
         }
 
-        .solution p {
-            font-size: 1.15rem;
-            line-height: 1.8;
+        .metric-value span {
+            font-size: 1.5rem;
+        }
+
+        .metric-desc {
+            font-size: 13px;
+            color: var(--color-ink-muted);
         }
 
         /* Sprint Section */
         .sprint {
             background: var(--color-ink);
             color: var(--color-warm-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sprint::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 30% 20%, rgba(196,145,124,0.15) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .sprint .section-label {
@@ -479,6 +662,8 @@
             margin-bottom: 80px;
             padding-bottom: 80px;
             border-bottom: 1px solid rgba(255,255,255,0.08);
+            position: relative;
+            z-index: 1;
         }
 
         .sprint-intro p {
@@ -517,28 +702,42 @@
         .deliverables-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
+            gap: 24px;
+            position: relative;
+            z-index: 1;
         }
 
         .deliverable {
             padding: 36px;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: var(--radius);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-lg);
             transition: all 0.3s ease;
         }
 
         .deliverable:hover {
-            background: rgba(255,255,255,0.04);
-            border-color: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(196,145,124,0.3);
+            transform: translateY(-4px);
         }
 
-        .deliverable-number {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            color: var(--color-accent);
-            line-height: 1;
-            margin-bottom: 20px;
+        .deliverable-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-deep) 100%);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .deliverable-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+            stroke-width: 1.5;
+            fill: none;
         }
 
         .deliverable h3 {
@@ -553,9 +752,76 @@
             line-height: 1.7;
         }
 
+        /* Benefits Grid - Bento Style */
+        .benefits {
+            background: var(--color-cream);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .benefit-card {
+            padding: 32px;
+            background: var(--color-warm-white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-taupe-light);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            box-shadow: var(--shadow-soft);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-accent-pale);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .benefit-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--color-accent);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .benefit-label {
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .benefit-card h4 {
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--color-ink);
+            margin-bottom: 8px;
+        }
+
+        .benefit-card p {
+            font-size: 14px;
+            color: var(--color-ink-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+
         /* Pricing Section */
         .pricing {
-            background: var(--color-accent-pale);
+            background: linear-gradient(180deg, var(--color-accent-pale) 0%, var(--color-cream) 100%);
         }
 
         .pricing-content {
@@ -567,7 +833,7 @@
         .pricing-box {
             background: var(--color-warm-white);
             padding: 56px 48px;
-            border-radius: var(--radius);
+            border-radius: var(--radius-lg);
             box-shadow: var(--shadow-lg);
             border: 1px solid rgba(0,0,0,0.04);
         }
@@ -589,7 +855,7 @@
         .pricing-includes {
             background: var(--color-cream);
             padding: 28px;
-            border-radius: var(--radius);
+            border-radius: var(--radius-lg);
             margin-bottom: 32px;
             text-align: left;
         }
@@ -640,66 +906,9 @@
             font-weight: 500;
         }
 
-        /* Boundaries Section */
-        .boundaries {
-            background: var(--color-warm-white);
-        }
-
-        .boundaries-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .boundaries h2 {
-            margin-bottom: 24px;
-        }
-
-        .boundaries-intro p {
-            font-size: 1.1rem;
-            margin-bottom: 32px;
-            line-height: 1.8;
-        }
-
-        .boundaries-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px 32px;
-        }
-
-        .boundaries-list li {
-            color: var(--color-ink-muted);
-            font-size: 15px;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .boundaries-list li::before {
-            content: '—';
-            position: absolute;
-            left: 0;
-            color: var(--color-taupe);
-        }
-
-        .boundaries-quote {
-            padding: 48px;
-            background: var(--color-cream);
-            border-radius: var(--radius);
-        }
-
-        .boundaries-quote blockquote {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            font-style: italic;
-            color: var(--color-ink);
-            line-height: 1.4;
-        }
-
         /* Fit Section */
         .fit {
-            background: var(--color-cream);
+            background: var(--color-warm-white);
         }
 
         .fit-grid {
@@ -731,6 +940,28 @@
             border-bottom: 1px solid var(--color-taupe-light);
             color: var(--color-ink-soft);
             font-size: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .fit-list li::before {
+            content: '';
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            border-radius: 50%;
+        }
+
+        .fit-yes li::before {
+            background: var(--color-sage-pale);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%238B9E8B'%3E%3Cpath d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
+        }
+
+        .fit-no li::before {
+            background: var(--color-accent-pale);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23C4917C'%3E%3Cpath d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'/%3E%3C/svg%3E");
         }
 
         .fit-list li:last-child {
@@ -739,7 +970,7 @@
 
         /* About Section */
         .about {
-            background: linear-gradient(to bottom, var(--color-warm-white), var(--color-cream));
+            background: linear-gradient(to bottom, var(--color-cream), var(--color-warm-white));
         }
 
         .about-content {
@@ -785,7 +1016,7 @@
 
         /* FAQ Section */
         .faq {
-            background: var(--color-cream);
+            background: var(--color-warm-white);
         }
 
         .faq-header {
@@ -803,9 +1034,14 @@
 
         .faq-item {
             padding: 28px;
-            background: var(--color-warm-white);
-            border-radius: var(--radius);
-            border: 1px solid rgba(0,0,0,0.04);
+            background: var(--color-cream);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-taupe-light);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
         }
 
         .faq-item h4 {
@@ -829,6 +1065,24 @@
             color: var(--color-warm-white);
             text-align: center;
             padding: 140px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 100%, rgba(196,145,124,0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .contact > .container {
+            position: relative;
+            z-index: 1;
         }
 
         .contact h2 {
@@ -846,13 +1100,12 @@
         }
 
         .contact .btn-primary {
-            background: var(--color-warm-white);
-            color: var(--color-ink);
+            background: var(--color-accent);
+            color: var(--color-warm-white);
         }
 
         .contact .btn-primary:hover {
-            background: var(--color-accent);
-            color: var(--color-warm-white);
+            background: var(--color-accent-soft);
         }
 
         .contact-email {
@@ -868,7 +1121,7 @@
         }
 
         .contact-email a:hover {
-            color: var(--color-accent);
+            color: var(--color-accent-soft);
         }
 
         /* Footer */
@@ -913,16 +1166,22 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
+            .hero-grid,
             .problem-grid,
             .sprint-header,
-            .boundaries-grid,
             .fit-grid {
                 grid-template-columns: 1fr;
                 gap: 48px;
             }
 
-            .deliverables-grid {
-                grid-template-columns: 1fr;
+            .hero-visual {
+                display: none;
+            }
+
+            .deliverables-grid,
+            .metrics-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr 1fr;
             }
 
             .faq-grid {
@@ -949,7 +1208,12 @@
                 padding: 80px 0;
             }
 
-            .boundaries-list,
+            .deliverables-grid,
+            .metrics-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
             .pricing-includes ul {
                 grid-template-columns: 1fr;
             }
@@ -960,6 +1224,10 @@
 
             .hero-ctas .btn {
                 width: 100%;
+            }
+
+            .trust-logos {
+                gap: 32px;
             }
 
             .footer-inner {
@@ -994,7 +1262,6 @@
         .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
         .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
         .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
-        .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
     </style>
 </head>
 <body>
@@ -1013,17 +1280,80 @@
 
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <p class="section-label">Operational Excellence</p>
-                <h1>We make your business run like it <em>should have</em> all along.</h1>
-                <p class="hero-subtitle">High-touch operational sprints for founder-led service businesses. We come in, reset what's heavy, and leave you with systems that run clean — without us.</p>
-                <div class="hero-ctas">
-                    <a href="start.html" class="btn btn-primary">Start a Conversation</a>
-                    <a href="#sprint" class="btn btn-ghost">See How It Works →</a>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        Now accepting Q1 engagements
+                    </div>
+                    <h1>We make your business run like it <em>should have</em> all along.</h1>
+                    <p class="hero-subtitle">High-touch operational sprints for founder-led service businesses. We come in, reset what's heavy, and leave you with systems that run clean — without us.</p>
+                    <div class="hero-ctas">
+                        <a href="start.html" class="btn btn-primary">Start a Conversation</a>
+                        <a href="#sprint" class="btn btn-secondary">See How It Works</a>
+                    </div>
                 </div>
-                <div class="hero-fit">
-                    <p><strong>For:</strong> Founder-led service businesses doing $1M–$10M where momentum is real, but operations are the constraint.</p>
-                    <p><strong>Not for:</strong> Teams looking for ongoing support, Slack access, or someone to manage day-to-day.</p>
+                <div class="hero-visual">
+                    <div class="iso-container">
+                        <div class="iso-block"></div>
+                        <div class="iso-block"></div>
+                        <div class="iso-block"></div>
+                        <div class="iso-block"></div>
+                    </div>
+                    <div class="float-card float-card-1">
+                        <div class="float-card-avatar">K</div>
+                        <p>"Finally, someone who gets it. In and out, no drama."</p>
+                        <div class="float-card-tag">Agency Owner</div>
+                    </div>
+                    <div class="float-card float-card-2">
+                        <div class="float-card-avatar">M</div>
+                        <p>"Our ops went from chaos to calm in 3 weeks."</p>
+                        <div class="float-card-tag">Consulting Firm</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-bar">
+        <div class="container trust-bar-inner">
+            <span class="trust-bar-label">Background includes leadership at</span>
+            <div class="trust-logos">
+                <img src="images/google-logo.png" alt="Google" class="trust-logo">
+                <img src="images/airbnb-logo.png" alt="Airbnb" class="trust-logo">
+                <img src="images/walmart-logo.png" alt="Walmart" class="trust-logo">
+                <img src="images/mccann-logo.png" alt="McCann" class="trust-logo">
+            </div>
+        </div>
+    </div>
+
+    <section class="metrics">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Track Record</p>
+                <h2>Proof this approach works</h2>
+                <p class="section-lead">Real outcomes from a decade of running operations at scale.</p>
+            </div>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Campaigns Managed</div>
+                    <div class="metric-value">140<span>+</span></div>
+                    <div class="metric-desc">annually at Fortune 500</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">On-Time Delivery</div>
+                    <div class="metric-value">97.6<span>%</span></div>
+                    <div class="metric-desc">across all engagements</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Typical Time Saved</div>
+                    <div class="metric-value">15<span>hrs</span></div>
+                    <div class="metric-desc">per week post-reset</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Sprint Duration</div>
+                    <div class="metric-value">3-4<span>wks</span></div>
+                    <div class="metric-desc">start to clean exit</div>
                 </div>
             </div>
         </div>
@@ -1032,7 +1362,7 @@
     <section class="problem" id="approach">
         <div class="container">
             <div class="problem-grid">
-                <div>
+                <div class="problem-content">
                     <p class="section-label">The Reality</p>
                     <h2>You built something real. But the back-end became a mess.</h2>
                     <p class="section-lead">Things slip. Handoffs break. You're holding too much in your head. You're spending your best hours managing friction instead of growing.</p>
@@ -1071,12 +1401,62 @@
         </div>
     </section>
 
-    <section class="solution">
+    <section class="benefits">
         <div class="container">
-            <div class="solution-content">
-                <p class="section-label">The Solution</p>
-                <h2>You don't need another tool. You need someone to reset it.</h2>
-                <p>Someone to come in, see the whole picture, reset what's heavy, and leave you with something that actually runs clean — without you holding it together.</p>
+            <div class="section-header">
+                <p class="section-label">The Transformation</p>
+                <h2>Everything you need for a clean operation</h2>
+                <p class="section-lead">We don't just diagnose — we implement. Here's what changes.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+                    </div>
+                    <div class="benefit-label">Clarity</div>
+                    <h4>Operations Diagnosis</h4>
+                    <p>A clear map of where you're leaking time and money — prioritized by impact.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+                    </div>
+                    <div class="benefit-label">Structure</div>
+                    <h4>Workflow Architecture</h4>
+                    <p>End-to-end workflows with clear ownership and standardized handoffs.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <div class="benefit-label">Implementation</div>
+                    <h4>System Build</h4>
+                    <p>1-2 highest-leverage systems built and documented for your team.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div class="benefit-label">Training</div>
+                    <h4>Loom Walkthroughs</h4>
+                    <p>Video documentation of every system so your team can run it without you.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div class="benefit-label">Sustainability</div>
+                    <h4>60-Day Stabilization Plan</h4>
+                    <p>A roadmap to keep things running clean long after we're gone.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+                    </div>
+                    <div class="benefit-label">Independence</div>
+                    <h4>Clean Exit</h4>
+                    <p>We leave. No retainers, no ongoing dependency. Just systems that work.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1107,24 +1487,32 @@
 
             <div class="deliverables-grid">
                 <div class="deliverable">
-                    <div class="deliverable-number">01</div>
-                    <h3>Operations Diagnosis</h3>
-                    <p>A clear-eyed assessment of where you're leaking time, money, and energy. Not a 50-page report — an actionable map with priorities ranked by impact.</p>
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>Week 1: Discovery</h3>
+                    <p>60-minute onboarding call. We audit your current systems, map your workflows, and identify the highest-leverage fixes.</p>
                 </div>
                 <div class="deliverable">
-                    <div class="deliverable-number">02</div>
-                    <h3>Workflow Architecture</h3>
-                    <p>Your operations redesigned — end-to-end workflows, clear ownership, standardized handoffs. A system built for how your business actually runs.</p>
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                    </div>
+                    <h3>Week 2: Architecture</h3>
+                    <p>We design your new operational infrastructure — workflows, ownership maps, and system specifications.</p>
                 </div>
                 <div class="deliverable">
-                    <div class="deliverable-number">03</div>
-                    <h3>System Build</h3>
-                    <p>We personally implement the 1–2 highest-leverage systems. Built for durability. Documented for adoption. Good beats perfect.</p>
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    </div>
+                    <h3>Week 3: Build</h3>
+                    <p>We implement the 1-2 highest-impact systems. Built in your existing tools. Documented for your team.</p>
                 </div>
                 <div class="deliverable">
-                    <div class="deliverable-number">04</div>
-                    <h3>Handoff + Exit</h3>
-                    <p>Loom walkthroughs of every system. A 60-day stabilization plan. Clear boundaries on what we fixed and what we didn't. Then we're gone.</p>
+                    <div class="deliverable-icon">
+                        <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <h3>Week 4: Handoff</h3>
+                    <p>Loom walkthroughs of every system. A 60-day stabilization plan. Clear boundaries. Then we're gone.</p>
                 </div>
             </div>
         </div>
@@ -1160,29 +1548,6 @@
         </div>
     </section>
 
-    <section class="boundaries">
-        <div class="container">
-            <div class="boundaries-grid">
-                <div class="boundaries-intro">
-                    <p class="section-label">Boundaries</p>
-                    <h2>What this isn't.</h2>
-                    <p>We don't do open-ended engagements. No retainers. No Slack channels. No "quick questions." This is a defined scope with a clean ending.</p>
-                    <ul class="boundaries-list">
-                        <li>Ongoing management</li>
-                        <li>Ad-hoc availability</li>
-                        <li>Slack access</li>
-                        <li>Team coaching</li>
-                        <li>Open-ended revisions</li>
-                        <li>"While you're here..."</li>
-                    </ul>
-                </div>
-                <div class="boundaries-quote">
-                    <blockquote>"We come in. We reset it. We go."</blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="fit">
         <div class="container">
             <div class="fit-grid">
@@ -1190,7 +1555,7 @@
                     <p class="section-label">Fit</p>
                     <h2>Is this for you?</h2>
                     <h3>This works if you:</h3>
-                    <ul class="fit-list">
+                    <ul class="fit-list fit-yes">
                         <li>Have a business that's working — but running you ragged</li>
                         <li>Know the back-end is a mess and are ready to fix it</li>
                         <li>Trust expertise and don't need to micromanage</li>
@@ -1199,7 +1564,7 @@
                 </div>
                 <div class="fit-column" style="padding-top: 100px;">
                     <h3>This doesn't work if you:</h3>
-                    <ul class="fit-list">
+                    <ul class="fit-list fit-no">
                         <li>Need constant reassurance or access</li>
                         <li>Want to negotiate scope mid-project</li>
                         <li>Expect on-demand availability</li>
