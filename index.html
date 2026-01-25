@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixique — Operations Reset for Marketing & Creative Teams</title>
-    <meta name="description" content="A 3–4 week operations reset for marketing + creative teams: intake, workflows, handoffs, and delivery—rebuilt inside your existing tools. $15-20K flat fee.">
+    <title>Pixique — Delivery Operations for Marketing & Creative Teams</title>
+    <meta name="description" content="Ship more, on time, without babysitting. We install a Delivery Operating System for marketing and creative teams in 30–60 days. If we don't hit two agreed KPIs, we extend at no cost.">
 
+    <meta name="keywords" content="creative operations, marketing operations, delivery operations, creative team workflow, marketing team systems, agency operations, campaign management, project management for agencies, marketing workflow optimization, creative ops consultant">
+    
+    <!-- Open Graph for LinkedIn/Social -->
+    <meta property="og:title" content="Pixique — Delivery Operations for Marketing & Creative Teams">
+    <meta property="og:description" content="Ship more, on time, without babysitting. We install a Delivery Operating System in 30–60 days. If we don't hit two agreed KPIs, we extend at no cost.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pixique.github.io">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Pixique — Delivery Operations for Marketing & Creative Teams">
+    <meta name="twitter:description" content="Ship more, on time, without babysitting. 30–60 day delivery system install for marketing and creative teams.">
+    
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A1918'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='55' fill='%23FAF8F5' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,8 +83,8 @@
         }
 
         h1 {
-            font-size: clamp(2.75rem, 6vw, 4.25rem);
-            line-height: 1.1;
+            font-size: clamp(2.75rem, 6vw, 4.5rem);
+            line-height: 1.08;
             letter-spacing: -0.02em;
         }
 
@@ -144,7 +155,7 @@
             display: inline-flex;
             align-items: center;
             padding: 12px 24px;
-            background: var(--color-accent);
+            background: var(--color-ink);
             color: var(--color-warm-white) !important;
             font-size: 13px;
             font-weight: 400;
@@ -180,27 +191,26 @@
         }
 
         .btn-primary {
-            background: var(--color-accent);
+            background: var(--color-ink);
             color: var(--color-warm-white);
-            box-shadow: 0 4px 20px rgba(196,145,124,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
         .btn-primary:hover {
             background: var(--color-accent-deep);
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(196,145,124,0.4);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
         }
 
         .btn-secondary {
-            background: var(--color-warm-white);
+            background: transparent;
             color: var(--color-ink);
-            border: 1px solid var(--color-taupe-light);
+            border: 1px solid var(--color-ink);
         }
 
         .btn-secondary:hover {
             background: var(--color-ink);
             color: var(--color-warm-white);
-            border-color: var(--color-ink);
         }
 
         .section-label {
@@ -218,7 +228,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 140px 0 80px;
+            padding: 160px 0 100px;
             position: relative;
             overflow: hidden;
         }
@@ -231,47 +241,14 @@
             width: 80%;
             height: 160%;
             background: radial-gradient(ellipse at center, var(--color-blush) 0%, transparent 60%);
-            opacity: 0.4;
+            opacity: 0.3;
             pointer-events: none;
         }
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+        .hero-content {
+            max-width: 800px;
             position: relative;
             z-index: 1;
-        }
-
-        .hero-content {
-            max-width: 560px;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: var(--color-warm-white);
-            border: 1px solid var(--color-taupe-light);
-            border-radius: 100px;
-            font-size: 12px;
-            color: var(--color-ink-muted);
-            margin-bottom: 28px;
-        }
-
-        .hero-badge-dot {
-            width: 6px;
-            height: 6px;
-            background: var(--color-sage);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
         }
 
         .hero h1 {
@@ -280,14 +257,34 @@
 
         .hero h1 em {
             font-style: italic;
-            color: var(--color-accent);
+            color: var(--color-accent-deep);
         }
 
         .hero-subtitle {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
+            color: var(--color-ink-soft);
+            margin-bottom: 32px;
+            line-height: 1.75;
+            max-width: 640px;
+        }
+
+        .hero-proof-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
             color: var(--color-ink-muted);
-            margin-bottom: 36px;
-            line-height: 1.8;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-proof-bar span {
+            color: var(--color-ink);
+            font-weight: 400;
+        }
+
+        .proof-divider {
+            color: var(--color-taupe);
         }
 
         .hero-ctas {
@@ -296,665 +293,405 @@
             flex-wrap: wrap;
         }
 
-        /* Hero Visual - Isometric Blocks */
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 500px;
-        }
-
-        .iso-container {
-            position: relative;
-            transform: rotateX(60deg) rotateZ(-45deg);
-            transform-style: preserve-3d;
-        }
-
-        .iso-block {
-            position: absolute;
-            width: 80px;
-            background: linear-gradient(135deg, var(--color-accent-pale) 0%, var(--color-blush) 100%);
-            border-radius: 4px;
-            transform-style: preserve-3d;
-        }
-
-        .iso-block::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 20px;
-            background: var(--color-accent-soft);
-            transform: rotateX(-90deg) translateY(-10px);
-            transform-origin: top;
-            border-radius: 4px 4px 0 0;
-        }
-
-        .iso-block::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 100%;
-            right: -20px;
-            background: var(--color-accent);
-            transform: rotateY(90deg) translateX(10px);
-            transform-origin: left;
-            border-radius: 0 4px 4px 0;
-        }
-
-        .iso-block:nth-child(1) { height: 60px; left: 0; bottom: 0; animation: float1 4s ease-in-out infinite; }
-        .iso-block:nth-child(2) { height: 100px; left: 90px; bottom: 0; animation: float2 4s ease-in-out infinite 0.2s; }
-        .iso-block:nth-child(3) { height: 140px; left: 180px; bottom: 0; animation: float3 4s ease-in-out infinite 0.4s; }
-        .iso-block:nth-child(4) { height: 180px; left: 270px; bottom: 0; animation: float4 4s ease-in-out infinite 0.6s; }
-
-        @keyframes float1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-        @keyframes float2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-        @keyframes float3 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        @keyframes float4 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-
-        /* Results Cards (replacing fake testimonials) */
-        .results-card {
-            position: absolute;
-            background: var(--color-warm-white);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-soft);
-            padding: 20px 24px;
-            font-size: 14px;
-            max-width: 240px;
-            z-index: 10;
-            animation: floatCard 6s ease-in-out infinite;
-        }
-
-        .results-card-1 {
-            top: 10%;
-            right: 5%;
-            animation-delay: 0s;
-        }
-
-        .results-card-2 {
-            bottom: 20%;
-            left: 0%;
-            animation-delay: 2s;
-        }
-
-        @keyframes floatCard {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .results-card-value {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            color: var(--color-accent);
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        .results-card p {
-            margin: 0;
-            color: var(--color-ink-soft);
-            line-height: 1.5;
-        }
-
-        .results-card-tag {
-            margin-top: 8px;
-            font-size: 11px;
-            color: var(--color-ink-muted);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Trust Bar */
-        .trust-bar {
-            padding: 48px 0;
-            border-top: 1px solid var(--color-taupe-light);
-            border-bottom: 1px solid var(--color-taupe-light);
-            background: var(--color-warm-white);
-        }
-
-        .trust-bar-inner {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 28px;
-        }
-
-        .trust-bar-label {
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--color-ink-muted);
-        }
-
-        .trust-experience {
-            display: flex;
-            gap: 48px;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .trust-item {
-            font-size: 14px;
-            color: var(--color-ink-soft);
-            padding: 8px 16px;
-            background: var(--color-cream);
-            border-radius: 100px;
-            border: 1px solid var(--color-taupe-light);
-        }
-
-        /* Section Styling */
-        section {
-            padding: 120px 0;
-        }
-
-        .section-header {
-            margin-bottom: 64px;
-            text-align: center;
-        }
-
-        .section-header h2 {
-            margin-bottom: 16px;
-        }
-
-        .section-lead {
-            font-size: 1.1rem;
-            color: var(--color-ink-muted);
-            max-width: 560px;
-            margin: 0 auto;
-            line-height: 1.75;
-        }
-
-        /* Problem Section */
-        .problem {
-            background: var(--color-cream);
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: start;
-        }
-
-        .problem-content h2 {
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        .problem-content .section-lead {
-            text-align: left;
-            margin: 0;
-        }
-
-        .problem-list {
-            list-style: none;
-            margin-top: 40px;
-        }
-
-        .problem-list li {
-            padding: 18px 0;
-            border-bottom: 1px solid var(--color-taupe-light);
-            color: var(--color-ink-soft);
-            font-size: 1rem;
-            padding-left: 28px;
-            position: relative;
-        }
-
-        .problem-list li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 26px;
-            width: 8px;
-            height: 8px;
-            background: var(--color-accent);
-            border-radius: 50%;
-        }
-
-        .problem-list li:last-child {
-            border-bottom: none;
-        }
-
-        /* Cost Box */
-        .cost-box {
-            background: var(--color-warm-white);
-            padding: 40px;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(196,145,124,0.1);
-        }
-
-        .cost-box h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            margin-bottom: 28px;
-            color: var(--color-ink);
-        }
-
-        .cost-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 14px 0;
-            border-bottom: 1px solid var(--color-taupe-light);
-            font-size: 15px;
-        }
-
-        .cost-item:last-child {
-            border-bottom: none;
-        }
-
-        .cost-item span:first-child {
-            color: var(--color-ink-soft);
-        }
-
-        .cost-item span:last-child {
-            font-weight: 500;
-            color: var(--color-accent);
-        }
-
-        .cost-total {
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 2px solid var(--color-ink);
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.1rem;
-        }
-
-        .cost-total span:first-child {
-            font-weight: 500;
-            color: var(--color-ink);
-        }
-
-        .cost-total span:last-child {
-            font-family: var(--font-display);
-            font-size: 1.35rem;
-            color: var(--color-ink);
-        }
-
-        /* Common Fixes Section */
-        .common-fixes {
-            background: var(--color-warm-white);
-            padding: 80px 0;
-            border-top: 1px solid var(--color-taupe-light);
-        }
-
-        .fixes-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .fixes-header h2 {
-            font-size: clamp(1.75rem, 3.5vw, 2.25rem);
-            margin-bottom: 12px;
-        }
-
-        .fixes-header p {
-            font-size: 1rem;
-            color: var(--color-ink-muted);
-        }
-
-        .fixes-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .fix-item {
-            padding: 20px 24px;
-            background: var(--color-cream);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--color-taupe-light);
-            font-size: 15px;
-            color: var(--color-ink-soft);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .fix-item:hover {
-            border-color: var(--color-accent);
-            transform: translateY(-2px);
-        }
-
-        .fix-item::before {
-            content: '→';
-            color: var(--color-accent);
-            font-weight: 500;
-            flex-shrink: 0;
-        }
-
-        /* Metrics Section */
-        .metrics {
-            background: var(--color-warm-white);
-            padding: 100px 0;
-        }
-
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-        }
-
-        .metric-card {
-            text-align: center;
-            padding: 32px 24px;
-            background: var(--color-cream);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--color-taupe-light);
-        }
-
-        .metric-label {
-            font-size: 11px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--color-ink-muted);
-            margin-bottom: 16px;
-        }
-
-        .metric-value {
-            font-family: var(--font-display);
-            font-size: 3.5rem;
-            color: var(--color-accent);
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .metric-value span {
-            font-size: 1.5rem;
-        }
-
-        .metric-desc {
-            font-size: 13px;
-            color: var(--color-ink-muted);
-        }
-
-        /* Sprint Section */
-        .sprint {
+        /* Pain Section */
+        .pain {
             background: var(--color-ink);
             color: var(--color-warm-white);
+            padding: 100px 0;
             position: relative;
-            overflow: hidden;
         }
 
-        .sprint::before {
+        .pain::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(ellipse at 30% 20%, rgba(196,145,124,0.15) 0%, transparent 50%);
+            background: radial-gradient(ellipse at 70% 30%, rgba(196,145,124,0.1) 0%, transparent 50%);
             pointer-events: none;
         }
 
-        .sprint .section-label {
-            color: var(--color-accent-soft);
-        }
-
-        .sprint h2 {
-            color: var(--color-warm-white);
-            margin-bottom: 20px;
-        }
-
-        .sprint-header {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 80px;
-            margin-bottom: 80px;
-            padding-bottom: 80px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+        .pain-content {
             position: relative;
             z-index: 1;
+            max-width: 800px;
         }
 
-        .sprint-intro p {
-            color: var(--color-taupe);
-            font-size: 1.1rem;
+        .pain-text {
+            font-size: 1.35rem;
             line-height: 1.8;
-        }
-
-        .sprint-details {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .sprint-detail {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding-bottom: 16px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .sprint-detail-label {
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--color-accent-soft);
-        }
-
-        .sprint-detail-value {
-            font-family: var(--font-display);
-            font-size: 1.375rem;
-            color: var(--color-warm-white);
-        }
-
-        .deliverables-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .deliverable {
-            padding: 36px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: var(--radius-lg);
-            transition: all 0.3s ease;
-        }
-
-        .deliverable:hover {
-            background: rgba(255,255,255,0.06);
-            border-color: rgba(196,145,124,0.3);
-            transform: translateY(-4px);
-        }
-
-        .deliverable-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-deep) 100%);
-            border-radius: var(--radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
-
-        .deliverable-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: white;
-            stroke-width: 1.5;
-            fill: none;
-        }
-
-        .deliverable h3 {
-            color: var(--color-warm-white);
-            margin-bottom: 12px;
-            font-size: 1.25rem;
-        }
-
-        .deliverable p {
             color: var(--color-taupe);
-            font-size: 0.95rem;
+        }
+
+        .pain-text strong {
+            color: var(--color-warm-white);
+            font-weight: 400;
+        }
+
+        .pain-cost {
+            margin-top: 40px;
+            padding: 28px 36px;
+            background: rgba(196,145,124,0.12);
+            border-radius: var(--radius-lg);
+            border-left: 3px solid var(--color-accent);
+        }
+
+        .pain-cost p {
+            color: var(--color-warm-white);
+            font-size: 1.1rem;
+            margin: 0;
             line-height: 1.7;
         }
 
-        /* Benefits Grid - Bento Style */
-        .benefits {
+        /* Targets Section */
+        .targets {
+            padding: 100px 0;
+            background: var(--color-warm-white);
+        }
+
+        .targets-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .targets-header h2 {
+            margin-bottom: 12px;
+        }
+
+        .targets-header p {
+            font-size: 1rem;
+            color: var(--color-ink-muted);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .targets-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .target-card {
+            text-align: center;
+            padding: 28px 16px;
+            background: var(--color-cream);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-taupe-light);
+        }
+
+        .target-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-accent-deep);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .target-value span {
+            font-size: 1.1rem;
+        }
+
+        .target-label {
+            font-size: 12px;
+            color: var(--color-ink-muted);
+            line-height: 1.4;
+        }
+
+        .targets-guarantee {
+            text-align: center;
+            font-size: 15px;
+            color: var(--color-ink-soft);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 28px;
+            background: var(--color-sage-pale);
+            border-radius: var(--radius-lg);
+        }
+
+        /* What We Install */
+        .install {
+            padding: 100px 0;
             background: var(--color-cream);
         }
 
-        .benefits-grid {
+        .install-header {
+            margin-bottom: 56px;
+        }
+
+        .install-header h2 {
+            margin-bottom: 12px;
+        }
+
+        .install-header p {
+            font-size: 1.05rem;
+            color: var(--color-ink-muted);
+            max-width: 560px;
+        }
+
+        .install-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
 
-        .benefit-card {
-            padding: 32px;
+        .install-item {
+            padding: 28px;
             background: var(--color-warm-white);
             border-radius: var(--radius-lg);
             border: 1px solid var(--color-taupe-light);
-            transition: all 0.3s ease;
         }
 
-        .benefit-card:hover {
-            box-shadow: var(--shadow-soft);
-            transform: translateY(-4px);
-        }
-
-        .benefit-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--color-accent-pale);
-            border-radius: var(--radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .benefit-icon svg {
-            width: 20px;
-            height: 20px;
-            stroke: var(--color-accent);
-            stroke-width: 1.5;
-            fill: none;
-        }
-
-        .benefit-label {
-            font-size: 10px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--color-accent);
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .benefit-card h4 {
+        .install-item h4 {
             font-family: var(--font-body);
             font-size: 15px;
             font-weight: 500;
             color: var(--color-ink);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
-        .benefit-card p {
+        .install-item p {
             font-size: 14px;
             color: var(--color-ink-muted);
             line-height: 1.6;
             margin: 0;
         }
 
+        .install-item .outcome {
+            color: var(--color-accent-deep);
+            font-weight: 400;
+        }
+
         /* Pricing Section */
         .pricing {
-            background: linear-gradient(180deg, var(--color-accent-pale) 0%, var(--color-cream) 100%);
-        }
-
-        .pricing-content {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .pricing-box {
+            padding: 100px 0;
             background: var(--color-warm-white);
-            padding: 56px 48px;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(0,0,0,0.04);
         }
 
-        .pricing-amount {
-            font-family: var(--font-display);
-            font-size: 3.5rem;
-            color: var(--color-ink);
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .pricing-header h2 {
             margin-bottom: 12px;
-            letter-spacing: -0.02em;
         }
 
-        .pricing-terms {
+        .pricing-header p {
             font-size: 1.05rem;
             color: var(--color-ink-muted);
-            margin-bottom: 36px;
         }
 
-        .pricing-includes {
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            padding: 44px 36px;
             background: var(--color-cream);
-            padding: 28px;
             border-radius: var(--radius-lg);
-            margin-bottom: 32px;
-            text-align: left;
+            border: 1px solid var(--color-taupe-light);
+            position: relative;
         }
 
-        .pricing-includes h4 {
-            font-family: var(--font-body);
-            font-size: 12px;
+        .pricing-card.featured {
+            background: var(--color-ink);
+            border-color: var(--color-ink);
+        }
+
+        .pricing-card.featured .pricing-label,
+        .pricing-card.featured .pricing-name,
+        .pricing-card.featured .pricing-price,
+        .pricing-card.featured .pricing-desc,
+        .pricing-card.featured li {
+            color: var(--color-warm-white);
+        }
+
+        .pricing-card.featured .pricing-label {
+            color: var(--color-accent-soft);
+        }
+
+        .pricing-card.featured li::before {
+            color: var(--color-accent-soft);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            right: 32px;
+            background: var(--color-accent);
+            color: var(--color-warm-white);
+            font-size: 11px;
             font-weight: 500;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 100px;
+        }
+
+        .pricing-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--color-accent);
-            margin-bottom: 16px;
+            margin-bottom: 6px;
         }
 
-        .pricing-includes ul {
+        .pricing-name {
+            font-family: var(--font-display);
+            font-size: 1.625rem;
+            color: var(--color-ink);
+            margin-bottom: 6px;
+        }
+
+        .pricing-price {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--color-ink);
+            margin-bottom: 8px;
+        }
+
+        .pricing-desc {
+            font-size: 14px;
+            color: var(--color-ink-muted);
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .pricing-card ul {
             list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px 24px;
+            margin-bottom: 28px;
         }
 
-        .pricing-includes li {
+        .pricing-card li {
             font-size: 14px;
             color: var(--color-ink-soft);
+            padding: 7px 0;
             padding-left: 20px;
             position: relative;
         }
 
-        .pricing-includes li::before {
+        .pricing-card li::before {
             content: '→';
             position: absolute;
             left: 0;
             color: var(--color-accent);
         }
 
-        .pricing-guarantee {
-            margin-top: 28px;
-            padding: 20px 24px;
-            background: var(--color-sage-pale);
-            border-radius: var(--radius);
-            font-size: 14px;
-            color: var(--color-ink-soft);
-            line-height: 1.7;
+        .pricing-card .btn {
+            width: 100%;
         }
 
-        .pricing-guarantee strong {
+        .pricing-card.featured .btn-primary {
+            background: var(--color-accent);
+        }
+
+        .pricing-card.featured .btn-primary:hover {
+            background: var(--color-accent-soft);
+        }
+
+        /* Add-ons */
+        .addons {
+            padding: 72px 0;
+            background: var(--color-cream);
+        }
+
+        .addons-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .addons-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .addons-header p {
+            color: var(--color-ink-muted);
+            font-size: 15px;
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .addon-card {
+            padding: 20px;
+            background: var(--color-warm-white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-taupe-light);
+            text-align: center;
+        }
+
+        .addon-card h4 {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--color-ink);
+            margin-bottom: 6px;
+        }
+
+        .addon-card .price {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            color: var(--color-accent-deep);
+        }
+
+        /* Availability */
+        .availability {
+            padding: 80px 0;
+            background: var(--color-accent-pale);
+            text-align: center;
+        }
+
+        .availability h3 {
+            font-size: 1.75rem;
+            margin-bottom: 24px;
+        }
+
+        .availability-dates {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .date-badge {
+            padding: 14px 28px;
+            background: var(--color-warm-white);
+            border-radius: var(--radius-lg);
+            font-size: 1.05rem;
+            color: var(--color-ink);
+            box-shadow: var(--shadow-md);
+            font-weight: 400;
+        }
+
+        .availability-incentive {
+            font-size: 15px;
+            color: var(--color-ink-soft);
+            max-width: 520px;
+            margin: 0 auto 28px;
+            line-height: 1.6;
+        }
+
+        .availability-incentive strong {
             color: var(--color-ink);
             font-weight: 500;
         }
 
-        /* Fit Section */
+        /* Who This Is For */
         .fit {
+            padding: 100px 0;
             background: var(--color-warm-white);
         }
 
@@ -964,18 +701,10 @@
             gap: 64px;
         }
 
-        .fit h2 {
-            margin-bottom: 24px;
-        }
-
         .fit-column h3 {
-            font-family: var(--font-body);
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--color-ink-muted);
-            margin-bottom: 24px;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 28px;
         }
 
         .fit-list {
@@ -983,10 +712,10 @@
         }
 
         .fit-list li {
-            padding: 16px 0;
+            padding: 14px 0;
             border-bottom: 1px solid var(--color-taupe-light);
             color: var(--color-ink-soft);
-            font-size: 1rem;
+            font-size: 15px;
             display: flex;
             align-items: flex-start;
             gap: 12px;
@@ -1015,108 +744,81 @@
             border-bottom: none;
         }
 
-        /* About Section */
-        .about {
-            background: linear-gradient(to bottom, var(--color-cream), var(--color-warm-white));
-        }
-
-        .about-content {
-            max-width: 800px;
-        }
-
-        .about h2 {
-            margin-bottom: 36px;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .about-credentials {
-            display: flex;
-            gap: 56px;
-            margin-top: 56px;
-            padding-top: 48px;
-            border-top: 1px solid var(--color-taupe-light);
-        }
-
-        .credential {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .credential-value {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            color: var(--color-accent);
-            line-height: 1;
-        }
-
-        .credential-label {
-            font-size: 13px;
-            color: var(--color-ink-muted);
-            margin-top: 8px;
-            letter-spacing: 0.02em;
-        }
-
-        /* FAQ Section */
+        /* FAQ */
         .faq {
-            background: var(--color-warm-white);
+            padding: 80px 0;
+            background: var(--color-cream);
         }
 
         .faq-header {
             text-align: center;
-            margin-bottom: 56px;
+            margin-bottom: 48px;
+        }
+
+        .faq-header h3 {
+            font-size: 1.75rem;
         }
 
         .faq-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
             max-width: 900px;
             margin: 0 auto;
         }
 
         .faq-item {
-            padding: 28px;
-            background: var(--color-cream);
+            padding: 24px 28px;
+            background: var(--color-warm-white);
             border-radius: var(--radius-lg);
             border: 1px solid var(--color-taupe-light);
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            box-shadow: var(--shadow-md);
         }
 
         .faq-item h4 {
             font-family: var(--font-body);
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
             color: var(--color-ink);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .faq-item p {
             font-size: 14px;
             color: var(--color-ink-muted);
-            line-height: 1.7;
+            line-height: 1.6;
             margin: 0;
         }
 
-        /* Contact Section */
-        .contact {
+        /* About */
+        .about {
+            padding: 100px 0;
+            background: var(--color-warm-white);
+        }
+
+        .about-content {
+            max-width: 700px;
+        }
+
+        .about-content h2 {
+            margin-bottom: 24px;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 120px 0;
             background: var(--color-ink);
-            color: var(--color-warm-white);
             text-align: center;
-            padding: 140px 0;
             position: relative;
             overflow: hidden;
         }
 
-        .contact::before {
+        .final-cta::before {
             content: '';
             position: absolute;
             top: 0;
@@ -1127,54 +829,53 @@
             pointer-events: none;
         }
 
-        .contact > .container {
+        .final-cta > .container {
             position: relative;
             z-index: 1;
         }
 
-        .contact h2 {
+        .final-cta h2 {
             color: var(--color-warm-white);
-            margin-bottom: 20px;
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            margin-bottom: 16px;
         }
 
-        .contact > .container > p {
+        .final-cta > .container > p {
             color: var(--color-taupe);
-            font-size: 1.15rem;
-            margin-bottom: 48px;
-            max-width: 500px;
+            font-size: 1.1rem;
+            margin-bottom: 36px;
+            max-width: 480px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.7;
         }
 
-        .contact .btn-primary {
+        .final-cta .btn-primary {
             background: var(--color-accent);
-            color: var(--color-warm-white);
+            padding: 20px 48px;
+            font-size: 14px;
         }
 
-        .contact .btn-primary:hover {
+        .final-cta .btn-primary:hover {
             background: var(--color-accent-soft);
         }
 
-        .contact-email {
-            margin-top: 40px;
+        .final-cta-email {
+            margin-top: 28px;
             font-size: 15px;
             color: var(--color-taupe);
         }
 
-        .contact-email a {
+        .final-cta-email a {
             color: var(--color-warm-white);
             text-decoration: underline;
             text-underline-offset: 4px;
         }
 
-        .contact-email a:hover {
-            color: var(--color-accent-soft);
-        }
-
         /* Footer */
         footer {
             background: var(--color-ink);
-            padding: 40px 0;
+            padding: 36px 0;
             border-top: 1px solid rgba(255,255,255,0.06);
         }
 
@@ -1213,35 +914,30 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero-grid,
-            .problem-grid,
-            .sprint-header,
+            .targets-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .install-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+            }
+
+            .addons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .fit-grid {
                 grid-template-columns: 1fr;
                 gap: 48px;
             }
 
-            .hero-visual {
-                display: none;
-            }
-
-            .deliverables-grid,
-            .metrics-grid,
-            .benefits-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .fixes-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
             .faq-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .about-credentials {
-                flex-wrap: wrap;
-                gap: 40px;
             }
         }
 
@@ -1255,18 +951,26 @@
                 min-height: auto;
             }
 
-            section {
-                padding: 80px 0;
+            .hero-proof-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
             }
 
-            .deliverables-grid,
-            .metrics-grid,
-            .benefits-grid,
-            .fixes-grid {
-                grid-template-columns: 1fr;
+            .proof-divider {
+                display: none;
             }
 
-            .pricing-includes ul {
+            .targets-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .targets-grid .target-card:last-child {
+                grid-column: span 2;
+            }
+
+            .install-grid,
+            .addons-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1278,13 +982,17 @@
                 width: 100%;
             }
 
-            .trust-experience {
-                gap: 16px;
+            .availability-dates {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .trust-item {
-                font-size: 13px;
-                padding: 6px 12px;
+            .logo-bar-logos {
+                gap: 32px;
+            }
+
+            .logo-img {
+                height: 20px;
             }
 
             .footer-inner {
@@ -1296,6 +1004,173 @@
             .footer-links {
                 order: -1;
             }
+        }
+
+        /* Hero availability line */
+        .hero-availability {
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--color-ink-muted);
+        }
+
+        .hero-availability strong {
+            color: var(--color-accent-deep);
+            font-weight: 500;
+        }
+
+        .hero-micro-cta {
+            margin-top: 24px;
+            font-size: 14px;
+            color: var(--color-ink-muted);
+        }
+
+        .hero-micro-risk {
+            font-size: 14px;
+            color: var(--color-ink-muted);
+            margin-bottom: 24px;
+        }
+
+        /* Logo bar */
+        .logo-bar {
+            padding: 40px 0;
+            background: var(--color-warm-white);
+            border-bottom: 1px solid var(--color-taupe-light);
+        }
+
+        .logo-bar .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-bar-label {
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-ink-muted);
+        }
+
+        .logo-bar-logos {
+            display: flex;
+            gap: 48px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .logo-img {
+            height: 24px;
+            width: auto;
+            opacity: 0.5;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .logo-img:hover {
+            opacity: 0.7;
+        }
+
+        .logo-bar-disclaimer {
+            font-size: 11px;
+            color: var(--color-ink-muted);
+            opacity: 0.7;
+        }
+
+        /* Testimonial section */
+        .testimonial {
+            padding: 64px 0;
+            background: var(--color-warm-white);
+            text-align: center;
+            border-bottom: 1px solid var(--color-taupe-light);
+        }
+
+        .testimonial-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .testimonial-quote {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-style: italic;
+            color: var(--color-ink);
+            line-height: 1.4;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-source {
+            font-size: 14px;
+            color: var(--color-ink-muted);
+            letter-spacing: 0.02em;
+        }
+
+        .ref-available {
+            font-size: 11px;
+            color: var(--color-taupe);
+            font-style: normal;
+        }
+
+        .testimonial-secondary {
+            background: var(--color-cream);
+            padding: 56px 0;
+            border-top: 1px solid var(--color-taupe-light);
+        }
+
+        .testimonial-secondary .testimonial-quote {
+            font-size: 1.5rem;
+        }
+
+        /* Pricing keeps line */
+        .pricing-keeps {
+            font-size: 12px;
+            color: var(--color-ink-muted);
+            margin-bottom: 12px;
+            padding-top: 16px;
+            border-top: 1px solid var(--color-taupe-light);
+        }
+
+        .pricing-card.featured .pricing-keeps {
+            color: var(--color-taupe);
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .pricing-outcome {
+            font-size: 13px;
+            color: var(--color-accent-deep);
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+
+        .pricing-card.featured .pricing-outcome {
+            color: var(--color-accent-soft);
+        }
+
+        .pricing-lead {
+            font-size: 12px;
+            color: var(--color-ink-muted);
+            margin-bottom: 20px;
+        }
+
+        .pricing-card.featured .pricing-lead {
+            color: var(--color-taupe);
+        }
+
+        /* Availability scheduler link */
+        .availability-scheduler {
+            margin-top: 12px;
+            font-size: 13px;
+            color: var(--color-ink-muted);
+        }
+
+        /* Final CTA alt */
+        .final-cta-alt {
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--color-taupe);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Animations */
@@ -1327,299 +1202,233 @@
         <div class="container header-inner">
             <a href="#" class="logo">Pixique</a>
             <nav>
-                <a href="#approach">Approach</a>
-                <a href="#sprint">The Sprint</a>
+                <a href="#install">What We Build</a>
+                <a href="#pricing">Pricing</a>
                 <a href="#about">About</a>
-                <a href="start.html" class="nav-cta">Book a Fit Call</a>
+                <a href="start.html" class="nav-cta">Book a 15-min Call</a>
             </nav>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <span class="hero-badge-dot"></span>
-                        Now accepting Q1 engagements
-                    </div>
-                    <h1>We make your business run like it <em>should have</em> all along.</h1>
-                    <p class="hero-subtitle">A 3–4 week operations reset for marketing + creative teams: intake, workflows, handoffs, and delivery—rebuilt inside your existing tools.</p>
-                    <div class="hero-ctas">
-                        <a href="start.html" class="btn btn-primary">Book a Fit Call</a>
-                        <a href="#deliverables" class="btn btn-secondary">See Deliverables</a>
-                    </div>
+            <div class="hero-content">
+                <h1>Ship more. On time. <em>Without babysitting.</em></h1>
+                <p class="hero-subtitle">We install a Delivery Operating System for marketing and creative teams in 30–60 days — inside the tools you already use. If we don't hit two agreed KPIs in 30 days, we extend at no cost.</p>
+                <p class="hero-micro-risk">No migrations. One kickoff. Async delivery.</p>
+                <div class="hero-proof-bar">
+                    <span>97.6% on-time (Walmart Connect)</span>
+                    <span class="proof-divider">•</span>
+                    <span>140+ campaigns/year</span>
+                    <span class="proof-divider">•</span>
+                    <span>9+ yrs at Fortune 500</span>
                 </div>
-                <div class="hero-visual">
-                    <div class="iso-container">
-                        <div class="iso-block"></div>
-                        <div class="iso-block"></div>
-                        <div class="iso-block"></div>
-                        <div class="iso-block"></div>
-                    </div>
-                    <div class="results-card results-card-1">
-                        <div class="results-card-value">97.6%</div>
-                        <p>On-time delivery across 140+ annual campaigns</p>
-                        <div class="results-card-tag">Walmart Connect</div>
-                    </div>
-                    <div class="results-card results-card-2">
-                        <div class="results-card-value">15 hrs</div>
-                        <p>Typical weekly time saved post-reset</p>
-                        <div class="results-card-tag">Client Average</div>
-                    </div>
+                <div class="hero-ctas">
+                    <a href="start.html" class="btn btn-primary">Book a 15-min Fit Call</a>
+                    <a href="#pricing" class="btn btn-secondary">See Pricing</a>
                 </div>
+                <p class="hero-micro-cta">On the call, we'll baseline two KPIs and outline your 30-day install plan.</p>
+                <p class="hero-availability">Two February start dates remaining: <strong>Feb 10</strong> & <strong>Feb 24</strong></p>
             </div>
         </div>
     </section>
 
-    <div class="trust-bar">
-        <div class="container trust-bar-inner">
-            <span class="trust-bar-label">Experience across</span>
-            <div class="trust-experience">
-                <span class="trust-item">Retail Media</span>
-                <span class="trust-item">Tech</span>
-                <span class="trust-item">Agency Networks</span>
-                <span class="trust-item">E-commerce</span>
+    <div class="logo-bar">
+        <div class="container">
+            <span class="logo-bar-label">Previously at</span>
+            <div class="logo-bar-logos">
+                <img src="images/walmart-logo.png" alt="Walmart" class="logo-img">
+                <img src="images/google-logo.png" alt="Google" class="logo-img">
+                <img src="images/airbnb-logo.png" alt="Airbnb" class="logo-img">
+                <img src="images/mccann-logo.png" alt="McCann" class="logo-img">
             </div>
+            <span class="logo-bar-disclaimer">Logos represent past employers and client engagements.</span>
         </div>
     </div>
 
-    <section class="metrics">
+    <section class="pain">
         <div class="container">
-            <div class="section-header">
-                <p class="section-label">Track Record</p>
-                <h2>Proof this approach works</h2>
-                <p class="section-lead">Real outcomes from a decade of running operations at scale.</p>
-            </div>
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <div class="metric-label">Campaigns Managed</div>
-                    <div class="metric-value">140<span>+</span></div>
-                    <div class="metric-desc">annually at Fortune 500</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-label">On-Time Delivery</div>
-                    <div class="metric-value">97.6<span>%</span></div>
-                    <div class="metric-desc">across all engagements</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-label">Typical Time Saved</div>
-                    <div class="metric-value">15<span>hrs</span></div>
-                    <div class="metric-desc">per week post-reset</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-label">Sprint Duration</div>
-                    <div class="metric-value">3-4<span>wks</span></div>
-                    <div class="metric-desc">start to clean exit</div>
+            <div class="pain-content">
+                <p class="pain-text"><strong>Briefs disappear into Slack.</strong> Approvals stall. Handoffs fail silently. Producers chase status instead of shipping. Every week this continues costs <strong>$5–15K in wasted time, missed deadlines, and burnout.</strong> Left unchecked, this compounds into scope creep, missed launches, and client churn.</p>
+                <div class="pain-cost">
+                    <p>You don't need more tools. You need a system that matches how your team actually works.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="problem" id="approach">
+    <section class="testimonial">
         <div class="container">
-            <div class="problem-grid">
-                <div class="problem-content">
-                    <p class="section-label">The Reality</p>
-                    <h2>You built something real. But the back-end became a mess.</h2>
-                    <p class="section-lead">Things slip. Handoffs break. You're holding too much in your head. You're spending your best hours managing friction instead of growing.</p>
-                    <ul class="problem-list">
-                        <li>Workflows that only exist in your memory</li>
-                        <li>Handoffs that fail silently</li>
-                        <li>Tools that don't talk to each other</li>
-                        <li>A team waiting on you for every decision</li>
-                        <li>The constant feeling of things slipping</li>
+            <div class="testimonial-content">
+                <p class="testimonial-quote">"We finally see everything in one place — approvals no longer stall."</p>
+                <p class="testimonial-source">— Creative Lead, mid-market creative agency <span class="ref-available">[ref available]</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="targets">
+        <div class="container">
+            <div class="targets-header">
+                <p class="section-label">Target Outcomes</p>
+                <h2>What we aim for in 30–60 days</h2>
+                <p>Targets set together in kickoff. Measured weekly. Guaranteed.</p>
+            </div>
+            <div class="targets-grid">
+                <div class="target-card">
+                    <div class="target-value">95<span>%+</span></div>
+                    <div class="target-label">On-time delivery</div>
+                </div>
+                <div class="target-card">
+                    <div class="target-value">-25<span>–40%</span></div>
+                    <div class="target-label">Cycle time</div>
+                </div>
+                <div class="target-card">
+                    <div class="target-value">-30<span>–50%</span></div>
+                    <div class="target-label">Rework & escalations</div>
+                </div>
+                <div class="target-card">
+                    <div class="target-value">100<span>%</span></div>
+                    <div class="target-label">WIP visibility</div>
+                </div>
+                <div class="target-card">
+                    <div class="target-value">+6<span>–10</span></div>
+                    <div class="target-label">Hours/week back</div>
+                </div>
+            </div>
+            <div class="targets-guarantee">
+                If two targets aren't met by Day 30, we extend at no cost.
+            </div>
+        </div>
+    </section>
+
+    <section class="install" id="install">
+        <div class="container">
+            <div class="install-header">
+                <p class="section-label">What We Build</p>
+                <h2>A delivery system that runs without you</h2>
+                <p>Installed in your existing tools — no migrations, no new licenses. Mid-migration? We use wrappers and freeze points so teams keep working while we install.</p>
+            </div>
+            <div class="install-grid">
+                <div class="install-item">
+                    <h4>Intake + Triage</h4>
+                    <p>One front door with clear SLAs <span class="outcome">→ no side-door chaos</span></p>
+                </div>
+                <div class="install-item">
+                    <h4>Brief → Build → Review</h4>
+                    <p>Standard stages for every project <span class="outcome">→ predictable flow, faster cycles</span></p>
+                </div>
+                <div class="install-item">
+                    <h4>Approval Gates</h4>
+                    <p>QA + explicit sign-off required <span class="outcome">→ fewer reworks and escalations</span></p>
+                </div>
+                <div class="install-item">
+                    <h4>Ownership Maps</h4>
+                    <p>Clear RACI for every workflow <span class="outcome">→ no dropped balls</span></p>
+                </div>
+                <div class="install-item">
+                    <h4>Capacity Visibility</h4>
+                    <p>Account-level load at a glance <span class="outcome">→ stop overcommitting</span></p>
+                </div>
+                <div class="install-item">
+                    <h4>KPI Dashboards</h4>
+                    <p>Real-time status + alerts <span class="outcome">→ catch slips before they hit</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <p class="section-label">Pricing</p>
+                <h2>Two ways in</h2>
+                <p>Flat fee. Fixed scope. We leave when it's done.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-label">Core</div>
+                    <div class="pricing-name">30-Day Install</div>
+                    <div class="pricing-price">$19,500 – $28,000</div>
+                    <p class="pricing-desc">For teams who need 1–2 core systems fixed fast.</p>
+                    <ul>
+                        <li>Diagnosis + KPI baseline</li>
+                        <li>1–2 system builds (e.g., Intake + QA Gate)</li>
+                        <li>Documentation + Loom enablement</li>
+                        <li>60-day stabilization plan</li>
                     </ul>
+                    <p class="pricing-keeps">Deliverables you keep: SOPs, ownership maps, dashboards, Loom walkthroughs.</p>
+                    <p class="pricing-outcome">Optimizes 1–2 bottlenecks (commonly Intake + QA Gate) to restore flow.</p>
+                    <p class="pricing-lead">Led by Bea Katcher; specialist collaborators engaged as needed.</p>
+                    <a href="start.html" class="btn btn-primary">Book a Fit Call</a>
                 </div>
-                <div class="cost-box">
-                    <h3>What operational chaos actually costs</h3>
-                    <div class="cost-item">
-                        <span>Missed deadlines & rework</span>
-                        <span>$5–15K/mo</span>
-                    </div>
-                    <div class="cost-item">
-                        <span>Wasted meeting time</span>
-                        <span>$3–8K/mo</span>
-                    </div>
-                    <div class="cost-item">
-                        <span>Delayed projects & lost revenue</span>
-                        <span>$10–25K/mo</span>
-                    </div>
-                    <div class="cost-item">
-                        <span>Employee burnout & turnover</span>
-                        <span>$5–15K/mo</span>
-                    </div>
-                    <div class="cost-total">
-                        <span>Total operational drag</span>
-                        <span>$23–63K/mo</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="common-fixes">
-        <div class="container">
-            <div class="fixes-header">
-                <p class="section-label">What We Fix</p>
-                <h2>Common systems we implement</h2>
-                <p>People buy what they can picture. Here's what typically gets rebuilt.</p>
-            </div>
-            <div class="fixes-grid">
-                <div class="fix-item">Creative intake + prioritization</div>
-                <div class="fix-item">Brief → build → review workflows</div>
-                <div class="fix-item">Asset handoffs + naming conventions</div>
-                <div class="fix-item">Launch calendar + dependencies</div>
-                <div class="fix-item">Stakeholder approvals + version control</div>
-                <div class="fix-item">RACI / ownership maps</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="benefits" id="deliverables">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-label">The Transformation</p>
-                <h2>Everything you need for a clean operation</h2>
-                <p class="section-lead">We don't just diagnose — we implement. Here's what changes.</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
-                    </div>
-                    <div class="benefit-label">Clarity</div>
-                    <h4>Operations Diagnosis</h4>
-                    <p>A clear map of where you're leaking time and money — prioritized by impact.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24"><path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
-                    </div>
-                    <div class="benefit-label">Structure</div>
-                    <h4>Workflow Architecture</h4>
-                    <p>End-to-end workflows with clear ownership and standardized handoffs.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
-                    </div>
-                    <div class="benefit-label">Implementation</div>
-                    <h4>System Build</h4>
-                    <p>1-2 highest-leverage systems built and documented for your team.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                    </div>
-                    <div class="benefit-label">Training</div>
-                    <h4>Loom Walkthroughs</h4>
-                    <p>Video documentation of every system so your team can run it without you.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                    </div>
-                    <div class="benefit-label">Sustainability</div>
-                    <h4>60-Day Stabilization Plan</h4>
-                    <p>A roadmap to keep things running clean long after we're gone.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
-                    </div>
-                    <div class="benefit-label">Independence</div>
-                    <h4>Clean Exit</h4>
-                    <p>We leave. No retainers, no ongoing dependency. Just systems that work.</p>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-label">Flagship</div>
+                    <div class="pricing-name">60-Day Install</div>
+                    <div class="pricing-price">$35,000 – $55,000</div>
+                    <p class="pricing-desc">For teams with complex delivery or multiple stakeholders.</p>
+                    <ul>
+                        <li>Everything in 30-Day, plus:</li>
+                        <li>Intake SLAs + triage system</li>
+                        <li>Capacity model + visibility</li>
+                        <li>QA gates + approval workflows</li>
+                        <li>KPI dashboards + alerting</li>
+                        <li>Client Status Hub (agencies)</li>
+                    </ul>
+                    <p class="pricing-keeps">Deliverables you keep: SOPs, ownership maps, dashboards, Loom walkthroughs.</p>
+                    <p class="pricing-outcome">Full delivery system install across intake, capacity, QA, and visibility.</p>
+                    <p class="pricing-lead">Led by Bea Katcher; specialist collaborators engaged as needed.</p>
+                    <a href="start.html" class="btn btn-primary">Book a Fit Call</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="sprint" id="sprint">
+    <section class="addons">
         <div class="container">
-            <div class="sprint-header">
-                <div class="sprint-intro">
-                    <p class="section-label">The Offering</p>
-                    <h2>The Pixique Reset</h2>
-                    <p>A 3–4 week engagement where we map what's heavy, reset your core workflows, and hand you back a business that runs cleaner. Then we leave.</p>
-                </div>
-                <div class="sprint-details">
-                    <div class="sprint-detail">
-                        <span class="sprint-detail-label">Duration</span>
-                        <span class="sprint-detail-value">3–4 Weeks</span>
-                    </div>
-                    <div class="sprint-detail">
-                        <span class="sprint-detail-label">Investment</span>
-                        <span class="sprint-detail-value">$15,000 – $20,000</span>
-                    </div>
-                    <div class="sprint-detail">
-                        <span class="sprint-detail-label">Communication</span>
-                        <span class="sprint-detail-value">Async + 1 Kickoff Call</span>
-                    </div>
-                </div>
+            <div class="addons-header">
+                <h3>Optional Add-Ons</h3>
+                <p>Stack with either tier for deeper builds.</p>
             </div>
-
-            <div class="deliverables-grid">
-                <div class="deliverable">
-                    <div class="deliverable-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    </div>
-                    <h3>Week 1: Discovery</h3>
-                    <p>60-minute kickoff call. We audit your current systems, map your workflows, and identify the highest-leverage fixes.</p>
+            <div class="addons-grid">
+                <div class="addon-card">
+                    <h4>Client Status Hub</h4>
+                    <div class="price">$6–10K</div>
                 </div>
-                <div class="deliverable">
-                    <div class="deliverable-icon">
-                        <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-                    </div>
-                    <h3>Week 2: Architecture</h3>
-                    <p>We design your new operational infrastructure — workflows, ownership maps, and system specifications.</p>
+                <div class="addon-card">
+                    <h4>Brief-to-Approve QA Gate</h4>
+                    <div class="price">$5–8K</div>
                 </div>
-                <div class="deliverable">
-                    <div class="deliverable-icon">
-                        <svg viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
-                    </div>
-                    <h3>Week 3: Build</h3>
-                    <p>We implement the 1-2 highest-impact systems. Built in your existing tools. Documented for your team.</p>
+                <div class="addon-card">
+                    <h4>Capacity + Scenario Planner</h4>
+                    <div class="price">$6–10K</div>
                 </div>
-                <div class="deliverable">
-                    <div class="deliverable-icon">
-                        <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                    </div>
-                    <h3>Week 4: Handoff</h3>
-                    <p>Loom walkthroughs of every system. A 60-day stabilization plan. Clear boundaries. Then we're gone.</p>
+                <div class="addon-card">
+                    <h4>Sales-Assist for Approvals</h4>
+                    <div class="price">$6–12K</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pricing">
+    <section class="testimonial testimonial-secondary">
         <div class="container">
-            <div class="pricing-content">
-                <p class="section-label">Investment</p>
-                <div class="pricing-box">
-                    <div class="pricing-amount">$15,000 – $20,000</div>
-                    <p class="pricing-terms">Flat fee. 3–4 weeks. Paid before work begins.</p>
-
-                    <div class="pricing-includes">
-                        <h4>What's Included</h4>
-                        <ul>
-                            <li>Operations diagnosis report</li>
-                            <li>Workflow architecture design</li>
-                            <li>1–2 system builds</li>
-                            <li>Complete documentation</li>
-                            <li>Loom walkthroughs</li>
-                            <li>60-day stabilization plan</li>
-                        </ul>
-                    </div>
-
-                    <a href="start.html" class="btn btn-primary" style="width: 100%;">Book a Fit Call</a>
-
-                    <div class="pricing-guarantee">
-                        <strong>Clarity guarantee:</strong> If you don't leave with a documented diagnosis + one implemented system, we extend 1 week at no cost.
-                    </div>
-                </div>
+            <div class="testimonial-content">
+                <p class="testimonial-quote">"Most proficient person in the room."</p>
+                <p class="testimonial-source">— VP, Vendor Partnerships <span class="ref-available">[ref available]</span></p>
             </div>
+        </div>
+    </section>
+
+    <section class="availability">
+        <div class="container">
+            <h3>Next available start dates</h3>
+            <div class="availability-dates">
+                <div class="date-badge">February 10</div>
+                <div class="date-badge">February 24</div>
+            </div>
+            <p class="availability-incentive"><strong>Fast-start incentive:</strong> Sign within 10 days of your fit call and receive the Capacity Model add-on at no extra cost — while capacity lasts.</p>
+            <a href="start.html" class="btn btn-primary">Pick Feb 10 or Feb 24 →</a>
         </div>
     </section>
 
@@ -1627,24 +1436,56 @@
         <div class="container">
             <div class="fit-grid">
                 <div class="fit-column">
-                    <p class="section-label">Fit</p>
-                    <h2>Is this for you?</h2>
-                    <h3>This works if you:</h3>
+                    <h3>This is for you if:</h3>
                     <ul class="fit-list fit-yes">
-                        <li>Have a business that's working — but running you ragged</li>
-                        <li>Know the back-end is a mess and are ready to fix it</li>
-                        <li>Trust expertise and don't need to micromanage</li>
-                        <li>Want results, not a relationship that drags on</li>
+                        <li>You're an agency (creative, content, performance) with 5–30 people</li>
+                        <li>You're an in-house marketing or creative team with 3–15 people</li>
+                        <li>You know the back-end is messy and want it fixed now</li>
+                        <li>You trust expertise and don't need to micromanage</li>
                     </ul>
                 </div>
-                <div class="fit-column" style="padding-top: 100px;">
-                    <h3>This doesn't work if you:</h3>
+                <div class="fit-column">
+                    <h3>This isn't for you if:</h3>
                     <ul class="fit-list fit-no">
-                        <li>Need constant reassurance or access</li>
-                        <li>Want to negotiate scope mid-project</li>
-                        <li>Expect on-demand availability</li>
-                        <li>Are looking for someone to convince you it's worth it</li>
+                        <li>You want an ongoing ops manager or retainer</li>
+                        <li>You need daily hand-holding or frequent status calls</li>
+                        <li>You're not convinced delivery ops is the bottleneck</li>
+                        <li>You want to negotiate scope mid-project</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <div class="faq-header">
+                <h3>Common questions</h3>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Who is "we"?</h4>
+                    <p>The install is led by Bea Katcher. Specialist collaborators are engaged as needed for tool-specific build/config. Your team owns the system post-handoff.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you replace our tools?</h4>
+                    <p>No. We build in your stack (Notion, Asana, Monday, Airtable). Mid-migration? We use wrappers and freeze points so teams keep working.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Will people actually follow the process?</h4>
+                    <p>We install constraint-driven systems (SLAs, WIP limits, QA gates) and dashboards that create behavior — not just docs that collect dust.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How is success measured?</h4>
+                    <p>We baseline KPIs in kickoff and review weekly. If two targets aren't met by Day 30, we extend at no cost.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can you stay on retainer?</h4>
+                    <p>We offer optional advisory office hours ($3–5K/mo) and an SLA warranty ($1.5–2.5K/mo), but the system is built to run without us.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What if our scope changes mid-project?</h4>
+                    <p>We lock scope at kickoff and manage a change log. Material changes roll into an add-on or follow-on sprint so we protect timelines and outcomes.</p>
                 </div>
             </div>
         </div>
@@ -1654,60 +1495,20 @@
         <div class="container">
             <div class="about-content">
                 <p class="section-label">About</p>
-                <h2>Built on a decade of doing this at scale.</h2>
-                <p class="about-text">Pixique is led by a former Fortune 500 program leader who spent nine years managing large-scale operations across tech, e-commerce, and media — including 140+ campaigns annually at Walmart Connect with 97.6% on-time delivery.</p>
-                <p class="about-text">She built Pixique for marketing and creative teams that have outgrown duct-tape operations but don't need — or want — a full-time ops hire. Just someone to come in, reset what's heavy, and leave you with something that runs clean.</p>
-                <div class="about-credentials">
-                    <div class="credential">
-                        <span class="credential-value">140+</span>
-                        <span class="credential-label">Campaigns managed annually</span>
-                    </div>
-                    <div class="credential">
-                        <span class="credential-value">97.6%</span>
-                        <span class="credential-label">On-time delivery rate</span>
-                    </div>
-                    <div class="credential">
-                        <span class="credential-value">9+</span>
-                        <span class="credential-label">Years at Fortune 500</span>
-                    </div>
-                </div>
+                <h2>I've built delivery ops at scale. Now I install them for you.</h2>
+                <p>I spent 9 years running operations at Walmart Connect, Google, Airbnb, and McCann — managing 140+ campaigns annually with 97.6% on-time delivery.</p>
+                <p>I install the systems that make teams ship faster with less chaos — in 30–60 days, inside your tools — then I leave. No retainers. No dependency.</p>
             </div>
         </div>
     </section>
 
-    <section class="faq">
+    <section class="final-cta">
         <div class="container">
-            <div class="faq-header">
-                <p class="section-label">Questions</p>
-                <h2>Before you reach out</h2>
-            </div>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h4>How much of my time will this take?</h4>
-                    <p>One 60-minute kickoff call. After that, everything is async — you'll spend roughly 2–3 hours total reviewing deliverables and providing feedback.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>What tools do you use?</h4>
-                    <p>Whatever you're already using. We configure your existing stack (Notion, Asana, Monday, Airtable, etc.) rather than introducing new tools.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>What if we need more help after?</h4>
-                    <p>We offer optional add-ons: additional system builds ($5–10K) and a 2-week stabilization sprint ($3–5K). But the goal is to leave you self-sufficient.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>How do I know if I'm ready?</h4>
-                    <p>If you're asking this question, you probably are. The businesses we work with know they have a problem — they just haven't had time to fix it.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Ready to reset what's heavy?</h2>
-            <p>15-minute call. No pitch. Just a quick conversation to see if we're a fit.</p>
+            <h2>Ready to stop babysitting delivery?</h2>
+            <p>15-minute fit call (no pitch). We'll baseline two KPIs and outline your 30-day install.</p>
             <a href="start.html" class="btn btn-primary">Book a Fit Call</a>
-            <p class="contact-email">Or email directly: <a href="mailto:hello@pixique.com">hello@pixique.com</a></p>
+            <p class="final-cta-email">Or email directly: <a href="mailto:hello@pixique.com">hello@pixique.com</a></p>
+            <p class="final-cta-alt">Prefer email? Reply with "DOS" and your top delivery bottleneck — we'll send a 2-minute Loom and a fit-call link.</p>
         </div>
     </section>
 
@@ -1715,16 +1516,13 @@
         <div class="container footer-inner">
             <span class="footer-logo">Pixique</span>
             <div class="footer-links">
-                <a href="articles/what-to-fix-first.html">Articles</a>
-                <a href="partners.html">Referral Partners</a>
                 <a href="https://www.linkedin.com/company/pixique-llc" target="_blank" rel="noopener">LinkedIn</a>
             </div>
-            <span class="footer-text">© <span id="copyright-year"></span> Pixique LLC. All rights reserved.</span>
+            <span class="footer-text">© <span id="copyright-year"></span> Pixique LLC</span>
         </div>
     </footer>
 
     <script>
-        // Auto-update copyright year
         document.getElementById('copyright-year').textContent = new Date().getFullYear();
     </script>
 
