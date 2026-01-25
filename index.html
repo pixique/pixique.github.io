@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixique — Operational Excellence for Growing Businesses</title>
-    <meta name="description" content="High-touch operational sprints for founder-led service businesses. We come in, reset what's heavy, and leave you with systems that run clean — without us. 3-4 weeks. $15-20K.">
+    <title>Pixique — Operations Reset for Marketing & Creative Teams</title>
+    <meta name="description" content="A 3–4 week operations reset for marketing + creative teams: intake, workflows, handoffs, and delivery—rebuilt inside your existing tools. $15-20K flat fee.">
 
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A1918'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='55' fill='%23FAF8F5' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
 
@@ -352,26 +352,26 @@
         @keyframes float3 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         @keyframes float4 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 
-        /* Floating Testimonials */
-        .float-card {
+        /* Results Cards (replacing fake testimonials) */
+        .results-card {
             position: absolute;
             background: var(--color-warm-white);
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-soft);
-            padding: 16px 20px;
-            font-size: 13px;
-            max-width: 220px;
+            padding: 20px 24px;
+            font-size: 14px;
+            max-width: 240px;
             z-index: 10;
             animation: floatCard 6s ease-in-out infinite;
         }
 
-        .float-card-1 {
+        .results-card-1 {
             top: 10%;
             right: 5%;
             animation-delay: 0s;
         }
 
-        .float-card-2 {
+        .results-card-2 {
             bottom: 20%;
             left: 0%;
             animation-delay: 2s;
@@ -382,31 +382,27 @@
             50% { transform: translateY(-10px); }
         }
 
-        .float-card-avatar {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--color-accent-soft), var(--color-accent));
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: white;
-            font-weight: 500;
+        .results-card-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 6px;
         }
 
-        .float-card p {
+        .results-card p {
             margin: 0;
             color: var(--color-ink-soft);
             line-height: 1.5;
         }
 
-        .float-card-tag {
+        .results-card-tag {
             margin-top: 8px;
             font-size: 11px;
-            color: var(--color-accent);
+            color: var(--color-ink-muted);
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         /* Trust Bar */
@@ -431,7 +427,7 @@
             color: var(--color-ink-muted);
         }
 
-        .trust-logos {
+        .trust-experience {
             display: flex;
             gap: 48px;
             align-items: center;
@@ -439,17 +435,13 @@
             justify-content: center;
         }
 
-        .trust-logo {
-            height: 24px;
-            width: auto;
-            opacity: 0.5;
-            filter: grayscale(100%);
-            transition: all 0.3s ease;
-        }
-
-        .trust-logo:hover {
-            opacity: 0.8;
-            filter: grayscale(0%);
+        .trust-item {
+            font-size: 14px;
+            color: var(--color-ink-soft);
+            padding: 8px 16px;
+            background: var(--color-cream);
+            border-radius: 100px;
+            border: 1px solid var(--color-taupe-light);
         }
 
         /* Section Styling */
@@ -580,6 +572,61 @@
             font-family: var(--font-display);
             font-size: 1.35rem;
             color: var(--color-ink);
+        }
+
+        /* Common Fixes Section */
+        .common-fixes {
+            background: var(--color-warm-white);
+            padding: 80px 0;
+            border-top: 1px solid var(--color-taupe-light);
+        }
+
+        .fixes-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .fixes-header h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+            margin-bottom: 12px;
+        }
+
+        .fixes-header p {
+            font-size: 1rem;
+            color: var(--color-ink-muted);
+        }
+
+        .fixes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fix-item {
+            padding: 20px 24px;
+            background: var(--color-cream);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-taupe-light);
+            font-size: 15px;
+            color: var(--color-ink-soft);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .fix-item:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .fix-item::before {
+            content: '→';
+            color: var(--color-accent);
+            font-weight: 500;
+            flex-shrink: 0;
         }
 
         /* Metrics Section */
@@ -1184,6 +1231,10 @@
                 grid-template-columns: 1fr 1fr;
             }
 
+            .fixes-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
             .faq-grid {
                 grid-template-columns: 1fr;
             }
@@ -1210,7 +1261,8 @@
 
             .deliverables-grid,
             .metrics-grid,
-            .benefits-grid {
+            .benefits-grid,
+            .fixes-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1226,8 +1278,13 @@
                 width: 100%;
             }
 
-            .trust-logos {
-                gap: 32px;
+            .trust-experience {
+                gap: 16px;
+            }
+
+            .trust-item {
+                font-size: 13px;
+                padding: 6px 12px;
             }
 
             .footer-inner {
@@ -1273,7 +1330,7 @@
                 <a href="#approach">Approach</a>
                 <a href="#sprint">The Sprint</a>
                 <a href="#about">About</a>
-                <a href="start.html" class="nav-cta">Start a Conversation</a>
+                <a href="start.html" class="nav-cta">Book a Fit Call</a>
             </nav>
         </div>
     </header>
@@ -1287,10 +1344,10 @@
                         Now accepting Q1 engagements
                     </div>
                     <h1>We make your business run like it <em>should have</em> all along.</h1>
-                    <p class="hero-subtitle">High-touch operational sprints for founder-led service businesses. We come in, reset what's heavy, and leave you with systems that run clean — without us.</p>
+                    <p class="hero-subtitle">A 3–4 week operations reset for marketing + creative teams: intake, workflows, handoffs, and delivery—rebuilt inside your existing tools.</p>
                     <div class="hero-ctas">
-                        <a href="start.html" class="btn btn-primary">Start a Conversation</a>
-                        <a href="#sprint" class="btn btn-secondary">See How It Works</a>
+                        <a href="start.html" class="btn btn-primary">Book a Fit Call</a>
+                        <a href="#deliverables" class="btn btn-secondary">See Deliverables</a>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -1300,15 +1357,15 @@
                         <div class="iso-block"></div>
                         <div class="iso-block"></div>
                     </div>
-                    <div class="float-card float-card-1">
-                        <div class="float-card-avatar">K</div>
-                        <p>"Finally, someone who gets it. In and out, no drama."</p>
-                        <div class="float-card-tag">Agency Owner</div>
+                    <div class="results-card results-card-1">
+                        <div class="results-card-value">97.6%</div>
+                        <p>On-time delivery across 140+ annual campaigns</p>
+                        <div class="results-card-tag">Walmart Connect</div>
                     </div>
-                    <div class="float-card float-card-2">
-                        <div class="float-card-avatar">M</div>
-                        <p>"Our ops went from chaos to calm in 3 weeks."</p>
-                        <div class="float-card-tag">Consulting Firm</div>
+                    <div class="results-card results-card-2">
+                        <div class="results-card-value">15 hrs</div>
+                        <p>Typical weekly time saved post-reset</p>
+                        <div class="results-card-tag">Client Average</div>
                     </div>
                 </div>
             </div>
@@ -1317,12 +1374,12 @@
 
     <div class="trust-bar">
         <div class="container trust-bar-inner">
-            <span class="trust-bar-label">Background includes leadership at</span>
-            <div class="trust-logos">
-                <img src="images/google-logo.png" alt="Google" class="trust-logo">
-                <img src="images/airbnb-logo.png" alt="Airbnb" class="trust-logo">
-                <img src="images/walmart-logo.png" alt="Walmart" class="trust-logo">
-                <img src="images/mccann-logo.png" alt="McCann" class="trust-logo">
+            <span class="trust-bar-label">Experience across</span>
+            <div class="trust-experience">
+                <span class="trust-item">Retail Media</span>
+                <span class="trust-item">Tech</span>
+                <span class="trust-item">Agency Networks</span>
+                <span class="trust-item">E-commerce</span>
             </div>
         </div>
     </div>
@@ -1342,7 +1399,7 @@
                 </div>
                 <div class="metric-card">
                     <div class="metric-label">On-Time Delivery</div>
-                    <div class="metric-value">98<span>%</span></div>
+                    <div class="metric-value">97.6<span>%</span></div>
                     <div class="metric-desc">across all engagements</div>
                 </div>
                 <div class="metric-card">
@@ -1401,7 +1458,25 @@
         </div>
     </section>
 
-    <section class="benefits">
+    <section class="common-fixes">
+        <div class="container">
+            <div class="fixes-header">
+                <p class="section-label">What We Fix</p>
+                <h2>Common systems we implement</h2>
+                <p>People buy what they can picture. Here's what typically gets rebuilt.</p>
+            </div>
+            <div class="fixes-grid">
+                <div class="fix-item">Creative intake + prioritization</div>
+                <div class="fix-item">Brief → build → review workflows</div>
+                <div class="fix-item">Asset handoffs + naming conventions</div>
+                <div class="fix-item">Launch calendar + dependencies</div>
+                <div class="fix-item">Stakeholder approvals + version control</div>
+                <div class="fix-item">RACI / ownership maps</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits" id="deliverables">
         <div class="container">
             <div class="section-header">
                 <p class="section-label">The Transformation</p>
@@ -1480,7 +1555,7 @@
                     </div>
                     <div class="sprint-detail">
                         <span class="sprint-detail-label">Communication</span>
-                        <span class="sprint-detail-value">Fully Async</span>
+                        <span class="sprint-detail-value">Async + 1 Kickoff Call</span>
                     </div>
                 </div>
             </div>
@@ -1491,7 +1566,7 @@
                         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                     </div>
                     <h3>Week 1: Discovery</h3>
-                    <p>60-minute onboarding call. We audit your current systems, map your workflows, and identify the highest-leverage fixes.</p>
+                    <p>60-minute kickoff call. We audit your current systems, map your workflows, and identify the highest-leverage fixes.</p>
                 </div>
                 <div class="deliverable">
                     <div class="deliverable-icon">
@@ -1538,10 +1613,10 @@
                         </ul>
                     </div>
 
-                    <a href="start.html" class="btn btn-primary" style="width: 100%;">Start a Conversation</a>
+                    <a href="start.html" class="btn btn-primary" style="width: 100%;">Book a Fit Call</a>
 
                     <div class="pricing-guarantee">
-                        <strong>Clarity guarantee:</strong> You'll walk away with a prioritized diagnosis, documented workflows, and at least one fully implemented system — or we extend the engagement at no additional cost.
+                        <strong>Clarity guarantee:</strong> If you don't leave with a documented diagnosis + one implemented system, we extend 1 week at no cost.
                     </div>
                 </div>
             </div>
@@ -1580,15 +1655,15 @@
             <div class="about-content">
                 <p class="section-label">About</p>
                 <h2>Built on a decade of doing this at scale.</h2>
-                <p class="about-text">Pixique is led by a former Fortune 500 program leader who spent nine years managing large-scale operations across tech, e-commerce, and media.</p>
-                <p class="about-text">She built Pixique for founder-led businesses that have outgrown duct-tape operations but don't need — or want — a full-time ops hire. Just someone to come in, reset what's heavy, and leave you with something that runs clean.</p>
+                <p class="about-text">Pixique is led by a former Fortune 500 program leader who spent nine years managing large-scale operations across tech, e-commerce, and media — including 140+ campaigns annually at Walmart Connect with 97.6% on-time delivery.</p>
+                <p class="about-text">She built Pixique for marketing and creative teams that have outgrown duct-tape operations but don't need — or want — a full-time ops hire. Just someone to come in, reset what's heavy, and leave you with something that runs clean.</p>
                 <div class="about-credentials">
                     <div class="credential">
                         <span class="credential-value">140+</span>
                         <span class="credential-label">Campaigns managed annually</span>
                     </div>
                     <div class="credential">
-                        <span class="credential-value">98%</span>
+                        <span class="credential-value">97.6%</span>
                         <span class="credential-label">On-time delivery rate</span>
                     </div>
                     <div class="credential">
@@ -1609,7 +1684,7 @@
             <div class="faq-grid">
                 <div class="faq-item">
                     <h4>How much of my time will this take?</h4>
-                    <p>One 60-minute onboarding call. After that, everything is async — you'll spend roughly 2–3 hours total reviewing deliverables and providing feedback.</p>
+                    <p>One 60-minute kickoff call. After that, everything is async — you'll spend roughly 2–3 hours total reviewing deliverables and providing feedback.</p>
                 </div>
                 <div class="faq-item">
                     <h4>What tools do you use?</h4>
@@ -1630,8 +1705,8 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2>Ready to reset what's heavy?</h2>
-            <p>A short form to tell us about your business. We'll respond within 48 hours if we think we can help.</p>
-            <a href="start.html" class="btn btn-primary">Start a Conversation</a>
+            <p>15-minute call. No pitch. Just a quick conversation to see if we're a fit.</p>
+            <a href="start.html" class="btn btn-primary">Book a Fit Call</a>
             <p class="contact-email">Or email directly: <a href="mailto:hello@pixique.com">hello@pixique.com</a></p>
         </div>
     </section>
@@ -1644,9 +1719,14 @@
                 <a href="partners.html">Referral Partners</a>
                 <a href="https://www.linkedin.com/company/pixique-llc" target="_blank" rel="noopener">LinkedIn</a>
             </div>
-            <span class="footer-text">© 2025 Pixique LLC. All rights reserved.</span>
+            <span class="footer-text">© <span id="copyright-year"></span> Pixique LLC. All rights reserved.</span>
         </div>
     </footer>
+
+    <script>
+        // Auto-update copyright year
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
