@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixique — We make content ship on time</title>
+    <meta name="description" content="We fix why your content ships late. Approvals, handoffs, priorities — we build the system so your team delivers without you chasing.">
+
+    <link rel="canonical" href="https://pixique.com/" />
+
+    <meta property="og:title" content="Pixique — We make content ship on time">
+    <meta property="og:description" content="We fix why your content ships late. Approvals, handoffs, priorities — we build the system so your team delivers without you chasing.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A1918'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='55' fill='%23FAF8F5' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cream: #FAF8F5;
+            --white: #FFFEFB;
+            --ink: #1A1918;
+            --ink-light: #3D3B39;
+            --ink-muted: #6B6866;
+            --stone: #E8E4DF;
+            --stone-dark: #C4BAB0;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--cream);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 400;
+        }
+
+        h1 {
+            font-size: clamp(2.25rem, 5vw, 3rem);
+            line-height: 1.15;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        p { color: var(--ink-light); }
+
+        a { color: var(--ink); }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid var(--stone);
+        }
+
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .header-cta {
+            font-size: 14px;
+            padding: 10px 20px;
+            background: var(--ink);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .header-cta:hover {
+            background: #2D3748;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 140px 0 80px;
+        }
+
+        .hero h1 {
+            margin-bottom: 24px;
+        }
+
+        .hero-sub {
+            font-size: 1.125rem;
+            margin-bottom: 32px;
+            max-width: 600px;
+        }
+
+        .hero-proof {
+            font-size: 15px;
+            color: var(--ink-muted);
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--stone);
+        }
+
+        .hero-cta {
+            display: inline-block;
+            font-size: 15px;
+            padding: 14px 28px;
+            background: var(--ink);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            margin-right: 12px;
+            margin-bottom: 12px;
+        }
+
+        .hero-cta:hover {
+            background: #2D3748;
+        }
+
+        .hero-cta-alt {
+            display: inline-block;
+            font-size: 15px;
+            padding: 14px 28px;
+            color: var(--ink);
+            text-decoration: none;
+            border: 1px solid var(--stone-dark);
+            border-radius: 6px;
+        }
+
+        .hero-micro {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--ink-muted);
+        }
+
+        /* Section */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-dark {
+            background: var(--ink);
+            color: var(--white);
+        }
+
+        .section-dark h2 {
+            color: var(--white);
+        }
+
+        .section-dark p {
+            color: var(--stone-dark);
+        }
+
+        .section-alt {
+            background: var(--white);
+        }
+
+        /* Problem */
+        .problem-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .problem-list li {
+            font-size: 1.05rem;
+            color: var(--stone-dark);
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .problem-list li:last-child {
+            border-bottom: none;
+        }
+
+        .problem-box {
+            padding: 24px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            border-left: 3px solid var(--stone-dark);
+        }
+
+        .problem-box p {
+            color: var(--white);
+            font-size: 1rem;
+        }
+
+        /* What We Do */
+        .do-grid {
+            display: grid;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .do-card {
+            padding: 24px;
+            background: var(--cream);
+            border-radius: 8px;
+            border: 1px solid var(--stone);
+        }
+
+        .do-card-problem {
+            font-size: 14px;
+            color: var(--ink-muted);
+            margin-bottom: 8px;
+        }
+
+        .do-card-fix {
+            font-size: 16px;
+            color: var(--ink);
+            font-weight: 400;
+        }
+
+        .do-note {
+            font-size: 15px;
+            color: var(--ink-muted);
+            padding: 20px 24px;
+            background: var(--stone);
+            border-radius: 8px;
+        }
+
+        /* Fit */
+        .fit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .fit-col h3 {
+            font-size: 1.125rem;
+            margin-bottom: 16px;
+        }
+
+        .fit-list {
+            list-style: none;
+        }
+
+        .fit-list li {
+            font-size: 15px;
+            color: var(--ink-light);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--stone);
+        }
+
+        .fit-list li:last-child {
+            border-bottom: none;
+        }
+
+        .fit-no .fit-list li {
+            color: var(--ink-muted);
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .pricing-card {
+            padding: 28px;
+            background: var(--cream);
+            border-radius: 8px;
+            border: 1px solid var(--stone);
+        }
+
+        .pricing-card.featured {
+            background: var(--ink);
+            border-color: var(--ink);
+        }
+
+        .pricing-card.featured .pricing-name,
+        .pricing-card.featured .pricing-price,
+        .pricing-card.featured .pricing-for,
+        .pricing-card.featured .pricing-includes li {
+            color: var(--white);
+        }
+
+        .pricing-card.featured .pricing-includes li {
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .pricing-name {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+
+        .pricing-price {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--ink);
+            margin-bottom: 12px;
+        }
+
+        .pricing-for {
+            font-size: 14px;
+            font-style: italic;
+            color: var(--ink-muted);
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--stone);
+        }
+
+        .pricing-card.featured .pricing-for {
+            color: var(--stone-dark);
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .pricing-includes {
+            list-style: none;
+        }
+
+        .pricing-includes li {
+            font-size: 15px;
+            color: var(--ink-light);
+            padding: 8px 0;
+            border-bottom: 1px solid var(--stone);
+        }
+
+        .pricing-includes li:last-child {
+            border-bottom: none;
+        }
+
+        /* About */
+        .about-founder {
+            padding: 24px;
+            background: var(--cream);
+            border-radius: 8px;
+            border: 1px solid var(--stone);
+            margin-bottom: 24px;
+        }
+
+        .about-founder h3 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .about-founder ul {
+            list-style: none;
+        }
+
+        .about-founder li {
+            font-size: 15px;
+            color: var(--ink-light);
+            padding: 6px 0;
+        }
+
+        .about-note {
+            font-size: 15px;
+            font-style: italic;
+            color: var(--ink-muted);
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: var(--white);
+        }
+
+        .cta p {
+            color: var(--stone-dark);
+            margin-bottom: 28px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            font-size: 15px;
+            padding: 16px 36px;
+            background: var(--white);
+            color: var(--ink);
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .cta-btn:hover {
+            background: var(--cream);
+        }
+
+        .cta-email {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--stone-dark);
+        }
+
+        .cta-email a {
+            color: var(--white);
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .faq-item {
+            padding: 20px 24px;
+            background: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--stone);
+        }
+
+        .faq-item h4 {
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 8px;
+        }
+
+        .faq-item p {
+            font-size: 15px;
+            color: var(--ink-muted);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--ink);
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .footer-links {
+            font-size: 14px;
+        }
+
+        .footer-links a {
+            color: var(--ink-muted);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .fit-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-cta {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="#" class="logo">Pixique</a>
+        <a href="#pricing" class="header-cta">See Pricing</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>We make your content ship on time.</h1>
+        <p class="hero-sub">You have a talented team. But stuff still ships late, approvals stall, and you're the one holding it together. We fix that.</p>
+        <p class="hero-proof">Previously: Walmart Connect, Google, Airbnb, McCann — 140+ campaigns/year, 97.6% on-time</p>
+        <a href="https://cal.com/pixique/fit" class="hero-cta">Book a 15-min call →</a>
+        <a href="#pricing" class="hero-cta-alt">See pricing</a>
+        <p class="hero-micro">No pitch on the call. We'll figure out if we can help.</p>
+    </div>
+</section>
+
+<section class="section-dark">
+    <div class="container">
+        <h2>Sound familiar?</h2>
+        <ul class="problem-list">
+            <li>Work piles up and nobody knows what's most important</li>
+            <li>Reviews happen, but things still ship late or wrong</li>
+            <li>Approvals disappear into a black hole</li>
+            <li>You spend more time chasing status than doing real work</li>
+            <li>You're the only reason anything gets done — and you're tired</li>
+        </ul>
+        <div class="problem-box">
+            <p>Every late launch and redo costs you time, money, and trust. You don't need more people. You need a system that actually works.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-alt" id="services">
+    <div class="container">
+        <h2>Here's what we do.</h2>
+        <p style="margin-bottom: 32px;">We step in and run your content operations — the whole thing from "here's a brief" to "it's live." We make sure the right work gets done, approvals don't stall, and your team can actually ship without someone babysitting every step.</p>
+
+        <div class="do-grid">
+            <div class="do-card">
+                <p class="do-card-problem">Work comes in from everywhere</p>
+                <p class="do-card-fix">We create one clear way to submit work, with priorities everyone can see.</p>
+            </div>
+            <div class="do-card">
+                <p class="do-card-problem">Approvals get stuck</p>
+                <p class="do-card-fix">We set up a simple approval process with deadlines that people actually follow.</p>
+            </div>
+            <div class="do-card">
+                <p class="do-card-problem">Nobody knows what's happening</p>
+                <p class="do-card-fix">We build a dashboard so you can see every project's status without asking.</p>
+            </div>
+            <div class="do-card">
+                <p class="do-card-problem">Stuff ships with mistakes</p>
+                <p class="do-card-fix">We add a review step before launch so problems get caught early.</p>
+            </div>
+            <div class="do-card">
+                <p class="do-card-problem">You're the bottleneck</p>
+                <p class="do-card-fix">We run the system so you don't have to chase everything yourself.</p>
+            </div>
+            <div class="do-card">
+                <p class="do-card-problem">Tools are a mess</p>
+                <p class="do-card-fix">We organize your existing tools — no new software, no migrations.</p>
+            </div>
+        </div>
+
+        <div class="do-note">
+            <strong>What makes us different:</strong> We care about quality, not just speed. Your content should ship fast <em>and</em> look good.
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>This is for teams that ship a lot.</h2>
+        <div class="fit-grid">
+            <div class="fit-col">
+                <h3>Good fit:</h3>
+                <ul class="fit-list">
+                    <li>You ship offers, landing pages, emails, or in-store content regularly</li>
+                    <li>Your team is talented but delivery is messy</li>
+                    <li>You've tried to fix this yourself but don't have time</li>
+                    <li>You want someone senior, not a junior coordinator</li>
+                </ul>
+            </div>
+            <div class="fit-col fit-no">
+                <h3>Not a fit:</h3>
+                <ul class="fit-list">
+                    <li>You need someone to design or write the content (we don't)</li>
+                    <li>You want a big agency with lots of people</li>
+                    <li>You're looking for cheap hourly help</li>
+                    <li>You're not willing to change how things work</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-alt" id="pricing">
+    <div class="container">
+        <h2>How we work together</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-name">Ongoing</div>
+                <div class="pricing-price">$8,000–$12,000/month</div>
+                <p class="pricing-for">For teams that want us to run operations month-to-month</p>
+                <ul class="pricing-includes">
+                    <li>We lead your content operations 1–2 days/week</li>
+                    <li>We manage the whole process: briefs, approvals, shipping</li>
+                    <li>We set up and maintain your dashboards and workflows</li>
+                    <li>We train your team so things don't fall apart</li>
+                    <li>3-month minimum, then month-to-month</li>
+                </ul>
+            </div>
+            <div class="pricing-card featured">
+                <div class="pricing-name">30-Day Build</div>
+                <div class="pricing-price">$15,000–$25,000</div>
+                <p class="pricing-for">For teams that need the system built, then want to run it themselves</p>
+                <ul class="pricing-includes">
+                    <li>We figure out what's broken in your current process</li>
+                    <li>We build a complete system: intake, approvals, tracking, handoffs</li>
+                    <li>We document everything and train your team</li>
+                    <li>We check in after 30 days to make sure it's working</li>
+                    <li>You own it all — no ongoing dependency</li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-name">Single Day</div>
+                <div class="pricing-price">$2,500–$3,500</div>
+                <p class="pricing-for">For urgent situations or when you just need a fresh set of eyes</p>
+                <ul class="pricing-includes">
+                    <li>Up to 8 hours focused with your team</li>
+                    <li>Good for: launch prep, unsticking something stuck, audits</li>
+                    <li>Summary and next steps sent within 24 hours</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>About Pixique</h2>
+        <p style="margin-bottom: 24px;">We help content teams ship faster without the chaos. We've done this for 9 years at places where missing a deadline wasn't an option.</p>
+
+        <div class="about-founder">
+            <h3>Founded by Bea Katcher</h3>
+            <ul>
+                <li>9 years running content operations at Walmart Connect, Google, Airbnb, McCann</li>
+                <li>Managed 140+ campaigns/year with 97.6% on-time delivery</li>
+                <li>Built systems for offers, landing pages, in-store content, and more</li>
+            </ul>
+        </div>
+
+        <p class="about-note">We take 2–3 clients at a time so we can do good work.</p>
+    </div>
+</section>
+
+<section class="section-dark cta">
+    <div class="container">
+        <h2>Let's talk.</h2>
+        <p>15-minute call. No pitch. We'll figure out if we can help.</p>
+        <a href="https://cal.com/pixique/fit" class="cta-btn">Book a call →</a>
+        <p class="cta-email">Or email: <a href="mailto:hello@pixique.com">hello@pixique.com</a></p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h4>Do we have to switch tools?</h4>
+                <p>No. We work with whatever you're already using — Notion, Asana, Monday, whatever. No new software.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Is it just one person?</h4>
+                <p>Yes, primarily. Bea leads every engagement. We bring in specialists for specific builds when needed.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can you stay on long-term?</h4>
+                <p>Yes. After the first 3 months, it's month-to-month. But we build systems that can run without us.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What if we also need design or writing help?</h4>
+                <p>We can recommend people. But we run the system that ships your content — we don't make the content itself.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-brand">Pixique</div>
+        <div class="footer-links">
+            <a href="mailto:hello@pixique.com">hello@pixique.com</a>
+            <a href="https://cal.com/pixique/fit">Book a call</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
